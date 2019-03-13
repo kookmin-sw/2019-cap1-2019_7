@@ -1,3 +1,53 @@
+
+### 1. 프로잭트 소개
+
+농인을 위한 수화 번역 플레이어
+
+### 2. 소개 영상
+
+프로젝트 소개하는 영상을 추가하세요
+
+### 3. 팀 소개
+
+팀을 소개하세요.
+
+팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+
+```markdown
+지도 교수 : 임성수 교수님
+```
+
+```markdown
+이름 :
+담당 :
+e-mail : 
+```
+
+```markdown
+이름 :
+담당 :
+e-mail : 
+```
+
+```markdown
+이름 :
+담당 :
+e-mail : 
+```
+
+```markdown
+이름 :
+역할 :
+e-mail : 
+```
+
+```markdown
+이름 :
+담당 :
+e-mail : 
+```
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
