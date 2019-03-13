@@ -20,8 +20,7 @@ def spider(max_indexes):
             index += 1
 
         else:
-            tmp = soup.select("dl", class_="content_view_dis")[1].dt.next_sibling.next_sibling
-            word = clean_text(tmp.get_text())
+            word = clean_text(soup.find("meta", property="og:title").get('content'))
 
             for link in soup.select('input#preview'):
                 href = link.get('value').replace('105X105.jpg', '700X466.mp4')
@@ -56,8 +55,8 @@ def spider(max_indexes):
 # 필요없는 text 부분 제거
 def clean_text(text):
 
-    cleaned_text = re.sub('[^가-힣]', '', text)
+    cleaned_text = re.sub('한국수어사전_', '', text)
     return cleaned_text
 
 
-spider(10)
+spider(13000)
