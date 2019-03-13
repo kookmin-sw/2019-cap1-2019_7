@@ -1,17 +1,5 @@
-# Welcome to GitHub
-
-캡스톤 팀 생성을 축하합니다.
-
-## 팀소개 및 페이지를 꾸며주세요.
-
-- readme.md 수정.
-
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
 
 **팀페이지 주소** https://kookmin-sw.github.io/2019-cap1-2019_7/
-
 
 ### 1. 프로잭트 소개
 
