@@ -28,12 +28,24 @@
 팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
 
 ```markdown
-**지도 교수 : 임성수 교수님**
+지도 교수 : 임성수 교수님
 ```
 
 ```markdown
 이름 :
-역할 :
+담당 :
+e-mail : 
+```
+
+```markdown
+이름 :
+담당 :
+e-mail : 
+```
+
+```markdown
+이름 :
+담당 :
 e-mail : 
 ```
 
@@ -45,19 +57,7 @@ e-mail :
 
 ```markdown
 이름 :
-역할 :
-e-mail : 
-```
-
-```markdown
-이름 :
-역할 :
-e-mail : 
-```
-
-```markdown
-이름 :
-역할 :
+담당 :
 e-mail : 
 ```
 
