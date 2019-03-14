@@ -14,7 +14,7 @@
 **_지도 교수 : 임성수 교수님_**
 
 ```markdown
-<img src="https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png">
+<img width="200" src="https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png">
 이름 : 윤지은
 담당 : 팀장
 e-mail : dbss5588@gmail.com
