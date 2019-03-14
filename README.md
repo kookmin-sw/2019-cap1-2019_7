@@ -21,25 +21,21 @@ e-mail : dbss5588@gmail.com
 
 ```markdown
 이름 : 정창회
-담당 :
 e-mail : 
 ```
 
 ```markdown
 이름 : 이희지
-담당 :
-e-mail : 
+e-mail : heeji228@gmail.com
 ```
 
 ```markdown
 이름 : 배진영
-역할 :
 e-mail : 
 ```
 
 ```markdown
 이름 : 축이림
-담당 :
 e-mail : 
 ```
 
