@@ -20,24 +20,28 @@
 e-mail : dbss5588@gmail.com
 ```
 
+![ckdghl](https://user-images.githubusercontent.com/31851599/54386304-fd1f9b80-46db-11e9-9f06-2e828f32dbac.PNG)
 ```markdown
 이름 : 정창회
 담당 :
 e-mail : 
 ```
 
+![gmlwl](https://user-images.githubusercontent.com/31851599/54386338-10326b80-46dc-11e9-9c87-656c4a2f94e9.PNG)
 ```markdown
 이름 : 이희지
 담당 :
 e-mail : 
 ```
 
+![wlsdud](https://user-images.githubusercontent.com/31851599/54386417-3c4dec80-46dc-11e9-835f-4d237aee4ba4.PNG)
 ```markdown
 이름 : 배진영
 역할 :
 e-mail : 
 ```
 
+![dlfla](https://user-images.githubusercontent.com/31851599/54386439-4c65cc00-46dc-11e9-8652-58dd7aca4c1c.PNG)
 ```markdown
 이름 : 축이림
 담당 :
