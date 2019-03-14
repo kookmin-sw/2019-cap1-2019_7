@@ -14,7 +14,6 @@
 **_지도 교수 : 임성수 교수님_**
 
 ![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
-
 ```markdown
 이름 : 윤지은
 담당 : 팀장
