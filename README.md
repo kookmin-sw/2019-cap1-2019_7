@@ -14,6 +14,7 @@
 **_지도 교수 : 임성수 교수님_**
 
 ```markdown
+![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
 이름 : 윤지은
 담당 : 팀장
 e-mail : dbss5588@gmail.com
@@ -21,21 +22,25 @@ e-mail : dbss5588@gmail.com
 
 ```markdown
 이름 : 정창회
+담당 :
 e-mail : 
 ```
 
 ```markdown
 이름 : 이희지
-e-mail : heeji228@gmail.com
+담당 :
+e-mail : 
 ```
 
 ```markdown
 이름 : 배진영
+역할 :
 e-mail : 
 ```
 
 ```markdown
 이름 : 축이림
+담당 :
 e-mail : 
 ```
 
