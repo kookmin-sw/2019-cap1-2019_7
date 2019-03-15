@@ -38,7 +38,7 @@ e-mail :
 ```markdown
 이름 : 배진영
 담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
-e-mail : 
+e-mail : wlsdudqo97@gmail.com
 ```
 
 ![dlfla](https://user-images.githubusercontent.com/31851599/54386439-4c65cc00-46dc-11e9-8652-58dd7aca4c1c.PNG)
