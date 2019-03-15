@@ -16,7 +16,7 @@
 ![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
 ```markdown
 이름 : 윤지은
-담당 : 팀장 / 수화 데이터베이스 구축 및 어플리케이션 개발
+담당 : 팀장 / 수화 데이터베이스 구축 및 어플리케이션 개발 
 e-mail : dbss5588@gmail.com
 ```
 
