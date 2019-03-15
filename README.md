@@ -31,7 +31,7 @@ e-mail : changhoe95@gmail.com
 ```markdown
 이름 : 이희지
 담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
-e-mail :  
+e-mail :  heeji228@gmail.com
 ```
 
 ![wlsdud](https://user-images.githubusercontent.com/31851599/54386417-3c4dec80-46dc-11e9-835f-4d237aee4ba4.PNG)
