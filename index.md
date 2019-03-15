@@ -1,11 +1,13 @@
 
-### 1. 프로잭트 소개
+**팀페이지 주소** https://kookmin-sw.github.io/2019-cap1-2019_7
+
+### 1. 프로젝트 소개
 
 청각장애인을 위한 **수화 번역** 플레이어
 
 ### 2. 소개 영상
 
-(준비중)
+[![Video Label](https://user-images.githubusercontent.com/26623557/54408019-99b95c00-4723-11e9-851f-37f60e320f69.png)](https://youtu.be/huAAx2-kwS0)
 
 ### 3. 팀 소개
 
@@ -14,47 +16,50 @@
 ![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
 ```markdown
 이름 : 윤지은
-담당 : 팀장
+담당 : 팀장 / 수화 데이터베이스 구축 및 어플리케이션 개발
 e-mail : dbss5588@gmail.com
 ```
 
 ![ckdghl](https://user-images.githubusercontent.com/31851599/54386304-fd1f9b80-46db-11e9-9f06-2e828f32dbac.PNG)
 ```markdown
 이름 : 정창회
-담당 :
-e-mail : 
+담당 : 수화 데이터베이스 구축 및 어플리케이션 개발
+e-mail : changhoe95@gmail.com
 ```
 
 ![gmlwl](https://user-images.githubusercontent.com/31851599/54386338-10326b80-46dc-11e9-9c87-656c4a2f94e9.PNG)
 ```markdown
 이름 : 이희지
-담당 :
-e-mail : 
+담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
+e-mail :  
 ```
 
 ![wlsdud](https://user-images.githubusercontent.com/31851599/54386417-3c4dec80-46dc-11e9-835f-4d237aee4ba4.PNG)
 ```markdown
 이름 : 배진영
-역할 :
+담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
 e-mail : 
 ```
 
 ![dlfla](https://user-images.githubusercontent.com/31851599/54386439-4c65cc00-46dc-11e9-8652-58dd7aca4c1c.PNG)
 ```markdown
 이름 : 축이림
-담당 :
+담당 : 어플리케이션 UI 구상 및 설계
 e-mail : 
 ```
 
-## Welcome to GitHub Pages
+### 4. 사용법
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+소스코드제출시 설치법이나 사용법을 작성하세요.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 5. 기타
 
-### Markdown
+추가적인 내용은 자유롭게 작성하세요.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+## Markdown을 사용하여 내용꾸미기
+
+Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
 
 ```markdown
 Syntax highlighted code block
@@ -74,12 +79,8 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/cap-template/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
