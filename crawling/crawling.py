@@ -5,7 +5,6 @@ import re
 import cv2
 from bs4 import BeautifulSoup
 
-
 # Crawling 함수 => txt파일로 저장
 def spider(max_indexes):
     file = codecs.open("dic2.txt", 'w', encoding="utf-8")
@@ -22,23 +21,50 @@ def spider(max_indexes):
         if soup.title.get_text() != "국립국어원 한국수어사전":
             index += 1
 
+        # word : 단어, part : 품사
         else:
             word = clean_text(soup.find("meta", property="og:title").get('content'))
 
+            temp1 = soup.find("form", {"name": "signViewForm"})
+            temp2 = temp1.find("dt", {"class": ""})
+            temp3 = temp2.find_next_sibling("dd")
+
+            try:
+                part = clean_text(temp3.find_next_sibling("dd").text)
+
+            except:
+                part = ''
+
             for link in soup.select('input#preview'):
                 href = link.get('value').replace('105X105.jpg', '700X466.mp4')
-
-                file.write(word + " " + href + " " + cut_video(href))
-                print(word + " " + href + " " + cut_video(href) + "\n")
+                file.write(word + " " + search_part(part) + " " + search_mean(part) + "\n")
+                print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n" + "의미 : " + search_mean(part) + "\n" + "동영상링크 : " + href + "\n")
             index += 1
     file.close()
 
 
 # 필요없는 text 부분 제거
 def clean_text(text):
-
     cleaned_text = re.sub('한국수어사전_', '', text)
-    return cleaned_text
+    text = re.sub('-', '', cleaned_text)
+    text2 = re.sub('\s\s', '', text)
+    return text2
+
+
+# 품사 정보 가져오기
+def search_part(text):
+    if ']' in text:
+        return text[1:text.index(']')]
+    else:
+        return ''
+
+
+# 뜻 정보 가져오기
+def search_mean(text):
+    if ']' in text:
+        return text[text.index(']')+1:]
+    else:
+        return ''
 
 
 # 비디오에서 사용할 부분만 자르기
