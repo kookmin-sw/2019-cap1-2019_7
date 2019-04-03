@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 # Crawling 함수 => txt파일로 저장
 def spider(max_indexes):
-    file = codecs.open("dic2.txt", 'w', encoding="utf-8")
+    file = codecs.open("dic3.txt", 'w', encoding="utf-8")
     index = 1
 
     while index < max_indexes:
@@ -37,7 +37,7 @@ def spider(max_indexes):
 
             for link in soup.select('input#preview'):
                 href = link.get('value').replace('105X105.jpg', '700X466.mp4')
-                file.write(word + " " + search_part(part) + " " + search_mean(part) + "\n")
+                file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
                 print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n" + "의미 : " + search_mean(part) + "\n" + "동영상링크 : " + href + "\n")
             index += 1
     file.close()
@@ -56,7 +56,7 @@ def search_part(text):
     if ']' in text:
         return text[1:text.index(']')]
     else:
-        return ''
+        return 'none'
 
 
 # 뜻 정보 가져오기
@@ -64,7 +64,7 @@ def search_mean(text):
     if ']' in text:
         return text[text.index(']')+1:]
     else:
-        return ''
+        return 'none'
 
 
 # 비디오에서 사용할 부분만 자르기
