@@ -1,5 +1,17 @@
 import json
 
+def convertTimecode(stt_t):
+    srt_t = "00:00:00,000"
+
+    find_dot = stt_t.find('.')
+    if find_dot == -1:
+        stt_t = stt_t[0:len(stt_t)-1] + ".000" +stt_t[-1]
+
+    front_t = int(stt_t[0:len(stt_t)-5])
+    back_t = stt_t[len(stt_t) - 4:len(stt_t) - 1]
+
+    return srt_t
+
 with open('test.json', encoding='utf-8') as json_file:
     json_data = json.load(json_file)
     print(json_data)
@@ -24,3 +36,4 @@ with open('test.json', encoding='utf-8') as json_file:
     print(start_time)
     print(end_time[0])
     print(word)
+
