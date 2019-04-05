@@ -10,15 +10,6 @@ def convertTimecode(stt_t):
     front_t = int(stt_t[0:len(stt_t)-5])
     back_t = stt_t[len(stt_t) - 4:len(stt_t) - 1]
 
-    h1 = int(front_t / 36000)
-    h2 = int((front_t / 3600) % 10)
-    m1 = int(front_t / 600)
-    m2 = int((front_t / 60) % 10)
-    s1 = int((front_t % 60) / 10)
-    s2 = int(front_t % 600)
-
-    srt_t = str(h1) + str(h2) + ":" + str(m1) + str(m2) + ":" + str(s1) + str(s2) + "," + back_t
-
     return srt_t
 
 with open('test.json', encoding='utf-8') as json_file:
@@ -44,12 +35,6 @@ with open('test.json', encoding='utf-8') as json_file:
 
     print(start_time)
     print(end_time[0])
+    print(word)
+    print(word[0])
 
-    for x in range(0, len(start_time)) :
-        start_time[x] = convertTimecode(start_time[x])
-
-    for x in range(0, len(end_time)) :
-        end_time[x] = convertTimecode(end_time[x])
-
-    print(start_time)
-    print(end_time)
