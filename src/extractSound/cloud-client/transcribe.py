@@ -45,7 +45,9 @@ def transcribe_file(speech_file):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=44100,
-        language_code='ko-KR')
+        language_code='ko-KR',
+        enable_word_time_offsets=True,
+        enable_automatic_punctuation=True)
     # [END speech_python_migration_config]
 
     # [START speech_python_migration_sync_response]
@@ -54,6 +56,20 @@ def transcribe_file(speech_file):
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
     for result in response.results:
+        alternative = result.alternatives[0]
+        print(u'Transcript: {}'.format(alternative.transcript))
+        print('Confidence: {}'.format(alternative.confidence))
+
+        for word_info in alternative.words:
+            word = word_info.word
+            start_time = word_info.start_time
+            end_time = word_info.end_time
+
+            print('Word: {}, start_time: {}, end_time: {}'.format(
+                word,
+                start_time.seconds + start_time.nanos * 1e-9,
+                end_time.seconds + end_time.nanos * 1e-9))
+
         # The first alternative is the most likely one for this portion.
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
     # [END speech_python_migration_sync_response]
@@ -73,14 +89,26 @@ def transcribe_gcs(gcs_uri):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
         sample_rate_hertz=44100,
-        language_code='ko-KR')
+        language_code='ko-KR',
+        enable_word_time_offsets=True,
+        enable_automatic_punctuation=True)
     # [END speech_python_migration_config_gcs]
+
+    operation = client.long_running_recognize(config, audio)
 
     response = client.recognize(config, audio)
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
     for result in response.results:
         # The first alternative is the most likely one for this portion.
+        for word_info in alternative.words:
+            word = word_info.word
+            start_time = word_info.start_time
+            end_time = word_info.end_time
+            print('Word: {}, start_time: {}, end_time: {}'.format(
+                word,
+                start_time.seconds + start_time.nanos * 1e-9,
+                end_time.seconds + end_time.nanos * 1e-9))
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
 # [END speech_transcribe_sync_gcs]
 
