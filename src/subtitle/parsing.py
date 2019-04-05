@@ -36,3 +36,5 @@ with open('test.json', encoding='utf-8') as json_file:
     print(start_time)
     print(end_time[0])
     print(word)
+    print(word[0])
+
