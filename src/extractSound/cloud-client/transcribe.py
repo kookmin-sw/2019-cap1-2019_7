@@ -44,8 +44,8 @@ def transcribe_file(speech_file):
     audio = types.RecognitionAudio(content=content)
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=16000,
-        language_code='en-US')
+        sample_rate_hertz=44100,
+        language_code='ko-KR')
     # [END speech_python_migration_config]
 
     # [START speech_python_migration_sync_response]
@@ -72,7 +72,7 @@ def transcribe_gcs(gcs_uri):
     audio = types.RecognitionAudio(uri=gcs_uri)
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
-        sample_rate_hertz=16000,
+        sample_rate_hertz=44100,
         language_code='ko-KR')
     # [END speech_python_migration_config_gcs]
 
