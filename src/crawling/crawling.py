@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 # Crawling 함수 => txt파일로 저장
 def spider(max_indexes):
-    file = codecs.open("dic3.txt", 'w', encoding="utf-8")
+    file = codecs.open("number.txt", 'w', encoding="utf-8")
     index = 1
 
     while index < max_indexes:
@@ -34,11 +34,13 @@ def spider(max_indexes):
 
             except:
                 part = ''
-
+            if search_part(part) == '수사':
+                file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
+                print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n")
             for link in soup.select('input#preview'):
                 href = link.get('value').replace('105X105.jpg', '700X466.mp4')
-                file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
-                print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n" + "의미 : " + search_mean(part) + "\n" + "동영상링크 : " + href + "\n")
+                #file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
+                #print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n" + "의미 : " + search_mean(part) + "\n" + "동영상링크 : " + href + "\n")
             index += 1
     file.close()
 
