@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebbacd7c-4c5b-42f1-a4e6-3c26bc3ae4af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crawling/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../crawling/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crawling/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../crawling/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../crawling/crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/../crawling/crawling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../crawling/dic.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../crawling/dic.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/CrawlingToMongodb.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
@@ -28,10 +26,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic.txt">
+        <entry file="file://$PROJECT_DIR$/../crawling/dic.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7923">
-              <caret line="417" column="2" selection-start-line="417" selection-start-column="2" selection-end-line="417" selection-end-column="2" />
+            <state relative-caret-position="722">
+              <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -94,11 +92,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="803" />
-    <option name="y" value="6" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -178,11 +176,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="803" y="6" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23504274" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.115911484" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -211,20 +208,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dic2.txt" />
-    <entry file="file://$PROJECT_DIR$/CrawlingToMongodb.py">
+    <entry file="file://$PROJECT_DIR$/basic.txt" />
+    <entry file="file://$PROJECT_DIR$/../crawling/dic.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#24#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="722">
+          <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic.txt">
+    <entry file="file://$PROJECT_DIR$/CrawlingToMongodb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7923">
-          <caret line="417" column="2" selection-start-line="417" selection-start-column="2" selection-end-line="417" selection-end-column="2" />
+        <state relative-caret-position="285">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="e#24#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
