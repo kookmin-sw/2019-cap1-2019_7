@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from lib.constant import MORPH
+from constant import MORPH
 
 # 수화에서 사용하는 조사
 POST = ['랑','에서','더러','보다','에게', '의', '로', '이라고', '에', '처럼','께','으로','한테',  # 격조사
@@ -42,19 +42,29 @@ class StopWord:
     # 의미있는 조사 추출
     def check_post(self, morph, word):
         if word in POST:
-            return 1
+            return 1, word
         else:
-            return 0
+            return 0, ''
 
     # 의미있는 어미 추출
     def check_end(self, morph, word):
         if word in END:
-            return 1
+            return 1, word
         else:
-            return 0
+            return 0, ''
 
     def check_number(self, morph, word):
-        return 1
+        number = int(word)
+        # number의 자릿수
+        cipher = len(word)
+        print(cipher)
+        text = ''
+        for i in range(cipher):
+            if word[i] == '0': continue
+            text += str(int(word[i]) * (10 ** (cipher - 1 - i)))
+            text += ' '
+
+        return 1, text
 
     def ignore(self):
         return 0, ''
