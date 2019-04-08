@@ -7,6 +7,7 @@ def matchTImecode(transcript, start_time, end_time, word):
         transcript[i] = transcript[i].strip()
 
     for i in range(0,len(transcript)):
+        while j < len(word):
             if(transcript[i].startswith(word[j])):
                 start.append(start_time[j])
             if(transcript[i].endswith(word[j])):
