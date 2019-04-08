@@ -13,8 +13,9 @@ def user_path(instance, filename): #파라미터 instance는 Photo 모델을 의
     return '%s.%s' % (pid, extension) # 예 : wayhome/abcdefgs.png
 
 
-# 실제로 DB에 저장되는 기능
+# 사용자가 업로드한 Video DB
 class Video(models.Model):
     videofile= models.FileField(upload_to= user_path, null=True, verbose_name="")
+
     def __str__(self):
         return str(self.videofile)

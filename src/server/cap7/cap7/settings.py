@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'player'
+    'player',
+    'dictionary',
 ]
 
 MIDDLEWARE = [
@@ -124,5 +125,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-MEDIA_URL = '/media/videos/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/videos/')
+MEDIA_URL = '/player/media/videos/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'player/media/videos/')

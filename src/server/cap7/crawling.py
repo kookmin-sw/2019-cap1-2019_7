@@ -5,11 +5,19 @@ import re
 import cv2
 from bs4 import BeautifulSoup
 
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cap7.settings")
+
+import django
+django.setup()
+
+from dictionary.models import Basic
+
+
 # Crawling 함수 => txt파일로 저장
 def spider(max_indexes):
-    file = codecs.open("number.txt", 'w', encoding="utf-8")
-    index = 1
-
+    index = 1008
     while index < max_indexes:
 
         url = 'http://sldict.korean.go.kr/front/sign/signContentsView.do?origin_no=' + str(index)
@@ -31,18 +39,28 @@ def spider(max_indexes):
 
             try:
                 part = clean_text(temp3.find_next_sibling("dd").text)
-
+                mean = search_mean(part)
+                part = search_part(part)
             except:
                 part = ''
-            if search_part(part) == '수사':
-                file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
-                print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n")
+
+            #if search_part(part) == '수사':
+                #file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
+            #print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n")
+            ref = ''
+            data = []
+
             for link in soup.select('input#preview'):
                 href = link.get('value').replace('105X105.jpg', '700X466.mp4')
-                #file.write(word + "\n" + search_part(part) + "\n" + search_mean(part) + "\n")
+                frame = cut_video(href)
+
+                data.append([word, part, mean, ref, href, frame])
+                print(data)
+                for w, p, m, r, u, f in data:
+                    Basic(word=w, part=p, mean=m, ref=r, url=u, frame=f).save()
                 #print("단어 : " + word + "\n" + "품사 : " + search_part(part) + "\n" + "의미 : " + search_mean(part) + "\n" + "동영상링크 : " + href + "\n")
             index += 1
-    file.close()
+    #file.close()
 
 
 # 필요없는 text 부분 제거
@@ -78,6 +96,5 @@ def cut_video(url):
     frame_cnt = int(frame_cnt / 3)
     frame = str(frame_cnt)
     return frame
-
 
 spider(13000)

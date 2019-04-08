@@ -144,3 +144,6 @@ local_settings.py
 
 .env
 db.sqlite3
+
+### google STT API ###
+test3-596b967c9537.json

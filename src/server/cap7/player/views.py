@@ -21,8 +21,15 @@ from .forms import VideoForm
 #     })
 
 def player(request):
-    lastvideo= Video.objects.last()
-    videofile= lastvideo.videofile
+
+    try:
+        lastvideo= Video.objects.last()
+        videofile= lastvideo.videofile
+
+    except:
+        lastvideo=''
+        videofile=''
+
     form= VideoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
