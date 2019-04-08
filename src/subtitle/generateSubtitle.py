@@ -39,6 +39,21 @@ def convertTimecode(stt_t):
 
     return srt_t
 
+def writeSubtitle(sentence, start_time, end_time, file_name):
+    num, arrow = 0, " --> "
+    f = open(file_name, 'w')
+    for x in range(0, len(sentence)):
+        num += 1
+        f.write(str(num))
+        f.write("\n")
+        f.write(start_time[x])
+        f.write(arrow)
+        f.write(end_time[x])
+        f.write("\n")
+        f.write(sentence[x])
+        f.write("\n\n")
+    f.close()
+
 # Load data file
 with open('test.json', encoding='utf-8') as json_file:
     json_data = json.load(json_file)
@@ -77,9 +92,12 @@ for x in range(0, len(sent_start)):
 for x in range(0, len(sent_end)):
     sent_end[x] = convertTimecode(sent_end[x])
 
-print(start_time)
-print(end_time)
-print(word)
-print(sentence)
-print(sent_start)
-print(sent_end)
+writeSubtitle(sentence, sent_start, sent_end, '0408.srt')
+
+# print(start_time)
+# print(end_time)
+# print(word)
+# print(sentence)
+# print(sent_start)
+# print(sent_end)
+
