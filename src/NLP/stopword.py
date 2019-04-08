@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from constant import MORPH
+from constant import Morph
 
 # 수화에서 사용하는 조사
 POST = ['랑','에서','더러','보다','에게', '의', '로', '이라고', '에', '처럼','께','으로','한테',  # 격조사
@@ -15,18 +15,19 @@ class StopWord:
         pass
 
     def process_morph(self, morph, word):
-        mp = MORPH()
-        m = mp[morph]
+        mp = Morph()
+        m = mp.MORPH[morph]
         FUN = {
             'NOUN': self.default,  # 명사(noun)
             'VERB': self.check_verb,  # 동사(verb)
             'DETER': self.default,  # 관형사(determinant)
             'ADVERB': self.default,  # 부사(adverb)
-            'EXCLAM': self.check_exclam,  # 감탄사(exclamation)
+            'EXCLAM': self.default,  # 감탄사(exclamation)
             'POST': self.check_post,  # 조사(post)
             'END': self.check_end,  # 어미(end)
             'AFFIX': self.default,  #접사(affix)
-            'NUMBER': self.check_number,  # 숫자(number)
+            'NUMBER': self.check_number,  # 숫자(number),
+            'MARK': self.default,  # 기호
             'IGNORE': self.ignore  # 무시해도 되는 품사들
         }
         fun = FUN[m]
@@ -66,7 +67,7 @@ class StopWord:
 
         return 1, text
 
-    def ignore(self):
+    def ignore(self, morph, word):
         return 0, ''
 
 if __name__ == "__main__":
