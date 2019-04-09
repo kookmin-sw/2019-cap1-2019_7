@@ -1,22 +1,4 @@
-#!/usr/bin/env python
-
-# Copyright 2017 Google Inc. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-"""Google Cloud Speech API sample application using the REST API for batch
-processing.
-Example usage:
+"""
     python transcribe.py resources/audio.raw
     python transcribe.py gs://cloud-samples-tests/speech/brooklyn.flac
 """
@@ -47,7 +29,9 @@ def transcribe_file(speech_file):
         sample_rate_hertz=44100,
         language_code='ko-KR',
         enable_word_time_offsets=True,
-        enable_automatic_punctuation=True)
+        enable_automatic_punctuation=True,
+        audio_channel_count=2,
+        enable_separate_recognition_per_channel=True)
     # [END speech_python_migration_config]
 
     # [START speech_python_migration_sync_response]
@@ -110,17 +94,21 @@ def transcribe_gcs(gcs_uri):
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
-# [END speech_transcribe_sync_gcs]
+
+#경로 or 파일
+def receiveVideo():
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument(
-        'path', help='File or GCS path for audio file to be recognized')
-    args = parser.parse_args()
-    if args.path.startswith('gs://'):
-        transcribe_gcs(args.path)
-    else:
-        transcribe_file(args.path)
+    transcribe_file(file_path)
+
+# if __name__ == '__main__':
+#     parser = argparse.ArgumentParser(
+#         description=__doc__,
+#         formatter_class=argparse.RawDescriptionHelpFormatter)
+#     parser.add_argument(
+#         'path', help='File or GCS path for audio file to be recognized')
+#     args = parser.parse_args()
+#     if args.path.startswith('gs://'):
+#         transcribe_gcs(args.path)
+#     else:
+#         transcribe_file(args.path)
