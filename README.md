@@ -25,21 +25,20 @@
 ![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
 ```markdown
 이름 : 윤지은
-담당 : 팀장 / 수화 데이터베이스 구축 및 어플리케이션 개발
-e-mail : dbss5588@gmail.com
+담당 : 팀장 / 자막 생성수화 데이터베이스 구축
 ```
 
 ![ckdghl](https://user-images.githubusercontent.com/31851599/54386304-fd1f9b80-46db-11e9-9f06-2e828f32dbac.PNG)
 ```markdown
 이름 : 정창회
-담당 : 수화 데이터베이스 구축 및 어플리케이션 개발
+담당 : 수화 데이터베이스 구축 및 수화 데이터 크롤링
 e-mail : changhoe95@gmail.com
 ```
 
 ![gmlwl](https://user-images.githubusercontent.com/31851599/54386338-10326b80-46dc-11e9-9c87-656c4a2f94e9.PNG)
 ```markdown
 이름 : 이희지
-담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
+담당 : 음성인식 및 웹서버 구축
 e-mail :  heeji228@gmail.com
 ```
 
