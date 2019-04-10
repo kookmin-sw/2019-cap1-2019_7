@@ -1,22 +1,4 @@
-#!/usr/bin/env python
-
-# Copyright 2017 Google Inc. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-"""Google Cloud Speech API sample application using the REST API for batch
-processing.
-Example usage:
+"""
     python transcribe.py resources/audio.raw
     python transcribe.py gs://cloud-samples-tests/speech/brooklyn.flac
 """
@@ -24,9 +6,23 @@ Example usage:
 import argparse
 import io
 import os
+import sys
+import pipes
 
 credential_path = "/Users/heeji/test3-596b967c9537.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+
+def video_to_audio(fileName):
+    try:
+        file, file_extension = os.path.splitext(fileName)
+        file = pipes.quote(file)
+        video_to_wav = 'ffmpeg -i ' + file + file_extension + ' ' + file + '.wav' + ' -ac 2 -ar 44100'
+        os.system(video_to_wav)
+        print(video_to_wav)
+        return file + '.wav'
+    except OSError as err:
+        print(err.reason)
+        exit(1)
 
 # [START speech_transcribe_sync]
 def transcribe_file(speech_file):
@@ -47,7 +43,9 @@ def transcribe_file(speech_file):
         sample_rate_hertz=44100,
         language_code='ko-KR',
         enable_word_time_offsets=True,
-        enable_automatic_punctuation=True)
+        enable_automatic_punctuation=True,
+        audio_channel_count=2,
+        enable_separate_recognition_per_channel=True)
     # [END speech_python_migration_config]
 
     # [START speech_python_migration_sync_response]
@@ -110,17 +108,25 @@ def transcribe_gcs(gcs_uri):
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
-# [END speech_transcribe_sync_gcs]
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument(
-        'path', help='File or GCS path for audio file to be recognized')
-    args = parser.parse_args()
-    if args.path.startswith('gs://'):
-        transcribe_gcs(args.path)
-    else:
-        transcribe_file(args.path)
+
+    filePath = sys.argv[1]
+    # check if the specified file exists or not
+
+    file = video_to_audio(filePath)
+    transcribe_file(file)
+
+    # parser = argparse.ArgumentParser(
+    #     description=__doc__,
+    #     formatter_class=argparse.RawDescriptionHelpFormatter)
+    # parser.add_argument(
+    #     'path', help='File or GCS path for audio file to be recognized')
+    # args = parser.parse_args()
+    #
+    #
+    # if args.path.startswith('gs://'):
+    #     transcribe_gcs(args.path)
+    # else:
+    #     transcribe_file(args.path)
