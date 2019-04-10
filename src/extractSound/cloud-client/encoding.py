@@ -11,6 +11,7 @@ def video_to_audio(fileName):
         file = pipes.quote(file)
         video_to_wav = 'ffmpeg -i ' + file + file_extension + ' ' + file + '.wav' + ' -ac 2 -ar 44100'
         os.system(video_to_wav)
+        return video_to_wav
         print("##############sucess")
     except OSError as err:
         print(err.reason)

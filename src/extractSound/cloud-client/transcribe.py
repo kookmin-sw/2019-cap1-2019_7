@@ -6,9 +6,23 @@
 import argparse
 import io
 import os
+import sys
+import pipes
 
 credential_path = "/Users/heeji/test3-596b967c9537.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+
+def video_to_audio(fileName):
+    try:
+        file, file_extension = os.path.splitext(fileName)
+        file = pipes.quote(file)
+        video_to_wav = 'ffmpeg -i ' + file + file_extension + ' ' + file + '.wav' + ' -ac 2 -ar 44100'
+        os.system(video_to_wav)
+        print(video_to_wav)
+        return file + '.wav'
+    except OSError as err:
+        print(err.reason)
+        exit(1)
 
 # [START speech_transcribe_sync]
 def transcribe_file(speech_file):
@@ -95,20 +109,24 @@ def transcribe_gcs(gcs_uri):
                 end_time.seconds + end_time.nanos * 1e-9))
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
 
-#경로 or 파일
-def receiveVideo():
 
+if __name__ == '__main__':
 
-    transcribe_file(file_path)
+    filePath = sys.argv[1]
+    # check if the specified file exists or not
 
-# if __name__ == '__main__':
-#     parser = argparse.ArgumentParser(
-#         description=__doc__,
-#         formatter_class=argparse.RawDescriptionHelpFormatter)
-#     parser.add_argument(
-#         'path', help='File or GCS path for audio file to be recognized')
-#     args = parser.parse_args()
-#     if args.path.startswith('gs://'):
-#         transcribe_gcs(args.path)
-#     else:
-#         transcribe_file(args.path)
+    file = video_to_audio(filePath)
+    transcribe_file(file)
+
+    # parser = argparse.ArgumentParser(
+    #     description=__doc__,
+    #     formatter_class=argparse.RawDescriptionHelpFormatter)
+    # parser.add_argument(
+    #     'path', help='File or GCS path for audio file to be recognized')
+    # args = parser.parse_args()
+    #
+    #
+    # if args.path.startswith('gs://'):
+    #     transcribe_gcs(args.path)
+    # else:
+    #     transcribe_file(args.path)
