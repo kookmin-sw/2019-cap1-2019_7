@@ -112,7 +112,7 @@
           <form method="post" enctype="multipart/form-data">
               {% csrf_token %}
               {{ form.as_p }}
-              <button type="submit">Upload</button>
+            <button class="upload" type="submit" value="Upload">Upload</button>
           </form>
           <br><br>
           <video width='1000' controls>
@@ -120,7 +120,7 @@
           Your browser does not support the video tag.
           </video>
           <br><br>
-
+          {{ subscript }}
         </div>
       </div>
     </section>
@@ -339,6 +339,7 @@
         </div>
       </div>
     </div> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src='{% static "vendor/jquery/jquery.min.js" %}'></script>
     <script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
 
@@ -351,5 +352,6 @@
 
     <!-- Custom scripts for this template -->
     <script src='{% static "js/agency.min.js" %}'></script>
+    <script src='{% static "js/upload.js" %}'></script>
   </body>
   </html>
