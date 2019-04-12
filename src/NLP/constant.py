@@ -4,7 +4,7 @@ class Morph:
     MORPH = {   # 명사
                 'NNG': 'NOUN', 'NNP': 'NOUN', 'NNB': 'NOUN', 'NNM': 'NOUN', 'NR': 'NOUN','UN': 'NOUN', 'NP': 'NOUN',
                 # 용언
-                'VV': 'VERB', 'VA': 'VERB','VXV': 'VERB', 'VXA': 'VERB',
+                'VV': 'VERB', 'VA': 'VERB', 'VX': 'VERB', 'VXV': 'VERB', 'VXA': 'VERB','VCP': 'VERB','VCN': 'VERB',
                 # 관형사
                 'MDT': 'DETER', 'MDN': 'DETER',
                 # 부사
@@ -13,7 +13,7 @@ class Morph:
                 'IC': 'EXCLAM',
                 # 조사
                 'JKS': 'POST','JKC': 'POST', 'JKG': 'POST', 'JKO': 'POST', 'JKM': 'POST', 'JKI': 'POST',
-                'JKQ': 'POST', 'JX': 'POST', 'JC': 'POST', 'VCP': 'POST','VCN': 'POST',
+                'JKQ': 'POST', 'JX': 'POST', 'JC': 'POST',
                 # 어미
                 'EPH': 'END','EPH': 'END','EPT': 'END','EPP': 'END','EFN': 'END','EFQ': 'END','EFO': 'END',
                 'EFA': 'END','EFI': 'END','EFR': 'END','ECE': 'END','ECD': 'END','ECS': 'END','ETN': 'END','ETD': 'END',
@@ -26,3 +26,11 @@ class Morph:
                 # 외국어, 한자 제외
                 'OL': 'IGNORE','OH': 'IGNORE'
     }
+
+    USE_POST = ['랑','에서','더러','보다','에게', '의', '로', '이라고', '에', '처럼','께','으로','한테',  # 격조사
+                '야','이나','든지','부터','도','커녕','마다','밖에','뿐','만','까지',                      # 보조사
+                '과','와',                                                                                    # 접속조사
+                '이니까','이다',                                                                              # 서술격 조사
+                '이랑']
+
+    USE_END = ['았','었','ㅂ시다','면서','자','지만','던','면','러','다오','ㅂ니다','ㅂ니까','다가']

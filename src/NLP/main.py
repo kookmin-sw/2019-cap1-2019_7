@@ -8,18 +8,23 @@ def main():
 
     flag = 1
     lines = input_f.readlines()
+    question = []
     for i in range(len(lines)):
-        if flag%4 == 0:
+        if flag % 4 == 0:
             output_f.write('\n')
         if flag % 4 == 3:
             line = kkma.pos(lines[i])
             print(line)
             # line = line.split()
             for w, m in line:
-                print('w: '+w+' m: '+ m)
                 r, word = pr.process_morph(m, w)
                 if r == 1:
+                    if word == '무엇' or word == '뭐' or word == '어디':
+                        question.append(word)
+                        continue
                     output_f.write(word + ' ')
+            if len(question) > 0:
+                output_f.write(question[0] + ' ')
             flag+=1
         else:
             output_f.write(lines[i])
@@ -28,7 +33,6 @@ def main():
     input_f.close()
     output_f.close()
     pass
-
 
 
 if __name__ == "__main__":
