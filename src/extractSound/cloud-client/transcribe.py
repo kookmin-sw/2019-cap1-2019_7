@@ -12,6 +12,8 @@ import pipes
 credential_path = "/Users/heeji/test3-596b967c9537.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
+textfile=open('textfile.txt','w')
+
 def video_to_audio(fileName):
     try:
         file, file_extension = os.path.splitext(fileName)
@@ -63,10 +65,28 @@ def transcribe_file(speech_file):
             start_time = word_info.start_time
             end_time = word_info.end_time
 
+            textfile.write('%s ' % word)
+            textfile.write('start_time %s ' % (start_time.seconds + start_time.nanos * 1e-9))
+            textfile.write('end_time %s\n' % (end_time.seconds + end_time.nanos * 1e-9))
+
             print('Word: {}, start_time: {}, end_time: {}'.format(
                 word,
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
+        # for word_info in alternative.words:
+        #     word = word_info.word
+        #     start_time = word_info.start_time
+        #     end_time = word_info.end_time
+        #
+        #     file.write('%s    ' % word)
+        #     file.write('start_time %s   ~ ' % (start_time.seconds + start_time.nanos * 1e-9))
+        #     file.write('end_time %s\n\n' % (end_time.seconds + end_time.nanos * 1e-9))
+        #
+        #
+        #     print('Word: {}, start_time: {}, end_time: {}'.format(
+        #         word,
+        #         start_time.seconds + start_time.nanos * 1e-9,
+        #         end_time.seconds + end_time.nanos * 1e-9))
 
         # The first alternative is the most likely one for this portion.
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
