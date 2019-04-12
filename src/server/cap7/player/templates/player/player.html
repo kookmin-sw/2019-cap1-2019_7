@@ -23,6 +23,12 @@
         body {
             font-family: "Nanum Gothic Coding";
         }
+
+        video {
+         width:100%;
+         max-width:1000px;
+         height:auto;
+        }
     </style>
   </head>
 
@@ -50,7 +56,7 @@
       </div>
     </nav>
 
-    <!-- Header -->
+     <!--Header-->
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
@@ -61,7 +67,7 @@
       </div>
     </header>
 
-    <!-- Info -->
+     <!--Info-->
     <section id="info">
       <div class="container">
         <div class="row">
@@ -115,17 +121,16 @@
             <button class="upload" type="submit" value="Upload">Upload</button>
           </form>
           <br><br>
-          <video width='1000' controls>
-          <source src='{{ MEDIA_URL }}{{ videofile }}' type='video/mp4'>
-          Your browser does not support the video tag.
+          <video autoplay loop autobuffer muted playsinline controls>
+            <source src='{{ MEDIA_URL }}{{ videofile }}' type='video/mp4'>
+              <track kind="subtitles" label="Korean" src="{{MEDIA_URL}}test.srt" srclang="ko" default/>
           </video>
           <br><br>
-          {{ subscript }}
         </div>
       </div>
     </section>
 
-    <!-- Team -->
+     <!--Team-->
     <section id="team">
       <div class="container">
         <div class="row">
@@ -353,5 +358,6 @@
     <!-- Custom scripts for this template -->
     <script src='{% static "js/agency.min.js" %}'></script>
     <script src='{% static "js/upload.js" %}'></script>
+    <script src="http://www.storiesinflight.com/js_videosub/includes/videosub-0.9.9.js"></script>
   </body>
   </html>

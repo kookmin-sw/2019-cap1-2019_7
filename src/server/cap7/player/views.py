@@ -9,6 +9,7 @@ from .models import Video
 from .forms import VideoForm
 from .transcribe import transcribe_file
 from .videotowav import *
+from .generateSubtitleFormTxt import *
 import os
 
 # def upload_video(request):
@@ -57,7 +58,11 @@ def player(request):
                 video_name = str(file) + '.mp4'
 
             audio_path = video_to_audio(video_name)
-            transcribe_file(audio_path)
+            print(audio_path)
+            text_path = transcribe_file(audio_path)
+            writeSubtitle(text_path)
+            print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+            print(text_path)
         except:
             pass
 
@@ -72,4 +77,3 @@ def player(request):
     print(video_name)
     #print(subscript)
     return render(request, 'player/player.html', context)
-

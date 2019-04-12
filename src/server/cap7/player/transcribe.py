@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 """
     python transcribe.py resources/audio.raw
     python transcribe.py gs://cloud-samples-tests/speech/brooklyn.flac
@@ -12,17 +13,6 @@ from .videotowav import *
 credential_path = "test3-596b967c9537.json"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
-# def video_to_audio(fileName):
-#     try:
-#         file, file_extension = os.path.splitext(fileName)
-#         file = pipes.quote(file)
-#         video_to_wav = 'ffmpeg -i ' + file + file_extension + ' ' + file + '.wav' + ' -ac 2 -ar 44100'
-#         os.system(video_to_wav)
-#         print(video_to_wav)
-#         return file + '.wav'
-#     except OSError as err:
-#         print(err.reason)
-#         exit(1)
 
 # [START speech_transcribe_sync]
 def transcribe_file(speech_file):
@@ -53,6 +43,9 @@ def transcribe_file(speech_file):
     # [END speech_python_migration_sync_request]
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
+
+    textfile = open('player/media/text/test.txt', 'w')
+
     for result in response.results:
         alternative = result.alternatives[0]
         print(u'Transcript: {}'.format(alternative.transcript))
@@ -63,15 +56,22 @@ def transcribe_file(speech_file):
             start_time = word_info.start_time
             end_time = word_info.end_time
 
+            textfile.write('%s ' % word)
+            textfile.write('start_time %s ' % (start_time.seconds + start_time.nanos * 1e-9))
+            textfile.write('end_time %s\n' % (end_time.seconds + end_time.nanos * 1e-9))
             print('Word: {}, start_time: {}, end_time: {}'.format(
                 word,
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
 
         # The first alternative is the most likely one for this portion.
+        textfile.write(u'Transcript: {}'.format(result.alternatives[0].transcript))
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
     # [END speech_python_migration_sync_response]
 # [END speech_transcribe_sync]
+
+    text_path = 'player/media/text/test.txt'
+    return text_path
 
 
 if __name__ == '__main__':
