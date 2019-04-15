@@ -25,6 +25,7 @@ def main():
                     output_f.write(word + ' ')
             if len(question) > 0:
                 output_f.write(question[0] + ' ')
+                question.clear()
             flag+=1
         else:
             output_f.write(lines[i])

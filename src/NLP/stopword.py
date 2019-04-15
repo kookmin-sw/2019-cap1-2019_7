@@ -52,6 +52,8 @@ class StopWord:
     # 의미있는 조사 추출
     def check_post(self, morph, word):
         if word in POST:
+            if word == '이':
+                return 1, '이다'
             return 1, word
         else:
             return 0, ''

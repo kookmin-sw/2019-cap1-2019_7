@@ -18,7 +18,7 @@ class Morph:
                 'EPH': 'END','EPH': 'END','EPT': 'END','EPP': 'END','EFN': 'END','EFQ': 'END','EFO': 'END',
                 'EFA': 'END','EFI': 'END','EFR': 'END','ECE': 'END','ECD': 'END','ECS': 'END','ETN': 'END','ETD': 'END',
                 # 접사
-                'XPN': 'AFFIX','XPV': 'AFFIX','XSN': 'AFFIX','XSV': 'AFFIX','XSA': 'AFFIX', 'XR': 'AFFIX',
+                'XPN': 'AFFIX','XPV': 'AFFIX','XSN': 'AFFIX','XSV': 'VERB','XSA': 'AFFIX', 'XR': 'AFFIX',
                 # 부호
                 'SF': 'MARK','SP': 'MARK','SS': 'MARK','SE': 'MARK','SO': 'MARK','SW': 'MARK',
                 # 숫자
