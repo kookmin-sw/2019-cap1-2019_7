@@ -22,4 +22,4 @@ class Video(models.Model):
     subscript = models.TextField(verbose_name="subscript", blank=True)
 
     def __str__(self):
-        return str(self.name)
+        return str(self.videofile)
