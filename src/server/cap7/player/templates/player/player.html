@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href='{% static "css/agency.min.css" %}' rel="stylesheet">
+    <link rel="stylesheet" href='{% static "css/styles.css" %}'>
+    <link rel="stylesheet" href='{% static "css/agency.min.css" %}'>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400,700&amp;subset=korean" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
     <link href='{% static "vendor/fontawesome-free/css/all.min.css" %}' rel="stylesheet" type="text/css">
@@ -22,12 +23,6 @@
     <style>
         body {
             font-family: "Nanum Gothic Coding";
-        }
-
-        video {
-         width:100%;
-         max-width:1000px;
-         height:auto;
         }
     </style>
   </head>
@@ -120,13 +115,35 @@
               {{ form.as_p }}
             <button class="upload" type="submit" value="Upload">Upload</button>
           </form>
-          <br><br>
-          <video autoplay loop autobuffer muted playsinline controls>
-            <source src='{{ MEDIA_URL }}{{ videofile }}' type='video/mp4'>
-              <track kind="subtitles" label="Korean" src="{{MEDIA_URL}}test.srt" srclang="ko" default/>
-          </video>
-          <br><br>
         </div>
+          <br><br>
+          <figure id="videoContainer" data-fullscreen="true">
+              <video id="video" controls autobuffer autoplay preload="metadata">
+                  <source src="{{MEDIA_URL}}{{videofile}}" type="video/mp4">
+                  <track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}test.vtt" default>
+              </video>
+              <div id="video-controls" class="controls" data-state="hidden">
+                  <button id="playpause" type="button" data-state="play">Play/Pause</button>
+                  <button id="stop" type="button" data-state="stop">Stop</button>
+                  <div class="progress">
+                      <progress id="progress" value="0" min="0">
+                          <span id="progress-bar"></span>
+                      </progress>
+                  </div>
+                  <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+                  <button id="volinc" type="button" data-state="volup">Vol+</button>
+                  <button id="voldec" type="button" data-state="voldown">Vol-</button>
+                  <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+                  <button id="subtitles" type="button" data-state="subtitles">CC</button>
+              </div>
+          </figure>
+          <!--<div>-->
+            <!--<video controls preload="metadata">-->
+              <!--<source src='{{ MEDIA_URL }}{{ videofile }}' type='video/mp4'>-->
+              <!--<track kind="subtitles" label="Korean" src="{{MEDIA_URL}}test.srt" srclang="ko">-->
+            <!--</video>-->
+          <!--</div>-->
+          <br><br>
       </div>
     </section>
 
@@ -358,6 +375,8 @@
     <!-- Custom scripts for this template -->
     <script src='{% static "js/agency.min.js" %}'></script>
     <script src='{% static "js/upload.js" %}'></script>
+    <script src='{% static "js/subtitle.js" %}'></script>
     <script src="http://www.storiesinflight.com/js_videosub/includes/videosub-0.9.9.js"></script>
+
   </body>
   </html>
