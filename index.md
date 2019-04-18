@@ -1,86 +1,65 @@
 
-**팀페이지 주소** https://kookmin-sw.github.io/2019-cap1-2019_7
+
+***팀페이지 주소** https://kookmin-sw.github.io/2019-cap1-2019_7
 
 ### 1. 프로젝트 소개
 
-청각장애인을 위한 **수화 번역** 플레이어
+ 본 프로젝트의 이름은 **‘수화인플레이어’**로 사용자가 정보를 얻고자 하는 영상을 등록하면 영상의 내용을 수화로 번역하여 이를 등록된 영상과 함께 사용자에게 제공하는 것이 목표이다. 
 
-### 2. 소개 영상
+ 현재 시중에 나와있는 대부분의 영상매체는 자막이 함께 제공되는 영상이 적을 뿐더러 더욱이 수화 영상을 함께 제공하는 것은 뉴스나 일부 수화통역 영상 이외에 거의 찾아볼 수 없다. IT 기술 발달로 점점 영상 매체의 의존도가 높아짐에 따라 청인과 청각장애인 간의 정보 격차는 심화될 것으로 예상된다. 하여 본 프로젝트의 기대효과는 청각장애인도 인터넷 강의나 시사/교양 프로그램 등 정보를 담고 있는 영상에서 원하는 정보를 제약없이 습득할 수 있도록 하는 것이다.
 
+
+### 2. Abstract
+  Most of the video media currently on the market have fewer videos that come with subtitles and, moreover, provide Sign Language together can hardly be found other than news or some sign language translation videos. As IT technology advances increasingly rely on video media, the information gap between the audience and the deaf is expected to widen. Thus, the expected effect of this project is to enable deaf people to acquire the information they want in a video containing information, such as Internet lectures and current events/cultivation programs.
+
+
+### 3. 소개 영상 (click)
+------------------------------------------------------------------------------------------------------------------------
 [![Video Label](https://user-images.githubusercontent.com/26623557/54408019-99b95c00-4723-11e9-851f-37f60e320f69.png)](https://youtu.be/huAAx2-kwS0)
 
-### 3. 팀 소개
+------------------------------------------------------------------------------------------------------------------------
+
+### 4. 팀 소개
 
 **_지도 교수 : 임성수 교수님_**
 
 ![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
 ```markdown
 이름 : 윤지은
-담당 : 팀장 / 수화 데이터베이스 구축 및 어플리케이션 개발 
-e-mail : dbss5588@gmail.com
+담당 : 팀장 / 자막 생성 및 수화 데이터베이스 구축
+e-mail : dbss58@naver.com
 ```
 
 ![ckdghl](https://user-images.githubusercontent.com/31851599/54386304-fd1f9b80-46db-11e9-9f06-2e828f32dbac.PNG)
 ```markdown
 이름 : 정창회
-담당 : 수화 데이터베이스 구축 및 어플리케이션 개발
+담당 : 수화 데이터베이스 구축 및 수화 데이터 크롤링 및 웹 구현
 e-mail : changhoe95@gmail.com
 ```
 
 ![gmlwl](https://user-images.githubusercontent.com/31851599/54386338-10326b80-46dc-11e9-9c87-656c4a2f94e9.PNG)
 ```markdown
 이름 : 이희지
-담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
-e-mail :  
+담당 : 영상 인코딩 및 음성인식 및 수어 데이터 매핑 기능 구현
+e-mail :  heeji228@gmail.com
 ```
 
 ![wlsdud](https://user-images.githubusercontent.com/31851599/54386417-3c4dec80-46dc-11e9-835f-4d237aee4ba4.PNG)
 ```markdown
 이름 : 배진영
-담당 : 자연어 분석 및 수어 데이터 매핑 기능 구현
-e-mail : 
+담당 : 형태소 분석 및 수화 분법 체계로 재구성 구현
+e-mail : wlsdudqo97@naver.com
 ```
 
 ![dlfla](https://user-images.githubusercontent.com/31851599/54386439-4c65cc00-46dc-11e9-8652-58dd7aca4c1c.PNG)
 ```markdown
 이름 : 축이림
-담당 : 어플리케이션 UI 구상 및 설계
-e-mail : 
 ```
 
 ### 4. 사용법
 
-소스코드제출시 설치법이나 사용법을 작성하세요.
+추후에 업로드할 예정입니다.
 
 ### 5. 기타
 
-추가적인 내용은 자유롭게 작성하세요.
-
-
-## Markdown을 사용하여 내용꾸미기
-
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Support or Contact
-
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+팀원들 너무 고생했어
