@@ -3,12 +3,15 @@ from konlpy.tag import Kkma
 from stopword import StopWord
 
 def main():
-    input_f = open('txt/test.srt', 'r')
-    output_f = open('txt/output.srt', 'w')
+    input_f = open('txt/VTT01.vtt', 'r')
+    output_f = open('txt/jedong.vtt', 'w')
+
+    lines = input_f.readlines()
+    for i in range(2):
+        output_f.write(lines[0])
+        del lines[0]
 
     flag = 1
-    lines = input_f.readlines()
-    question = []
     for i in range(len(lines)):
         if flag % 4 == 0:
             output_f.write('\n')
@@ -19,13 +22,7 @@ def main():
             for w, m in line:
                 r, word = pr.process_morph(m, w)
                 if r == 1:
-                    if word == '무엇' or word == '뭐' or word == '어디':
-                        question.append(word)
-                        continue
                     output_f.write(word + ' ')
-            if len(question) > 0:
-                output_f.write(question[0] + ' ')
-                question.clear()
             flag+=1
         else:
             output_f.write(lines[i])

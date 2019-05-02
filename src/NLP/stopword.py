@@ -26,7 +26,7 @@ class StopWord:
             'EXCLAM': self.default,  # 감탄사(exclamation)
             'POST': self.check_post,  # 조사(post)
             'END': self.check_end,  # 어미(end)
-            'AFFIX': self.default,  #접사(affix)
+            'AFFIX': self.check_affix,  #접사(affix)
             'NUMBER': self.check_number,  # 숫자(number),
             'MARK': self.check_mark,  # 기호
             'IGNORE': self.ignore  # 무시해도 되는 품사들
@@ -40,8 +40,8 @@ class StopWord:
 
     # 의미있는 명사 추출
     def check_noun(self, morph, word):
-        if word == '뭐':
-            return 1, '무엇'
+        if word in mp.SPECIAL_NOUN.keys():
+            return 1, mp.SPECIAL_NOUN[word]
         else:
             return 1, word
 
@@ -51,7 +51,7 @@ class StopWord:
 
     # 의미있는 조사 추출
     def check_post(self, morph, word):
-        if word in POST:
+        if word in mp.USE_POST:
             if word == '이':
                 return 1, '이다'
             return 1, word
@@ -60,10 +60,19 @@ class StopWord:
 
     # 의미있는 어미 추출
     def check_end(self, morph, word):
-        if word in END:
-            return 1, word
+        if word in mp.USE_END:
+            if word in mp.SPECIAL_END.keys():
+                return 1, mp.SPECIAL_END[word]
+            else:
+                return 1, word
         else:
             return 0, ''
+
+    def check_affix(self, morph, word):
+        if word in mp.SPECIAL_AFFIX.keys():
+            return 1, mp.SPECIAL_AFFIX[word]
+        else:
+            return 1, word
 
     # 숫자 표현(ex. 157 -> 100 50 7)
     def check_number(self, morph, word):
