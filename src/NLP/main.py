@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 from konlpy.tag import Kkma
+from konlpy.tag import Komoran
 from stopword import StopWord
+
+def splitLine(line):
+    l = line.split()
+    for i in range(len(l)):
+        s = l[i].split('/')
+        l[i] = s
+    return l
 
 def main():
     input_f = open('txt/VTT01.vtt', 'r')
@@ -12,13 +20,15 @@ def main():
         del lines[0]
 
     flag = 1
+    wordCnt = 0
     for i in range(len(lines)):
         if flag % 4 == 0:
             output_f.write('\n')
         if flag % 4 == 3:
+            l = lines[i].split()
+            wordCnt += len(l)
             line = kkma.pos(lines[i])
             print(line)
-            # line = line.split()
             for w, m in line:
                 r, word = pr.process_morph(m, w)
                 if r == 1:
@@ -30,10 +40,12 @@ def main():
 
     input_f.close()
     output_f.close()
+    print('wordCnt' + str(wordCnt))
     pass
 
 
 if __name__ == "__main__":
+    komoran = Komoran()
     kkma = Kkma()
     pr = StopWord()
     main()
