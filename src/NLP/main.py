@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from konlpy.tag import Kkma
-from konlpy.tag import Komoran
+from PyKomoran import *
 from stopword import StopWord
 
 def splitLine(line):
@@ -27,7 +26,8 @@ def main():
         if flag % 4 == 3:
             l = lines[i].split()
             wordCnt += len(l)
-            line = kkma.pos(lines[i])
+            line = komoran.get_plain_text(lines[i])
+            line = splitLine(line)
             print(line)
             for w, m in line:
                 r, word = pr.process_morph(m, w)
@@ -45,8 +45,7 @@ def main():
 
 
 if __name__ == "__main__":
-    komoran = Komoran()
-    kkma = Kkma()
+    komoran = Komoran(DEFAULT_MODEL['FULL'])
     pr = StopWord()
     main()
     pass
