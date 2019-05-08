@@ -1,33 +1,31 @@
 # constant
 
 class Morph:
-
-    MORPH = {  # 명사
-        'NNG': 'NOUN', 'NNP': 'NOUN', 'NNB': 'NOUN', 'NNM': 'NOUN', 'NR': 'NOUN', 'UN': 'NOUN', 'NP': 'NOUN',
-        # 용언
-        'VV': 'VERB', 'VA': 'VERB', 'VX': 'VERB', 'VXV': 'VERB', 'VXA': 'VERB', 'VCP': 'VERB', 'VCN': 'VERB',
-        # 관형사
-        'MDT': 'DETER', 'MDN': 'DETER',
-        # 부사
-        'MAG': 'ADVERB', 'MAC': 'ADVERB',
-        # 감탄사
-        'IC': 'EXCLAM',
-        # 조사
-        'JKS': 'POST', 'JKC': 'POST', 'JKG': 'POST', 'JKO': 'POST', 'JKM': 'POST', 'JKI': 'POST',
-        'JKQ': 'POST', 'JX': 'POST', 'JC': 'POST',
-        # 어미
-        'EPH': 'END', 'EPH': 'END', 'EPT': 'END', 'EPP': 'END', 'EFN': 'END', 'EFQ': 'END', 'EFO': 'END',
-        'EFA': 'END', 'EFI': 'END', 'EFR': 'END', 'ECE': 'END', 'ECD': 'END', 'ECS': 'END', 'ETN': 'END', 'ETD': 'END',
-        # 접사
-        'XPN': 'AFFIX', 'XPV': 'AFFIX', 'XSN': 'AFFIX', 'XSV': 'VERB', 'XSA': 'AFFIX', 'XR': 'AFFIX',
-        # 부호
-        'SF': 'MARK', 'SP': 'MARK', 'SS': 'MARK', 'SE': 'MARK', 'SO': 'MARK', 'SW': 'MARK',
-        # 숫자
-        'ON': 'NUMBER',
-        # 외국어
-        'OL': 'ENGLISH',
-        # 한자 제외
-        'OH': 'IGNORE'
+    MORPH = {   # 명사
+                'NNG': 'NOUN', 'NNP': 'NOUN', 'NNB': 'NOUN', 'NR': 'NOUN','NF': 'NOUN', 'NP': 'NOUN',
+                # 용언
+                'VV': 'VERB', 'VA': 'VERB', 'VX': 'VERB', 'VCP': 'VERB','VCN': 'VERB', 'NV': 'VERB',
+                # 관형사
+                'MM': 'DETER',
+                # 부사
+                'MAG': 'ADVERB', 'MAJ': 'ADVERB',
+                # 감탄사
+                'IC': 'EXCLAM',
+                # 조사
+                'JKS': 'POST','JKC': 'POST', 'JKG': 'POST', 'JKO': 'POST', 'JKB': 'POST', 'JKV': 'POST',
+                'JKQ': 'POST', 'JX': 'POST', 'JC': 'POST',
+                # 어미
+                'EP': 'END','EF': 'END','EC': 'END','ETN': 'END','ETM': 'END',
+                # 접사
+                'XPN': 'AFFIX','XSN': 'AFFIX','XSV': 'VERB','XSA': 'AFFIX', 'XR': 'AFFIX',
+                # 부호
+                'SF': 'MARK','SP': 'MARK','SS': 'MARK','SE': 'MARK','SO': 'MARK','SW': 'MARK',
+                # 숫자
+                'SN': 'NUMBER',
+                # 외국어, 한자 제외
+                'SL': 'IGNORE','SH': 'IGNORE',
+                # 분석 불능 범주 제외
+                'NA': 'IGNORE'
     }
 
     USE_POST = ['랑','에서','더러','보다','에게', '의', '로', '이라고', '에', '처럼','께','으로','한테',  # 격조사
@@ -38,11 +36,9 @@ class Morph:
 
     USE_END = ['았','었','ㅂ시다','면서','자','지만','던','면','러','다오','ㅂ니까','다가']
 
-    SPECIAL_NOUN = {'꺼': '것', '뭐': '무엇', '거': '것', '니': '너'}
+    SPECIAL_NOUN = {'꺼': '것', '뭐': '무엇', '거': '것'}
     SPECIAL_END = {'았': '끝', '었': '끝'}
-    SPECIAL_POST = {'이':'이다', '로서': '로'}
     SPECIAL_AFFIX = {'스럽': '하다', '하': '하다'}
-    SPECIAL_ADVERB = {'근데': '그런데'}
-    SPECIAL_ENGLISH = {'cm': '센티미터'}
 
 pass
+
