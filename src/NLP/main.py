@@ -19,13 +19,11 @@ def main():
         del lines[0]
 
     flag = 1
-    wordCnt = 0
     for i in range(len(lines)):
         if flag % 4 == 0:
             output_f.write('\n')
         if flag % 4 == 3:
             l = lines[i].split()
-            wordCnt += len(l)
             line = komoran.get_plain_text(lines[i])
             line = splitLine(line)
             print(line)
@@ -40,12 +38,12 @@ def main():
 
     input_f.close()
     output_f.close()
-    print('wordCnt' + str(wordCnt))
     pass
 
 
 if __name__ == "__main__":
     komoran = Komoran(DEFAULT_MODEL['FULL'])
+    komoran.set_user_dic("dic/dic.user")
     pr = StopWord()
     main()
     pass
