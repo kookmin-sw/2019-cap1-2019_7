@@ -1,31 +1,36 @@
 # -*- coding: utf-8 -*-
-from konlpy.tag import Kkma
+from PyKomoran import *
 from stopword import StopWord
 
+def splitLine(line):
+    for i in range(len(line)):
+        s = str(line[i])
+        s = s.split('/')
+        line[i] = s
+    return line
+
 def main():
-    input_f = open('txt/test.srt', 'r')
-    output_f = open('txt/output.srt', 'w')
+    input_f = open('txt/VTT01.vtt', 'r')
+    output_f = open('txt/jedong.vtt', 'w')
+
+    lines = input_f.readlines()
+    for i in range(2):
+        output_f.write(lines[0])
+        del lines[0]
 
     flag = 1
-    lines = input_f.readlines()
-    question = []
     for i in range(len(lines)):
         if flag % 4 == 0:
             output_f.write('\n')
         if flag % 4 == 3:
-            line = kkma.pos(lines[i])
+            l = lines[i].split()
+            line = komoran.get_list(lines[i])
+            line = splitLine(line)
             print(line)
-            # line = line.split()
             for w, m in line:
                 r, word = pr.process_morph(m, w)
                 if r == 1:
-                    if word == '무엇' or word == '뭐' or word == '어디':
-                        question.append(word)
-                        continue
                     output_f.write(word + ' ')
-            if len(question) > 0:
-                output_f.write(question[0] + ' ')
-                question.clear()
             flag+=1
         else:
             output_f.write(lines[i])
@@ -37,7 +42,8 @@ def main():
 
 
 if __name__ == "__main__":
-    kkma = Kkma()
+    komoran = Komoran(DEFAULT_MODEL['FULL'])
+    komoran.set_user_dic("dic/dic.user")
     pr = StopWord()
     main()
     pass
