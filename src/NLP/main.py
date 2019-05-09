@@ -3,11 +3,11 @@ from PyKomoran import *
 from stopword import StopWord
 
 def splitLine(line):
-    l = line.split()
-    for i in range(len(l)):
-        s = l[i].split('/')
-        l[i] = s
-    return l
+    for i in range(len(line)):
+        s = str(line[i])
+        s = s.split('/')
+        line[i] = s
+    return line
 
 def main():
     input_f = open('txt/VTT01.vtt', 'r')
@@ -24,7 +24,7 @@ def main():
             output_f.write('\n')
         if flag % 4 == 3:
             l = lines[i].split()
-            line = komoran.get_plain_text(lines[i])
+            line = komoran.get_list(lines[i])
             line = splitLine(line)
             print(line)
             for w, m in line:
