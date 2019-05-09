@@ -11,7 +11,7 @@ class StopWord:
         FUN = {
             'NOUN': self.check_noun,  # 명사(noun)
             'VERB': self.check_verb,  # 동사(verb)
-            'DETER': self.default,  # 관형사(determinant)
+            'DETER': self.check_deter,  # 관형사(determinant)
             'ADVERB': self.check_adverb,  # 부사(adverb)
             'EXCLAM': self.default,  # 감탄사(exclamation)
             'POST': self.check_post,  # 조사(post)
@@ -39,6 +39,12 @@ class StopWord:
     # 의미있는 동사 추출
     def check_verb(self, morph, word):
         return 1, word+'다'
+
+    def check_deter(self, morph, word):
+        if word in mp.USE_DETER:
+            return 1, word
+        else:
+            return 0, ''
 
     def check_adverb(self, morph, word):
         if word in mp.SPECIAL_ADVERB.keys():
@@ -77,7 +83,6 @@ class StopWord:
         number = int(word)
         # number의 자릿수
         cipher = len(word)
-        print(cipher)
         text = ''
         for i in range(cipher):
             if word[i] == '0': continue
@@ -87,8 +92,8 @@ class StopWord:
 
     # 기호 처리
     def check_mark(self, morph, word):
-        if word == '?':
-            return 1, 'ㅂ니까'
+        if word in mp.SPECIAL_MARK.keys():
+            return 1, mp.SPECIAL_MARK[word]
         else:
             return 0, ''
 
