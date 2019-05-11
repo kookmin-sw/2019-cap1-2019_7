@@ -1,5 +1,4 @@
-
-def matchTImecode(sentence, start_time, end_time, word):
+def matchTimecode(sentence, startTime, endTime, word):
     start, end, sen, j , check = [], [], [], 0, 0
 
     for i in range(0, len(sentence)):
@@ -9,10 +8,10 @@ def matchTImecode(sentence, start_time, end_time, word):
     for i in range(0,len(sentence)):
         while j < len(word):
             if(sen[i].startswith(word[j]) and check == 0):
-                start.append(start_time[j])
+                start.append(startTime[j])
                 check = 1
             if(sen[i].endswith(word[j]) and check == 1):
-                end.append(end_time[j])
+                end.append(endTime[j])
                 check = 0
                 j+=1
                 break
@@ -20,71 +19,77 @@ def matchTImecode(sentence, start_time, end_time, word):
 
     return start, end
 
-def convertTimecode(stt_t):
-    vtt_t = "00:00:00.000"
+def convertTimecode(sttTime):
+    vttTime = "00:00:00.000"
 
-    # find_dot = stt_t.find('.')
-    # if find_dot == -1:
-    #     stt_t = stt_t[0:len(stt_t)-1] + ".000" +stt_t[-1]
+    frontTime = int(sttTime)
+    backTime = int(round(sttTime - int(sttTime), 3) * 1000)
+    if(backTime==0):
+        backTime = "000"
 
-    front_t = int(stt_t)
-    back_t = int(round(stt_t -int(stt_t), 3)*1000)
-    if(back_t==0):
-        back_t = "000"
+    h1 = int(frontTime / 36000)
+    h2 = int((frontTime / 3600) % 10)
+    m1 = int(frontTime / 600)
+    m2 = int((frontTime / 60) % 10)
+    s1 = int((frontTime % 60) / 10)
+    s2 = int((frontTime % 60) % 10)
 
-    h1 = int(front_t / 36000)
-    h2 = int((front_t / 3600) % 10)
-    m1 = int(front_t / 600)
-    m2 = int((front_t / 60) % 10)
-    s1 = int((front_t % 60) / 10)
-    s2 = int((front_t % 60) % 10)
+    vttTime = str(h1) + str(h2) + ":" + str(m1) + str(m2) + ":" + str(s1) + str(s2) + "." + str(backTime)
 
-    vtt_t = str(h1) + str(h2) + ":" + str(m1) + str(m2) + ":" + str(s1) + str(s2) + "." + str(back_t)
+    return vttTime
 
-    return vtt_t
-
-def writeSubtitle(sentence, start_time, end_time, file_name):
+def writeSubtitle(sentence, startTime, endTime, fileName):
     num, arrow = 0, " --> "
-    f = open(file_name, 'w')
+    f = open(fileName, 'w')
     f.write("WEBVTT\n\n")
-
+    
     for x in range(0, len(sentence)):
         num += 1
         f.write(str(num))
         f.write("\n")
-        f.write(start_time[x])
+        f.write(str(startTime[x]))
         f.write(arrow)
-        f.write(end_time[x])
+        f.write(str(endTime[x]))
         f.write("\n")
         f.write(sentence[x])
         f.write("\n\n")
     f.close()
 
+def writeDuration(startTime, endTime, fileName):
+    f = open(fileName, 'w')
+    for x in range(0, len(startTime)):
+        duration = round(float(endTime[x])-float(startTime[x]),1)
+        f.write(str(duration))
+        f.write(" ")
+    f.close()
+
 def sliceLongSentence(sentence):
-    i, sen_len = 0, len(sentence)
-    while (i < sen_len):
-        count_blank = sentence[i].count(' ')
-        if (count_blank > 12):
-            count, find_index = 0, 0
+    i, sentenceLength = 0, len(sentence)
+    while (i < sentenceLength):
+        countBlank = sentence[i].count(' ')
+        if (countBlank > 12):
+            count, indexBlank = 0, 0
             sent = sentence[i]
             for j in range(len(sent)):
-                find_index = sent.index(' ', find_index + 1)
+                indexBlank = sent.index(' ', indexBlank + 1)
                 count += 1
                 if (count == 6):
-                    sentence[i:i + 1] = [sent[0:find_index], sent[find_index + 1:]]
-                    sen_len += 1
+                    sentence[i:i + 1] = [sent[0:indexBlank], sent[indexBlank + 1:]]
+                    sentenceLength += 1
                     break
         i += 1
     return sentence
 
-def generateSubtitle(input_path, output_path, file_name):
-    transcripts, sentence, start_time, end_time, word = "", [], [], [], []
-    sent_start, sent_end = [], []
-    output_file = output_path+file_name+'.vtt'
+def generateSubtitle(inputPath, outputPath, fileName):
+    transcripts, sentence, startTime, endTime, word = "", [], [], [], []
+    dividedSentStart, dividedSentEnd, sentStart, sentEnd = [], [], [], []
+    outputForWeb = outputPath + "[Web]" + fileName + '.vtt'
+    outputForNLP = outputPath + "[NLP]" + fileName + '.vtt'
+    outputForDur = outputPath + "[Dur]" + fileName + '.txt'
 
     # Load data file
-    input_file = open(input_path, 'r', encoding='utf-8')
-    lines = input_file.readlines()
+    inputFile = open(inputPath, 'r', encoding='utf-8')
+    lines = inputFile.readlines()
     for line in lines:
         if (line.startswith('Transcript:')):
             trans = line.split('Transcript: ')
@@ -97,8 +102,8 @@ def generateSubtitle(input_path, output_path, file_name):
             item[i] = item[i].strip('.')
             item[i] = item[i].strip('?')
         word.append(item[0].strip())
-        start_time.append(round(float(item[2]), 1))
-        end_time.append(round(float(item[4]), 1))
+        startTime.append(round(float(item[2]), 1))
+        endTime.append(round(float(item[4]), 1))
 
     # Divide the transcript into sentence units
     if(transcripts.endswith('.')):
@@ -109,22 +114,23 @@ def generateSubtitle(input_path, output_path, file_name):
     sentence = transcripts.split('.')
 
     # Slice long sentences
-    sentence = sliceLongSentence(sentence)
+    dividedSentence = sliceLongSentence(sentence)
 
     # Match the time code of each sentence
-    sent_start, sent_end = matchTImecode(sentence, start_time, end_time, word)
+    dividedSentStart, dividedSentEnd = matchTimecode(dividedSentence, startTime, endTime, word)
+    sentStart, sentEnd = matchTimecode(sentence, startTime, endTime, word)
 
     # Convert the time code to VTT format
-    for x in range(0, len(sent_start)):
-        sent_start[x] = convertTimecode(sent_start[x])
+    for x in range(0, len(dividedSentStart)):
+        dividedSentStart[x] = convertTimecode(dividedSentStart[x])
+        dividedSentEnd[x] = convertTimecode(dividedSentEnd[x])
 
-    for x in range(0, len(sent_end)):
-        sent_end[x] = convertTimecode(sent_end[x])
-
-    writeSubtitle(sentence, sent_start, sent_end, output_file)
+    writeSubtitle(dividedSentence, dividedSentStart, dividedSentEnd, outputForWeb)
+    writeSubtitle(sentence, sentStart, sentEnd, outputForNLP)
+    writeDuration(sentStart, sentEnd, outputForDur)
 
 if __name__=='__main__':
-    input_path = 'textfile_5.txt'
-    output_path = ''
-    output_name = '180501_3'
-    generateSubtitle(input_path, output_path, output_name)
+    inputPath = 'textfile_5.txt'
+    outputPath = ''
+    outputName = '180511'
+    generateSubtitle(inputPath, outputPath, outputName)
