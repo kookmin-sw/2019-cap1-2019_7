@@ -12,20 +12,25 @@ def matching(input_path, file_name):
     flag = 1
     lines = input_f.readlines()
     words =[]
-    results = []
+    wordPath = []
+
     for line in range(len(lines)+1):
         if flag%4 == 0:
             flag+=1
         elif flag%4 == 3:
             words = lines[line].split()
             for word in words:
-                results.append(db.collection.find_one({"word": word},{"_id":0, "href": 1}))
+                path = db.collection.find_one({"word": word},{"_id":0, "href": 1})
+                if path == None:
+                    continue
+                results.append(path["href"])
             flag+=1
+            wordPath.append(results)
         else:
             flag+=1
+    print(wordPath)
+    return wordPath
 
-    for result in results:
-        print(result)
 
 if __name__=='__main__':
     input_path = '0412.srt'
