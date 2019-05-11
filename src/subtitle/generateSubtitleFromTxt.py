@@ -1,5 +1,4 @@
-
-def matchTImecode(sentence, startTime, endTime, word):
+def matchTimecode(sentence, startTime, endTime, word):
     start, end, sen, j , check = [], [], [], 0, 0
 
     for i in range(0, len(sentence)):
@@ -43,7 +42,7 @@ def writeSubtitle(sentence, startTime, endTime, fileName):
     num, arrow = 0, " --> "
     f = open(fileName, 'w')
     f.write("WEBVTT\n\n")
-
+    
     for x in range(0, len(sentence)):
         num += 1
         f.write(str(num))
@@ -118,9 +117,8 @@ def generateSubtitle(inputPath, outputPath, fileName):
     dividedSentence = sliceLongSentence(sentence)
 
     # Match the time code of each sentence
-    dividedSentStart, dividedSentEnd = matchTImecode(dividedSentence, startTime, endTime, word)
-    sentStart, sentEnd = matchTImecode(sentence, startTime, endTime, word)
-
+    dividedSentStart, dividedSentEnd = matchTimecode(dividedSentence, startTime, endTime, word)
+    sentStart, sentEnd = matchTimecode(sentence, startTime, endTime, word)
 
     # Convert the time code to VTT format
     for x in range(0, len(dividedSentStart)):
