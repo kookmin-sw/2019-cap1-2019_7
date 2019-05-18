@@ -16,8 +16,8 @@ def run_quickstart(srtFile):
     translate_client = translate.Client()
 
     # The text to translate
-    inputFile=open('note.vtt','r')
-    outputFile = open('note2.vtt', 'w')
+    inputFile=open(srtFile,'r')
+    outputFile = open('note.vtt', 'w')
 
     lines = inputFile.readlines()
 
