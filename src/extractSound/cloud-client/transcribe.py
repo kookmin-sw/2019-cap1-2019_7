@@ -14,6 +14,11 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
 textfile=open('textfile.txt','w')
 
+if video.language== korean:
+    language= 'ko-KR'
+else:
+    language= 'en-US'
+
 def video_to_audio(fileName):
     try:
         file, file_extension = os.path.splitext(fileName)
@@ -43,7 +48,7 @@ def transcribe_file(speech_file):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=44100,
-        language_code='ko-KR',
+        language_code=language,
         enable_word_time_offsets=True,
         enable_automatic_punctuation=True,
         audio_channel_count=2,
@@ -93,7 +98,7 @@ def transcribe_gcs(gcs_uri):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
         sample_rate_hertz=44100,
-        language_code='ko-KR',
+        language_code=language,
         enable_word_time_offsets=True,
         enable_automatic_punctuation=True)
     # [END speech_python_migration_config_gcs]
