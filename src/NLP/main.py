@@ -22,6 +22,7 @@ def main():
     flag = 1
     q = 0; v = 0
     sentence = []
+    morph_sentence = []
     for i in range(len(lines)):
         if flag % 4 == 0:
             output_f.write('\n')
@@ -34,19 +35,25 @@ def main():
             print(line)
             i = 0
             for w, m in line:
-                r, word = pr.process_morph(m, w)
+                r, word, morph = pr.process_morph(m, w)
                 if r == 1:
                     count += 1
                     if (word == 'ㅂ니까') or (word == '하다') or (word == '끝'):
                         if len(sentence) == 0:
                             sentence.append(word)
+                            morph_sentence.append(morph)
                         elif sentence[len(sentence)-1] != word:
                             sentence.append(word)
+                            morph_sentence.append(morph)
                     else:
                         sentence.append(word)
+                        morph_sentence.append(morph)
                 i += 1
-            for w in sentence: output_f.write(w + ' ')
+            for ow in sentence: output_f.write(ow + ' ')
+            output_f.write('\n')
+            for om in morph_sentence: output_f.write(om + ' ')
             sentence.clear()
+            morph_sentence.clear()
             flag+=1
         else:
             output_f.write(lines[i])
