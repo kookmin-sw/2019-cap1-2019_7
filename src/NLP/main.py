@@ -10,20 +10,23 @@ def splitLine(line):
     return line
 
 def main():
-    input_f = open('txt/VTT05.vtt', 'r')
-    output_f = open('txt/강형욱.vtt', 'w')
+    input_f = open('txt/인강.vtt', 'r')
+    output_f = open('txt/인강수어.vtt', 'w')
 
     lines = input_f.readlines()
     for i in range(2):
         output_f.write(lines[0])
         del lines[0]
 
+    count = 0
     flag = 1
     q = 0; v = 0
     sentence = []
     for i in range(len(lines)):
         if flag % 4 == 0:
             output_f.write('\n')
+        if flag % 4 == 1:
+            print(lines[i])
         if flag % 4 == 3:
             l = lines[i].split()
             line = komoran.get_list(lines[i])
@@ -33,8 +36,11 @@ def main():
             for w, m in line:
                 r, word = pr.process_morph(m, w)
                 if r == 1:
-                    if (word == 'ㅂ니까') or (word == '하다'):
-                        if sentence[len(sentence)-1] != word:
+                    count += 1
+                    if (word == 'ㅂ니까') or (word == '하다') or (word == '끝'):
+                        if len(sentence) == 0:
+                            sentence.append(word)
+                        elif sentence[len(sentence)-1] != word:
                             sentence.append(word)
                     else:
                         sentence.append(word)
@@ -46,6 +52,8 @@ def main():
             output_f.write(lines[i])
             flag += 1
 
+    print()
+    print(count)
     input_f.close()
     output_f.close()
     pass
