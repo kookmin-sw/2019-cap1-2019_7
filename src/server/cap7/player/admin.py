@@ -1,8 +1,13 @@
 from django.contrib import admin
-from .models import Video
+from .models import *
 
-# Register your models here.
-admin.site.register(Video)
-#admin.site.register(Candidate)
-#admin.site.register(Poll)
-#admin.site.register(Choice)
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ['id', 'videofile', 'url']
+    list_display_links = ['id', 'videofile']
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['id','name', 'email', 'phone', 'message']
+    list_display_links = ['id', 'name']
+
+admin.site.register(Video, VideoAdmin)
+admin.site.register(Contact, ContactAdmin)

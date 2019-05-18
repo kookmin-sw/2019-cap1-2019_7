@@ -44,7 +44,8 @@ def transcribe_file(speech_file):
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
 
-    textfile = open('player/media/text/test.txt', 'w')
+    text_path = 'player/media/text/test.txt'
+    text_file = open(text_path, 'w')
 
     for result in response.results:
         alternative = result.alternatives[0]
@@ -56,22 +57,22 @@ def transcribe_file(speech_file):
             start_time = word_info.start_time
             end_time = word_info.end_time
 
-            textfile.write('%s ' % word)
-            textfile.write('start_time %s ' % (start_time.seconds + start_time.nanos * 1e-9))
-            textfile.write('end_time %s\n' % (end_time.seconds + end_time.nanos * 1e-9))
+            text_file.write('%s ' % word)
+            text_file.write('start_time %s ' % (start_time.seconds + start_time.nanos * 1e-9))
+            text_file.write('end_time %s\n' % (end_time.seconds + end_time.nanos * 1e-9))
             print('Word: {}, start_time: {}, end_time: {}'.format(
                 word,
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
 
         # The first alternative is the most likely one for this portion.
-        textfile.write(u'Transcript: {}'.format(result.alternatives[0].transcript))
+        text_file.write(u'Transcript: {}'.format(result.alternatives[0].transcript))
+        text_file.write('\n')
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
     # [END speech_python_migration_sync_response]
 # [END speech_transcribe_sync]
 
-    text_path = 'player/media/text/test.txt'
-    return text_path
+    return text_file
 
 
 if __name__ == '__main__':
