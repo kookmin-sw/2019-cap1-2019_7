@@ -1,382 +1,121 @@
 {% load staticfiles %}
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html lang="ko">
-<head>
-    <title>수화IN플레이어</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href='{% static "css/styles.css" %}'>
-    <link rel="stylesheet" href='{% static "css/agency.min.css" %}'>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400,700&amp;subset=korean" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
-    <link href='{% static "vendor/fontawesome-free/css/all.min.css" %}' rel="stylesheet" type="text/css">
-    <link href='{% static "vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: "Nanum Gothic Coding";
-        }
-    </style>
-  </head>
+	<head>
+		<title>Player</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <link href='{% static "css/nprogress.css" %}' rel='stylesheet' />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href='{% static "css/skel.css" %}' />
+		<link rel="stylesheet" href='{% static "css/style.css" %}'/>
+		<link rel="stylesheet" href='{% static "css/style-xlarge.css" %}' />
+        <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
+		<!--[if lte IE 8]><script src='{% static "js/html5shiv.js" %}'></script><![endif]-->
+		<script src='{% static "js/jquery.min.js" %}'></script>
+		<script src='{% static "js/skel.min.js" %}'></script>
+		<script src='{% static "js/skel-layers.min.js" %}'></script>
+		<script src='{% static "js/init.js" %}'></script>
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src='{% static "js/nprogress.js" %}'></script>
+        <script>if(location.hostname.match(/ricostacruz\.com$/)){var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-20473929-1"]),_gaq.push(["_trackPageview"]),function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}()}</script>
+	</head>
+	<body id="top">
 
-  <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">수화 IN 플레이어</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#info">Info</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#player">Player</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="/">수화 IN Player</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="player.html">Player</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="team.html">Team</a></li>
+					</ul>
+				</nav>
+			</header>
 
-     <!--Header-->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">수화 IN 플레이어</div>
-          <div class="intro-heading font-small">Welcome</div>
-          <a class="btn btn-danger btn-xl text-uppercase js-scroll-trigger" href="#player">시작하기</a>
-        </div>
-      </div>
-    </header>
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					<h2>Player</h2>
+                    {% if videofile == '' %}
+					<p class="">동영상을 업로드해주세요.</p>
+                    {% endif %}
+				</header>
+				<div class="container">
+					<section id="player">
+					  <div class="container">
+                        {% if videofile == '' %}
+                        <hr class="major" />
+						<div class="row">
+						  <form method="post" enctype="multipart/form-data" class="form-inline">
+                            <div class="form-group">
+                              {% csrf_token %}
+                              {{ form.as_p }}
+                            </div>
+							<button class="button big special text-center play upload btn btn-primary" id='b-inc' type="submit" value="Upload">Upload</button>
+						  </form>
+						  <!--<form method="post">-->
+							  <!--{% csrf_token %}-->
+							<!--<input type="url" name="urlfield">-->
+							<!--<button class="upload" type="submit" value="Upload">Upload</button>-->
+						  <!--</form>-->
+						</div>
+						  <br><br>
+                        {% else %}
+                          <div id="videoal">
+                            <div class="video_zone">
+                              <video id="video" class="video-js vjs-default-skin" controls autobuffer muted preload='auto' data-setup='{}' poster='{% static "img/logo.png" %}'>
+                                <source src="{{MEDIA_URL}}{{videofile}}" type="video/mp4">
+                                <!--<source src="{{MEDIA_URL}}{{videofile}}" type="video/webm">-->
+                                <!--<source src="{{MEDIA_URL}}{{videofile}}" type="video/ogg">-->
+                                <track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}{{webSubtitle}}" default>
+                              </video>
+                            </div>
+						  <div class="video_zone">
+							<video id="signLanguageVideo" class="video-js vjs-default-skin" autobuffer muted preload='auto' data-setup='{}'>
+							  <source src="{{MEDIA_URL}}exuvLtKC.mp4" type="video/mp4">
+							</video>
+						  </div>
+						</div>
+                        {% endif %}
+						  <br><br>
+					  </div>
+					</section>
+				</div>
+			</section>
 
-     <!--Info-->
-    <section id="info">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Information</h2>
-            <h3 class="section-subheading text-muted">자막과 수화가 결합된 동영상 제공</h3>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">동영상</h4>
-            <p class="text-muted"></p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">자막 제공</h4>
-            <p class="text-muted">Google STT API를 이용한 자막을 함께 제공합니다.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">수화 제공</h4>
-            <p class="text-muted">수화</p>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; 전지적 수화 시점. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+        <script>
+          setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
 
-    <!-- Player Grid -->
-    <section class="bg-light" id="player">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Player</h2>
-            <h3 class="section-subheading text-muted">동영상을 업로드해주세요.</h3>
-          </div>
-        </div>
-        <div class="row">
-          <form method="post" enctype="multipart/form-data">
-              {% csrf_token %}
-              {{ form.as_p }}
-            <button class="upload" type="submit" value="Upload">Upload</button>
-          </form>
-        </div>
-          <br><br>
-          <figure id="videoContainer" data-fullscreen="true">
-              <video id="video" controls autobuffer autoplay preload="metadata">
-                  <source src="{{MEDIA_URL}}{{videofile}}" type="video/mp4">
-                  <track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}test.vtt" default>
-              </video>
-              <div id="video-controls" class="controls" data-state="hidden">
-                  <button id="playpause" type="button" data-state="play">Play/Pause</button>
-                  <button id="stop" type="button" data-state="stop">Stop</button>
-                  <div class="progress">
-                      <progress id="progress" value="0" min="0">
-                          <span id="progress-bar"></span>
-                      </progress>
-                  </div>
-                  <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
-                  <button id="volinc" type="button" data-state="volup">Vol+</button>
-                  <button id="voldec" type="button" data-state="voldown">Vol-</button>
-                  <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
-                  <button id="subtitles" type="button" data-state="subtitles">CC</button>
-              </div>
-          </figure>
-          <!--<div>-->
-            <!--<video controls preload="metadata">-->
-              <!--<source src='{{ MEDIA_URL }}{{ videofile }}' type='video/mp4'>-->
-              <!--<track kind="subtitles" label="Korean" src="{{MEDIA_URL}}test.srt" srclang="ko">-->
-            <!--</video>-->
-          <!--</div>-->
-          <br><br>
-      </div>
-    </section>
+          $("#b-0").click(function() { NProgress.start(); });
+          $("#b-40").click(function() { NProgress.set(0.4); });
+          $("#b-inc").click(function() { NProgress.inc(); });
+          $("#b-100").click(function() { NProgress.done(); });
+        </script>
 
-     <!--Team-->
-    <section id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">전지적 수화 시점</h2>
-            <h3 class="section-subheading text-muted">Kookmin Univ. Software. Capstone 7</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src='{% static "img/team/jieun.png" %}' alt="">
-              <h4>윤지은</h4>
-              <p class="text-muted">조장</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src='{% static "img/team/jinyeong.jpg" %}' alt="">
-              <h4>배진영</h4>
-              <p class="text-muted">...</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src='{% static "img/team/changhoe.jpg" %}' alt="">
-              <h4>이희지</h4>
-              <p class="text-muted">...</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src='{% static "img/team/changhoe.jpg" %}' alt="">
-              <h4>정창회</h4>
-              <p class="text-muted">...</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src='{% static "img/team/changhoe.jpg" %}' alt="">
-              <h4>축이림</h4>
-              <p class="text-muted">...</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; 전지적수화시점</span>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://github.com/kookmin-sw/2019-cap1-2019_7">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
-    <!-- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src='{% static "vendor/jquery/jquery.min.js" %}'></script>
-    <script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
-
-    <!-- Plugin JavaScript -->
-    <script src='{% static "vendor/jquery-easing/jquery.easing.min.js" %}'></script>
-
-    <!-- Contact form JavaScript -->
-    <script src='{% static "js/jqBootstrapValidation.js" %}'></script>
-    <script src='{% static "js/contact_me.js" %}'></script>
-
-    <!-- Custom scripts for this template -->
-    <script src='{% static "js/agency.min.js" %}'></script>
-    <script src='{% static "js/upload.js" %}'></script>
-    <script src='{% static "js/subtitle.js" %}'></script>
-    <script src="http://www.storiesinflight.com/js_videosub/includes/videosub-0.9.9.js"></script>
-
-  </body>
-  </html>
+        <script>var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
+	    <script>
+          $(document).ready(function(){ var fileTarget = $('.filebox .upload-hidden'); fileTarget.on('change', function(){ // 값이 변경되면 if(window.FileReader){ // modern browser var filename = $(this)[0].files[0].name; } else { // old IE var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 } // 추출한 파일명 삽입 $(this).siblings('.upload-name').val(filename); }); });
+        </script>
+    </body>
+</html>
