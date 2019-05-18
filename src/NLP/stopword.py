@@ -11,15 +11,16 @@ class StopWord:
         FUN = {
             'NOUN': self.check_noun,  # 명사(noun)
             'VERB': self.check_verb,  # 동사(verb)
-            'DETER': self.check_deter,  # 관형사(determinant)
+            'DETER': self.default,  # 관형사(determinant)
             'ADVERB': self.check_adverb,  # 부사(adverb)
             'EXCLAM': self.default,  # 감탄사(exclamation)
             'POST': self.check_post,  # 조사(post)
             'END': self.check_end,  # 어미(end)
             'AFFIX': self.check_affix,  #접사(affix)
             'NUMBER': self.check_number,  # 숫자(number),
+            'NOUN_NUMBER': self.check_number,
             'MARK': self.check_mark,  # 기호,
-            'ENGLISH': self.check_english,
+            'ENGLISH': self.ignore,
             'IGNORE': self.ignore  # 무시해도 되는 품사들
         }
         fun = FUN[m]
@@ -80,15 +81,18 @@ class StopWord:
 
     # 숫자 표현(ex. 157 -> 100 50 7)
     def check_number(self, morph, word):
-        number = int(word)
-        # number의 자릿수
-        cipher = len(word)
-        text = ''
-        for i in range(cipher):
-            if word[i] == '0': continue
-            text += str(int(word[i]) * (10 ** (cipher - 1 - i)))
-            text += ' '
-        return 1, text
+        if morph == 'NOUN_NUMBER':
+            return 1, word
+        else:
+            number = int(word)
+            # number의 자릿수
+            cipher = len(word)
+            text = ''
+            for i in range(cipher):
+                if word[i] == '0': continue
+                text += str(int(word[i]) * (10 ** (cipher - 1 - i)))
+                text += ' '
+            return 1, text
 
     # 기호 처리
     def check_mark(self, morph, word):
@@ -96,12 +100,6 @@ class StopWord:
             return 1, mp.SPECIAL_MARK[word]
         else:
             return 0, ''
-
-    def check_english(self, morph, word):
-        if word in mp.SPECIAL_ENGLISH.keys():
-            return 1, mp.SPECIAL_ENGLISH[word]
-        else:
-            return 0, word
 
     # 무조건 제거
     def ignore(self, morph, word):
