@@ -16,10 +16,17 @@ def user_path(instance, filename): #파라미터 instance는 Photo 모델을 의
 
 # 사용자가 업로드한 Video DB
 class Video(models.Model):
-    name = models.CharField(verbose_name='name', max_length=20, default='')
     videofile = models.FileField(upload_to= user_path, null=True, verbose_name="video")
-    wavfile = models.FileField(upload_to= user_path, null=True, verbose_name="wav")
-    subscript = models.TextField(verbose_name="subscript", blank=True)
+    url = models.URLField(null=True, verbose_name='URL', max_length=250)
 
     def __str__(self):
         return str(self.videofile)
+
+class Contact(models.Model):
+    name = models.CharField(max_length=10, verbose_name="이름")
+    email = models.EmailField(verbose_name='이메일')
+    phone = models.CharField(null=True, verbose_name='휴대폰번호', max_length=20)
+    message = models.TextField(verbose_name='내용')
+
+    def __str__(self):
+        return str(self.name)
