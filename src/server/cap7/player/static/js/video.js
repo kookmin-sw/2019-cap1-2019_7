@@ -1,21 +1,25 @@
-videojs.autoSetup();
+// Get all videos.
+var videos = document.querySelectorAll('video');
 
-    videojs('video').ready(function(){
-      console.log(this.options()); //log all of the default videojs options
-      
-       // Store the video object
-      var myPlayer = this, id = myPlayer.id();
-      // Make up an aspect ratio
-      var aspectRatio = 264/640; 
+// Create a promise to wait all videos to be loaded at the same time.
+// When all of the videos are ready, call resolve().
+var promise = new Promise(function(resolve) {
+  var loaded = 0;
 
-      function resizeVideoJS(){
-        var width = document.getElementById(id).parentElement.offsetWidth;
-        myPlayer.width(width).height( width * aspectRatio );
+  videos.forEach(function(v) {
+    v.addEventListener('loadedmetadata', function() {
+      loaded++;
 
+      if (loaded === videos.length) {
+        resolve();
       }
-      
-      // Initialize resizeVideoJS()
-      resizeVideoJS();
-      // Then on resize call resizeVideoJS()
-      window.onresize = resizeVideoJS; 
     });
+  });
+});
+
+// Play all videos one by one only when all videos are ready to be played.
+promise.then(function() {
+  videos.forEach(function(v) {
+    v.play();
+  });
+});

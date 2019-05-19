@@ -37,8 +37,10 @@ def matching(input_path, file_name):
                 #print('@#:')
                 #print(word)
                 try:
-                    path = Basic.objects.get(word=word)
-                    print(path.location)
+                    if word == '\d':
+                        path = Number.objects.get(word=word)
+                    else:
+                        path = Basic.objects.get(word=word)
 
                 except:
                     path = ''

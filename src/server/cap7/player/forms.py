@@ -5,15 +5,12 @@ from .models import Contact
 class VideoForm(forms.ModelForm):
     class Meta:
         model= Video
-        fields= ["videofile"]
-        widgets = {
-            'videofile': forms.FileInput(attrs={'class': 'filebox'}),
-        }
+        fields = ["language", "videofile"]
 
 class URLForm(forms.ModelForm):
     class Meta:
         model = Video
-        fields= ["url"]
+        fields = ["url","language"]
 
 class ContactForm(forms.ModelForm):
     class Meta:

@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'videofile', 'url']
+    list_display = ['id', 'videofile', 'language', 'url']
     list_display_links = ['id', 'videofile']
 
 class ContactAdmin(admin.ModelAdmin):

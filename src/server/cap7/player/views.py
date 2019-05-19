@@ -9,14 +9,12 @@ from .videotowav import *
 from .generateSubtitleFormTxt import *
 from .text2SignLanguageMapping import *
 from .nlp import *
+from .generateSignLanguage import *
 import os
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 
 def index(request):
-    print(settings.BASE_DIR)
-    print(settings.STATIC_ROOT)
-    print(settings.STATICFILES_DIRS)
     return render(request, 'player/index.html')
 
 
@@ -41,9 +39,10 @@ def player(request):
     except:
         pass
 
-    form = VideoForm(request.POST or None, request.FILES or None)
+    video_form = VideoForm(request.POST or None, request.FILES or None)
+    url_form = URLForm(request.POST or None)
 
-    if form.is_valid():
+    if video_form.is_valid():
         # if file_extension != '.mp4':
         #     video_to_mp4(video_name)
         #     video = Video.objects.get(name=video_name)
@@ -53,8 +52,10 @@ def player(request):
         #     print(videofile.video)
         #     video.save()
         #     video_name = str(file) + '.mp4'
-        form.save()
+        video_form.save()
 
+    elif url_form.is_valid():
+        url_form.save()
     try:
         lastvideo= Video.objects.last()
         videofile= lastvideo.videofile
@@ -67,7 +68,10 @@ def player(request):
         file = pipes.quote(file)
         webSubtitle = '[Web]' + file + '.vtt'
         nlpSubtitle = '[NLP]' + file + '.vtt'
+        durInfo = vtt_path + '[Dur]' + file + '.txt'
 
+        print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+        print(durInfo)
         # 비디오 파일에서 오디오 파일 추출
         audio_path = video_to_audio(video_name)
 
@@ -84,21 +88,24 @@ def player(request):
 
         # 형태소 재배치된 파일에서 수화 영상 생성
         print("@!@!@#!@#!@#!@#!@#!@#!@#!@#")
-        matching("player/media/videos/relocatedVTT.vtt", "test_out.txt")
+        clips = matching("player/media/videos/relocatedVTT.vtt", "test_out.txt")
         print("@!@!@#!@#!@#!@#!@#!@#!@#!@#")
+        signLanguageVideo = generateSignLanguage(clips, durInfo)
 
     except:
         videofile=''
         vtt_path=''
         webSubtitle=''
-
+        signLanguageVideo =''
 
 
     context = {
                 'videofile': videofile,
-                'form': form,
+                'video_form': video_form,
+                'url_form':url_form,
                 'vtt_path': vtt_path,
-                'webSubtitle': webSubtitle
+                'webSubtitle': webSubtitle,
+                'signLanguageVideo' : signLanguageVideo
               }
     return render(request, 'player/player.html', context)
 
@@ -110,11 +117,11 @@ def contact(request):
         # 폼이 유효한지 체크:
         if form.is_valid():
             form.save()
-
-            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
     else:
         form = ContactForm()
-        return render(request, 'player/contact.html', {"form": form})
+
+    return render(request, 'player/contact.html', {"form": form})
 
 
 def team(request):
