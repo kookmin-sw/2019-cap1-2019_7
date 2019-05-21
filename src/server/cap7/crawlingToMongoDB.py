@@ -15,7 +15,7 @@ def crawling_to_mongodb(max_indexes):
     mydb = connection["dictionary"]
     col_basic = mydb["basic"]
 
-    index = 7399
+    index = 1
     while index < max_indexes:
         url = 'http://sldict.korean.go.kr/front/sign/signContentsView.do?origin_no=' + str(index) # + '&category=SPE008'
         # URL에서 비디오 가져오기

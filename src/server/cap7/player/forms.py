@@ -10,7 +10,7 @@ class VideoForm(forms.ModelForm):
 class URLForm(forms.ModelForm):
     class Meta:
         model = Video
-        fields = ["url","language"]
+        fields = ["language", "url"]
 
 class ContactForm(forms.ModelForm):
     class Meta:

@@ -1,12 +1,20 @@
 from pytube import YouTube
 
-yt = YouTube('https://youtu.be/9bZkp7q19f0')
-
-def getVideo(yt):
+# Youtube 링크를 입력받아 영상을 다운로드 하는 함수
+def getVideo(url):
+    print('Youtube Video Download Start...')
+    yt = YouTube(url)
     title = yt.title
-    yt.streams.first().download()
-    return title
+    print(title)
 
+    video = yt.streams.first().download('/home/ubuntu/cap7/cap7/player/media/videos')
+    print('Youtube Video Downloaded')
+    print(video)
+    videofile = title + ".mp4"
+
+    return videofile
+
+# Youtube 링크를 입력받아 자막을 가져오는 함수
 def getSubtitle(option, yt):
     # 영어 영상일때
     if option == 1:
@@ -25,15 +33,3 @@ def getSubtitle(option, yt):
             caption = yt.captions.get_by_language_code('ko')
             subtitle = caption.generate_srt_captions()
             return subtitle
-
-if __name__ == '__main__':
-    url = 'https://www.youtube.com/watch?v=ecUWKU_v318'
-    youtube = YouTube(url)
-    # t = getVideo(youtube)
-    # print(t)
-
-    subtitle = getSubtitle(2, youtube)
-    output_f = open('test.srt', 'w')
-    output_f.write(subtitle)
-    output_f.close()
-    pass

@@ -146,12 +146,12 @@
 					<source src="{{MEDIA_URL}}{{videofile}}" type="video/mp4">
 					<!--<source src="{{MEDIA_URL}}{{videofile}}" type="video/webm">-->
 					<!--<source src="{{MEDIA_URL}}{{videofile}}" type="video/ogg">-->
-					<track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}{{webSubtitle}}" default>
+					<track label="Korean" kind="subtitles" srclang="ko" src="{{webSubtitle}}" default>
 				  </video>
 				</div>
 				  <div class="video_zone">
 					<video id="video-2" class="video-js vjs-default-skin" autobuffer muted preload='auto' data-setup='{}'>
-					  <source src="{{MEDIA_URL}}rvleChLZ.mp4" type="video/mp4">
+					  <source src="{{MEDIA_URL}}{{signVideo}}" type="video/mp4">
 					</video>
 				  </div>
 			  </div>
@@ -178,21 +178,21 @@
 
 		<!-- 동영상 업로드 시 로딩 바 -->
         <script>
-          setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
-          $("#b-inc1").click(function() { NProgress.inc(); });
-          $("#b-inc2").click(function() { NProgress.inc(); });
-
+			setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+			$("#b-inc1").click(function() { NProgress.inc(); });
+			$("#b-inc2").click(function() { NProgress.inc(); });
+		</script>
 		<!-- 동영상 동시 재생 -->
-			$(function(){
-				$("#video-1").on("play",function(){
-					$("#video-2").trigger("play");
-				});
-				$("#video-1").on("pause",function(){
-					$("#video-2").trigger("pause");
-				});
+		<script>
+			$("#video-1").on("play",function(){
+				$("#video-2").trigger("play");
 			});
+			$("#video-1").on("pause",function(){
+				$("#video-2").trigger("pause");
+			});
+		</script>
 
-
+		<script>
 			$("#file_upload").click(function(){
 				$("#file_upload_modal").modal();
 			});
@@ -200,13 +200,15 @@
 			$("#youtube_link").click(function(){
 				$("#youtube_link_modal").modal();
 			});
+		</script>
 
+		<script>
 			$("#b-inc1").click(function(){
 				$("#file_upload_modal").modal('hide');
 				});
 			});
-
 		</script>
+
         <script>var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
 	    <script>
           $(document).ready(function(){ var fileTarget = $('.filebox .upload-hidden'); fileTarget.on('change', function(){ // 값이 변경되면 if(window.FileReader){ // modern browser var filename = $(this)[0].files[0].name; } else { // old IE var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 } // 추출한 파일명 삽입 $(this).siblings('.upload-name').val(filename); }); });

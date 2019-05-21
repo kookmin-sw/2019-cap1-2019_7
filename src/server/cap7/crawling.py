@@ -17,7 +17,7 @@ django.setup()
 
 from dictionary.models import *
 
-# Crawling 함수 => txt파일로 저장
+# 한국수어사전 홈페이지에서 단어명, 품사, 뜻, 수어영상을 Crawling하는 함수
 def spider(max_indexes):
     f = open("basic.txt", 'w')
     f2 = open("nunmber.txt", "w")

@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 from django import forms
-
+import hashlib
 # 동영상 이름 랜덤으로 생성함
 def user_path(instance, filename): #파라미터 instance는 Photo 모델을 의미 filename은 업로드 된 파일의 파일 이름
     from random import choice

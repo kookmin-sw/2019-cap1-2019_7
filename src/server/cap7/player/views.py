@@ -1,18 +1,12 @@
 #-*- coding: utf-8 -*-
 
 from django.shortcuts import render
-from django.conf import settings
-from .models import *
 from .forms import *
-from .transcribe import transcribe_file
-from .videotowav import *
-from .generateSubtitleFormTxt import *
-from .text2SignLanguageMapping import *
-from .nlp import *
-from .generateSignLanguage import *
-import os
-from django.http import HttpResponse, HttpResponseRedirect
-from django.utils import timezone
+from .models import *
+from .main import main
+from .bin.youtube import *
+
+from django.http import HttpResponseRedirect
 
 def index(request):
     return render(request, 'player/index.html')
@@ -22,11 +16,9 @@ def player(request):
 
     try:
         lastvideo = Video.objects.last()
+
         # videofile = lastvideo.videofile
         # video_name = str(videofile)
-        print('@@@@@@@@@@@@@@@@@@@@@@@@@')
-        print(lastvideo.videofile)
-
         # file, file_extension = os.path.splitext(video_name)
         # file = pipes.quote(file)
         # subtitle = file + '.vtt'
@@ -34,6 +26,7 @@ def player(request):
         # os.remove(settings.MEDIA_URL + video_name)
         # os.remove('/player/media/audio/' + file + '.wav')
         # os.remove(settings.MEDIA_URL + subtitle)
+
         lastvideo.delete()
 
     except:
@@ -55,57 +48,41 @@ def player(request):
         video_form.save()
 
     elif url_form.is_valid():
+        youtube_video = getVideo(request.POST['url'])
         url_form.save()
+
+        lastvideo_tmp = Video.objects.last()
+        lastvideo_tmp.videofile = youtube_video
+        lastvideo_tmp.save()
+
     try:
         lastvideo= Video.objects.last()
-        videofile= lastvideo.videofile
+
+        # if lastvideo.url != '':
+        #     lastvideo.videofile = getVideo(lastvideo.url)
+        #     print(lastvideo.videofile)
+
+        videofile = lastvideo.videofile
+
         video_name = str(videofile)
-        vtt_path = settings.MEDIA_ROOT
-        print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-        print(vtt_path)
 
-        file, file_extension = os.path.splitext(video_name)
-        file = pipes.quote(file)
-        webSubtitle = '[Web]' + file + '.vtt'
-        nlpSubtitle = '[NLP]' + file + '.vtt'
-        durInfo = vtt_path + '[Dur]' + file + '.txt'
+        main(video_name)
 
-        print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-        print(durInfo)
-        # 비디오 파일에서 오디오 파일 추출
-        audio_path = video_to_audio(video_name)
-
-        # 오디오 파일에서 텍스트 파일 추출
-        text_path = transcribe_file(audio_path)
-
-        text_path = 'player/media/text/test.txt'
-
-        # 텍스트 파일에서 자막 파일 생성
-        generateSubtitle(text_path, vtt_path, file)
-
-        #자막 파일에서 형태소 재배치
-        relocatedVTT = relocateMorpheme(vtt_path, vtt_path, nlpSubtitle)
-
-        # 형태소 재배치된 파일에서 수화 영상 생성
-        print("@!@!@#!@#!@#!@#!@#!@#!@#!@#")
-        clips = matching("player/media/videos/relocatedVTT.vtt", "test_out.txt")
-        print("@!@!@#!@#!@#!@#!@#!@#!@#!@#")
-        signLanguageVideo = generateSignLanguage(clips, durInfo)
+        webSubtitle = '/home/ubuntu/cap7/cap7/player/media/subtitle/[Web]subtitle.vtt'
+        signVideo = 'signLanguage.mp4'
 
     except:
         videofile=''
-        vtt_path=''
         webSubtitle=''
-        signLanguageVideo =''
+        signVideo =''
 
 
     context = {
                 'videofile': videofile,
                 'video_form': video_form,
                 'url_form':url_form,
-                'vtt_path': vtt_path,
                 'webSubtitle': webSubtitle,
-                'signLanguageVideo' : signLanguageVideo
+                'signVideo' : signVideo,
               }
     return render(request, 'player/player.html', context)
 
