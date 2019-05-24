@@ -7,6 +7,8 @@ import os
 import pipes
 import argparse
 import io
+from player.models import Video
+
 
 # 오디오 파일 및 텍스트 파일을 추출하는 함수를 가진 객체
 class STT:
@@ -18,7 +20,6 @@ class STT:
     # 사용자가 업로드 한 비디오 파일 또는 유튜브 영상의 오디오 파일을 추출하는 함수
     def extractAudio(self, video_path):
         try:
-            print(video_path)
             print('###Extract Audio Start...')
 
             file, file_extension = os.path.splitext(video_path)
@@ -38,7 +39,13 @@ class STT:
         from google.cloud import speech
         from google.cloud.speech import enums
         from google.cloud.speech import types
+
         client = speech.SpeechClient()
+
+        if Video.objects.last().language == 'ko-KR':
+            language = 'ko-KR'
+        else:
+            language = 'en-US'
 
         with io.open(audio_path, 'rb') as audio_file:
             content = audio_file.read()
@@ -47,7 +54,7 @@ class STT:
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
             sample_rate_hertz=44100,
-            language_code='ko-KR',
+            language_code=language,
             enable_word_time_offsets=True,
             enable_automatic_punctuation=True,
             audio_channel_count=2,
@@ -83,4 +90,5 @@ class STT:
             text_file.write('\n')
             print(u'Transcript: {}'.format(result.alternatives[0].transcript))
             print('###Extract Text End')
+
         return text_path

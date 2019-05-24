@@ -3,6 +3,7 @@
 
 # 자막 파일을 생성하는 함수를 갖는 객체
 class Subtitle:
+
     def __init__(self):
         pass
 
@@ -50,6 +51,7 @@ class Subtitle:
 
     # VTT 자막을 작성하는 함수
     def writeSubtitle(self, sentence, startTime, endTime, fileName):
+        print('##############################################')
         num, arrow = 0, " --> "
         f = open(fileName, 'w')
         f.write("WEBVTT\n\n")
@@ -95,16 +97,19 @@ class Subtitle:
 
     # Google STT로 생성된 텍스트 파일을 입력받아 VTT파일을 생성하는 함수
     def generateSubtitle(self, inputPath):
+        print('Generate Subtitle Start ...')
         transcripts, sentence, startTime, endTime, word = "", [], [], [], []
         dividedSentStart, dividedSentEnd, sentStart, sentEnd = [], [], [], []
-        outputForWeb = 'player/media/subtitle/[Web]subtitle.vtt'
-        outputForNLP = 'player/media/subtitle/[NLP]subtitle.vtt'
-        outputForDur = 'player/media/subtitle/[Dur]subtitle.txt'
+        outputForWeb = 'player/media/videos/[Web]subtitle.vtt'
+        outputForNLP = 'player/media/videos/[NLP]subtitle.vtt'
+        outputForDur = 'player/media/videos/[Dur]subtitle.txt'
 
         # Load data file
         inputFile = open(inputPath, 'r', encoding='utf-8')
         lines = inputFile.readlines()
         for line in lines:
+            print('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+            print(line)
             if (line.startswith('Transcript:')):
                 trans = line.split('Transcript: ')
                 trans[1] = trans[1].strip('\n')
@@ -144,3 +149,6 @@ class Subtitle:
         self.writeDuration(sentStart, sentEnd, outputForDur)
 
         return outputForNLP, outputForDur
+
+# if __name__ == '__main__':
+#     generateSubtitle()

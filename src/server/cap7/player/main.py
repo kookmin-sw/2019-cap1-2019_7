@@ -1,15 +1,13 @@
 #-*- coding: utf-8 -*-
-from .translate import SubtitleTranslator, SignVideoTranslator
+from .generate import SubtitleGenerator, SignVideoGenerator
 
 def main(videoPath):
     # Translator 객체 생성
-    #down = YouTubeDownloader()
-    subT = SubtitleTranslator()
-    signT = SignVideoTranslator()
+    subT = SubtitleGenerator()
+    signT = SignVideoGenerator()
 
-    #videoPath = down.getVideo(url)
-    subPath, durPath = subT.translate(videoPath)
-    signPath = signT.translate(subPath, durPath)
+    subPath, durPath = subT.generate(videoPath)
+    signPath = signT.generate(subPath, durPath)
     pass
 
 if __name__ == '__main__':

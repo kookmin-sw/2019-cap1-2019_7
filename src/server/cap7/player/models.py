@@ -1,9 +1,13 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 from django import forms
-import hashlib
+from .bin.utils import generateRandomName
+#import hashlib
 # 동영상 이름 랜덤으로 생성함
-def user_path(instance, filename): #파라미터 instance는 Photo 모델을 의미 filename은 업로드 된 파일의 파일 이름
+
+
+# 파일 이름을 랜덤으로 해주는 함수
+def generateRandomName(instance, filename): #파라미터 instance는 Photo 모델을 의미 filename은 업로드 된 파일의 파일 이름
     from random import choice
     import string # string.ascii_letters : ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 
@@ -16,12 +20,18 @@ def user_path(instance, filename): #파라미터 instance는 Photo 모델을 의
 
 # 사용자가 업로드한 Video DB
 class Video(models.Model):
-    videofile = models.FileField(upload_to= user_path, null=True, verbose_name="파일")
-    language = models.BooleanField(verbose_name='영어')
+    LANGUAGE_CHOICES = (
+        ('ko-KR', '한국어'),
+        ('en-US', '영어'),
+    )
+
+    language = models.CharField(choices=LANGUAGE_CHOICES, verbose_name='언어', default='ko-KR', max_length=10)
+    videoFile = models.FileField(upload_to=generateRandomName, null=True, verbose_name="파일")
     url = models.URLField(null=True, verbose_name='URL', max_length=250)
 
     def __str__(self):
-        return str(self.videofile)
+        return str(self.videoFile)
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=10, verbose_name="이름")

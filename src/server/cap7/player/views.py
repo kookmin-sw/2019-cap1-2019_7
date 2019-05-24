@@ -4,9 +4,10 @@ from django.shortcuts import render
 from .forms import *
 from .models import *
 from .main import main
-from .bin.youtube import *
+from .bin.utils import *
 
 from django.http import HttpResponseRedirect
+
 
 def index(request):
     return render(request, 'player/index.html')
@@ -17,8 +18,8 @@ def player(request):
     try:
         lastvideo = Video.objects.last()
 
-        # videofile = lastvideo.videofile
-        # video_name = str(videofile)
+        # videoFile = lastvideo.videoFile
+        # video_name = str(videoFile)
         # file, file_extension = os.path.splitext(video_name)
         # file = pipes.quote(file)
         # subtitle = file + '.vtt'
@@ -40,9 +41,9 @@ def player(request):
         #     video_to_mp4(video_name)
         #     video = Video.objects.get(name=video_name)
         #
-        #     video.videofile = settings.MEDIA_ROOT + str(file) + '.mp4'
+        #     video.videoFile = settings.MEDIA_ROOT + str(file) + '.mp4'
         #     print('@#############################')
-        #     print(videofile.video)
+        #     print(videoFile.video)
         #     video.save()
         #     video_name = str(file) + '.mp4'
         video_form.save()
@@ -52,33 +53,33 @@ def player(request):
         url_form.save()
 
         lastvideo_tmp = Video.objects.last()
-        lastvideo_tmp.videofile = youtube_video
+        lastvideo_tmp.videoFile = youtube_video
         lastvideo_tmp.save()
 
     try:
         lastvideo= Video.objects.last()
 
         # if lastvideo.url != '':
-        #     lastvideo.videofile = getVideo(lastvideo.url)
-        #     print(lastvideo.videofile)
+        #     lastvideo.videoFile = getVideo(lastvideo.url)
+        #     print(lastvideo.videoFile)
 
-        videofile = lastvideo.videofile
+        videoFile = lastvideo.videoFile
 
-        video_name = str(videofile)
+        video_name = str(videoFile)
 
         main(video_name)
 
-        webSubtitle = '/home/ubuntu/cap7/cap7/player/media/subtitle/[Web]subtitle.vtt'
+        webSubtitle = '[Web]subtitle.vtt'
         signVideo = 'signLanguage.mp4'
 
     except:
-        videofile=''
+        videoFile=''
         webSubtitle=''
         signVideo =''
 
 
     context = {
-                'videofile': videofile,
+                'videoFile': videoFile,
                 'video_form': video_form,
                 'url_form':url_form,
                 'webSubtitle': webSubtitle,

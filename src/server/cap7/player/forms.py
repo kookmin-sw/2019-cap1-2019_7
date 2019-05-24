@@ -2,15 +2,18 @@ from django import forms
 from .models import Video
 from .models import Contact
 
+
 class VideoForm(forms.ModelForm):
     class Meta:
-        model= Video
-        fields = ["language", "videofile"]
+        model = Video
+        fields = ["videoFile", "language"]
+
 
 class URLForm(forms.ModelForm):
     class Meta:
         model = Video
         fields = ["language", "url"]
+
 
 class ContactForm(forms.ModelForm):
     class Meta:

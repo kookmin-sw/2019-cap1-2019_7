@@ -5,16 +5,14 @@
 	<head>
 		<title>Player</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta http-equiv="Cache-Control" content="no-cache">
+    	<meta http-equiv="Pragma" content="no-cache">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="Cache-Control" content="no-cache">
         <link href='{% static "css/nprogress.css" %}' rel='stylesheet' />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href='{% static "css/skel.css" %}' />
 		<link rel="stylesheet" href='{% static "css/style.css" %}'/>
 		<link rel="stylesheet" href='{% static "css/style-xlarge.css" %}' />
-        <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 		<!--[if lte IE 8]><script src='{% static "js/html5shiv.js" %}'></script><![endif]-->
 		<script src='{% static "js/jquery.min.js" %}'></script>
@@ -24,16 +22,21 @@
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src='{% static "js/nprogress.js" %}'></script>
-		<script src='{% static "js/video.js" %}'></script>
         <script>if(location.hostname.match(/ricostacruz\.com$/)){var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-20473929-1"]),_gaq.push(["_trackPageview"]),function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}()}</script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<style>
-			video {
-			   width:100%;
+			#video-1 {
+			   width:200%;
 			   max-width:640px;
 			   height:auto;
+			}
+			#video-2 {
+			   width:40%;
+			   margin-top: 50px
+			   max-width:640px;
+			   height:40%;
 			}
 
 			/* Style buttons */
@@ -52,7 +55,7 @@
 
 		<!-- Header -->
 		<header id="header" class="skel-layers-fixed">
-			<h1><a href="/">수화 IN Player</a></h1>
+			<h1><a href="/"><img src='{% static "img/logo.PNG" %}' width="35%"></a></h1>
 			<nav id="nav">
 				<ul>
 					<li><a href="/">Home</a></li>
@@ -67,8 +70,7 @@
 		<section id="main" class="wrapper style1">
 			<header class="major">
 				<h2>Player</h2>
-
-				{% if videofile == '' %}
+				{% if videoFile == '' %}
 				<p>방식을 선택해주세요.</p>
 				<hr class="major" />
 			</header>
@@ -116,7 +118,7 @@
 			  </div>
 			</div>
 
-			<!-- youtube_link_ Modal -->
+			<!-- youtube_link Modal -->
 			<div class="modal fade" id="youtube_link_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
 				<div class="modal-content">
@@ -127,7 +129,7 @@
 					<form method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							{% csrf_token %}
-							{{ url_form.as_table }}
+							{{ url_form.as_p }}
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -140,20 +142,23 @@
 			</div>
 
 			{% else %}
-			  <div id="videoal">
-				<div class="video_zone">
-				  <video id="video-1" class="video-js vjs-default-skin" controls autobuffer muted preload='auto' data-setup='{}'>
-					<source src="{{MEDIA_URL}}{{videofile}}" type="video/mp4">
-					<!--<source src="{{MEDIA_URL}}{{videofile}}" type="video/webm">-->
-					<!--<source src="{{MEDIA_URL}}{{videofile}}" type="video/ogg">-->
-					<track label="Korean" kind="subtitles" srclang="ko" src="{{webSubtitle}}" default>
-				  </video>
-				</div>
-				  <div class="video_zone">
-					<video id="video-2" class="video-js vjs-default-skin" autobuffer muted preload='auto' data-setup='{}'>
-					  <source src="{{MEDIA_URL}}{{signVideo}}" type="video/mp4">
-					</video>
-				  </div>
+			  <div id="videoal" class="form-inline">
+				  <center>
+					<div class="video_zone">
+						<video id="video-1" class="video-js vjs-default-skin" controls autobuffer muted preload='auto' data-setup='{}'>
+							<source src="{{MEDIA_URL}}{{videoFile}}" type="video/mp4">
+							<!--<source src="{{MEDIA_URL}}{{videoFile}}" type="video/webm">-->
+							<!--<source src="{{MEDIA_URL}}{{videoFile}}" type="video/ogg">-->
+							<track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}{{webSubtitle}}" default>
+						</video>
+					</div>
+					<div class="video_zone">
+						<video id="video-2" class="video-js vjs-default-skin" autobuffer muted preload='auto' data-setup='{}'>
+							<source src="{{MEDIA_URL}}{{signVideo}}" type="video/mp4">
+						</video>
+					</div>
+				  </center>
+
 			  </div>
 			{% endif %}
 			<br><br>

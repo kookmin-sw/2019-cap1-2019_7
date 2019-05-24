@@ -5,15 +5,15 @@ from .bin.nlp import NLP
 from .bin.mapping import SignVideo
 
 
-class Translator:
+class Generator:
     def __init__(self):
         pass
 
-    def translate(self):
+    def generate(self):
         pass
 
 
-class SubtitleTranslator(Translator):
+class SubtitleGenerator(Generator):
     def __init__(self):
         self.stt = STT()
         self.sub = Subtitle()
@@ -28,13 +28,13 @@ class SubtitleTranslator(Translator):
         sub_path, dur_path = self.sub.generateSubtitle(text_path)
         return sub_path, dur_path
 
-    def translate(self, video_path):
+    def generate(self, video_path):
         audio_path = self.convertVideo2Audio(video_path)
         subtitle_path,  dur_path = self.convertAudio2Subtitle(audio_path)
         return subtitle_path, dur_path
 
 
-class SignVideoTranslator(Translator):
+class SignVideoGenerator(Generator):
     def __init__(self):
         self.nlp = NLP()
         self.sign = SignVideo()
@@ -48,7 +48,7 @@ class SignVideoTranslator(Translator):
         signVideoPath = self.sign.generateSignLanguage(subMorph, durPath)
         return signVideoPath
 
-    def translate(self, subtitlePath, duration):
+    def generate(self, subtitlePath, duration):
         morphPath = self.convertSubtitle2Morpheme(subtitlePath)
         signVideoPath = self.convertMorpheme2SignVideo(morphPath, duration)
         return signVideoPath
