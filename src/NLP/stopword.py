@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from constant import Morph
 
+
 mp = Morph()
 class StopWord:
     def __init__(self):
@@ -81,7 +82,7 @@ class StopWord:
 
     # 숫자 표현(ex. 157 -> 100 50 7)
     def check_number(self, morph, word):
-        if morph == 'NOUN_NUMBER':
+        if morph == '수사':
             return 1, word, morph
         else:
             number = int(word)

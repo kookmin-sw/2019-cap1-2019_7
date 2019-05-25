@@ -10,8 +10,8 @@ def splitLine(line):
     return line
 
 def main():
-    input_f = open('txt/인강.vtt', 'r')
-    output_f = open('txt/인강수어.vtt', 'w')
+    input_f = open('txt/VTT05.vtt', 'r')
+    output_f = open('txt/강형욱.vtt', 'w')
 
     lines = input_f.readlines()
     for i in range(2):
