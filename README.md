@@ -1,5 +1,6 @@
 
 ***팀페이지 주소** https://kookmin-sw.github.io/2019-cap1-2019_7
+
 ![수화인플레이어 로고](https://user-images.githubusercontent.com/31851634/58369567-493a5800-7f37-11e9-8a15-f2321adcb71b.png)
 ### 1. 프로젝트 소개
 
@@ -22,35 +23,28 @@
 
 **_지도 교수 : 임성수 교수님_**
 
-![자른셀카](https://user-images.githubusercontent.com/31851599/54383052-8d59e280-46d4-11e9-84d5-777c9ed3a0fe.png)
+![팀원](https://user-images.githubusercontent.com/31851634/58369771-3f662400-7f3a-11e9-85bc-879d8175df64.png)
+
 ```markdown
 이름 : 윤지은
 담당 : 팀장 / 자막 생성 및 수화 데이터베이스 구축
 e-mail : dbss58@naver.com
 ```
-
-![ckdghl](https://user-images.githubusercontent.com/31851599/54386304-fd1f9b80-46db-11e9-9f06-2e828f32dbac.PNG)
 ```markdown
 이름 : 정창회
 담당 : 수화 데이터베이스 구축 및 수화 데이터 크롤링 및 웹 구현
 e-mail : changhoe95@gmail.com
 ```
-
-![gmlwl](https://user-images.githubusercontent.com/31851599/54386338-10326b80-46dc-11e9-9c87-656c4a2f94e9.PNG)
 ```markdown
 이름 : 이희지
 담당 : 영상 인코딩 및 음성인식 및 수어 데이터 매핑 기능 구현
 e-mail :  heeji228@gmail.com
 ```
-
-![wlsdud](https://user-images.githubusercontent.com/31851599/54386417-3c4dec80-46dc-11e9-835f-4d237aee4ba4.PNG)
 ```markdown
 이름 : 배진영
 담당 : 형태소 분석 및 수화 분법 체계로 재구성 구현
 e-mail : wlsdudqo97@naver.com
 ```
-
-![dlfla](https://user-images.githubusercontent.com/31851599/54386439-4c65cc00-46dc-11e9-8652-58dd7aca4c1c.PNG)
 ```markdown
 이름 : 축이림
 ```
