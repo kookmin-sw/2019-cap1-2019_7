@@ -1,9 +1,26 @@
 #-*- coding: utf-8 -*-
 
+
+# 자막 파일을 생성하는 함수를 갖는 객체
 class Subtitle:
+    def __init__(self):
+        self.stt_vtt = STT2VTT()
+        self.srt_vtt = SRT2VTT()
+        pass
+
+    def generateVTTfromSTT(self, text_path):
+        sub_path, dur_path = self.stt_vtt.generateVTT(text_path)
+        return sub_path, dur_path
+
+    def generateVTTfromSRT(self, srt_path):
+        sub_path, dur_path = self.srt_vtt.generateVTT(srt_path)
+        return sub_path, dur_path
+
+class  STT2VTT:
     def __init__(self):
         pass
 
+    # 단어 단위의 timestamp들을 문장단위의 timestamp 정보로 기록하는 함수
     def matchTimecode(self, sentence, startTime, endTime, word):
         start, end, sen, j, check = [], [], [], 0, 0
 
@@ -25,6 +42,7 @@ class Subtitle:
 
         return start, end
 
+    # VTT파일의 timecode 형식에 맞게 바꿔주는 함수
     def convertTimecode(self, sttTime):
         vttTime = "00:00:00.000"
 
@@ -44,7 +62,9 @@ class Subtitle:
 
         return vttTime
 
+    # VTT 자막을 작성하는 함수
     def writeSubtitle(self, sentence, startTime, endTime, fileName):
+        print('##############################################')
         num, arrow = 0, " --> "
         f = open(fileName, 'w')
         f.write("WEBVTT\n\n")
@@ -61,6 +81,7 @@ class Subtitle:
             f.write("\n\n")
         f.close()
 
+    # 각 문장의 구간 시간을 적어주는 함수
     def writeDuration(self, startTime, endTime, fileName):
         f = open(fileName, 'w')
         for x in range(0, len(startTime)):
@@ -69,6 +90,7 @@ class Subtitle:
             f.write(" ")
         f.close()
 
+    # 사용자에게 보여지는 자막이 길어짐을 방지하기 위해 자르는 함수
     def sliceLongSentence(self, sentence):
         i, sentenceLength = 0, len(sentence)
         while (i < sentenceLength):
@@ -86,17 +108,21 @@ class Subtitle:
             i += 1
         return sentence
 
-    def generateSubtitle(self, inputPath, outputPath, fileName):
+    # Google STT로 생성된 텍스트 파일을 입력받아 VTT파일을 생성하는 함수
+    def generateVTT(self, inputPath):
+        print('Generate Subtitle Start ...')
         transcripts, sentence, startTime, endTime, word = "", [], [], [], []
         dividedSentStart, dividedSentEnd, sentStart, sentEnd = [], [], [], []
-        outputForWeb = outputPath + "[Web]" + fileName + '.vtt'
-        outputForNLP = outputPath + "[NLP]" + fileName + '.vtt'
-        outputForDur = outputPath + "[Dur]" + fileName + '.txt'
+        outputForWeb = 'player/media/videos/[Web]subtitle.vtt'
+        outputForNLP = 'player/media/videos/[NLP]subtitle.vtt'
+        outputForDur = 'player/media/videos/[Dur]subtitle.txt'
 
         # Load data file
         inputFile = open(inputPath, 'r', encoding='utf-8')
         lines = inputFile.readlines()
         for line in lines:
+            print('@@@@@@@@@@@@@@@@@@@@@@@@@@')
+            print(line)
             if (line.startswith('Transcript:')):
                 trans = line.split('Transcript: ')
                 trans[1] = trans[1].strip('\n')
@@ -136,3 +162,90 @@ class Subtitle:
         self.writeDuration(sentStart, sentEnd, outputForDur)
 
         return outputForNLP, outputForDur
+
+    pass
+
+class SRT2VTT:
+    def __init__(self):
+        pass
+
+    def writeSubtitle(self, lines, fileName):
+        num, arrow = 0, " --> "
+        f = open(fileName, 'w')
+        f.write("WEBVTT\n\n")
+
+        for x in range(0, len(lines)):
+            lines[x] = lines[x].replace(',', '.')
+            f.write(lines[x])
+        f.close()
+        pass
+
+    def convertSRTtoVTT(self, inputPath):
+        outputForWEB = 'player/media/videos/[WEB]subtitle.vtt'
+        outputForNLP = 'player/media/videos/[NLP]subtitle.vtt'
+        count, line_index = 0, -1
+        inputFile = open(inputPath, 'r', encoding='utf-8')
+        lines = inputFile.readlines()
+        pos, pre = 0, -1
+        while (pos < len(lines)):
+            line = lines[pos]
+            if (line[0].isspace()):
+                if (pos - pre <= 4):
+                    pre = pos
+                else:
+                    lines[pre + 3] = lines[pre + 3].strip('\n')
+                    lines[pre + 3:pos] = [' '.join(lines[pre + 3:pos])]
+                    pos -= 1
+                    pre = pos
+            pos += 1
+        self.writeSubtitle(lines, outputForWEB)
+        self.writeSubtitle(lines, outputForNLP)
+        inputFile.close()
+        pass
+
+    def calculateDuration(self, inputPath, outputPath):
+        number = 1
+        inputFile = open(inputPath, 'r')
+        outputFile = open(outputPath, 'w')
+        lines = inputFile.readlines()
+        for x in range(len(lines)):
+            if lines[x] == str(number) + '\n':
+                time = lines[x + 1]
+                startHour = float(time[0:2]);
+                startMinute = float(time[3:5]);
+                startSecond = float(time[6:12])
+                endHour = float(time[17:19]);
+                endMinute = float(time[20:22]);
+                endSecond = float(time[23:29])
+                startTime = startHour * 3600 + startMinute * 60 + startSecond
+                endTime = endHour * 3600 + endMinute * 60 + endSecond
+                duration = round(endTime - startTime, 3)
+                if (duration < 0):
+                    duration = 0
+                outputFile.write(str(duration))
+                outputFile.write(" ")
+                number += 1
+        inputFile.close()
+        outputFile.close()
+        pass
+
+    def generateVTT(self, srt_path):
+        print('Generate Subtitle Start ...')
+        transcripts, sentence, startTime, endTime, word = "", [], [], [], []
+        dividedSentStart, dividedSentEnd, sentStart, sentEnd = [], [], [], []
+        outputForDur = 'player/media/videos/[Dur]subtitle.txt'
+        outputForWEB = 'player/media/videos/[WEB]subtitle.vtt'
+        outputForNLP = 'player/media/videos/[NLP]subtitle.vtt'
+
+        self.convertSRTtoVTT(srt_path)
+        self.calculateDuration(outputForWEB, outputForDur)
+
+        return outputForNLP, outputForDur
+        
+
+
+
+
+
+# if __name__ == '__main__':
+#     generateSubtitle()
