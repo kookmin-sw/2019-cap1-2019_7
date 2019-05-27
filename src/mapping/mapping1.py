@@ -32,10 +32,8 @@ class SignVideo:
             if flag%5 == 3:
                 words = lines[line].split()
                 idx=0
-
                 for word in words:
                     idx+=1
-
                     try:
                         # 형태소가 숫자일 때,
                         if word.isdigit():
@@ -51,12 +49,57 @@ class SignVideo:
                         elif Basic.objects.filter(word=word).count() > 1:
                             find_word = Basic.objects.filter(word=word)
 
+                            # 명사 list, 왼쪽 오른쪽 명사거리, 명사, 참조단어 list, href list
+                            noun = []
+                            nounSub = []
+                            N = ""
+                            refList = []
+                            hrefList = []
+
+                            # 품사 리스트
+                            parts = lines[line+1].split()
+
+                            for i in range(idx-1, -1, -1):
+                                if(parts[i] == "명사"):
+                                    noun.append(words[i])
+                                    nounSub.append(idx - i -1)
+                                    break
+
+                            for i in range(idx, len(parts)):
+                                if(parts[i] == "명사"):
+                                    noun.append(words[i])
+                                    nounSub.append(i-idx+1)
+                                    break
+
+                            if(nounSub[0]>nounSub[1]):
+                                N = noun[1]
+                            else:
+                                N = noun[0]
+
+                            # 같은 품사 갯수
+                            samePart = 0
+
                             # 일차적으로 품사가 일치하는 단어로 반환
                             for result in find_word:
-                                words = lines[line].split()
-                                if result.part == word.part:
-                                    results.append(result.location)
-                                    break
+                                if result.part == parts[idx-1]:
+                                    samePart+=1
+                                refList.append(result.ref_word)
+                                hrefList.append(result.href)
+
+                            if(samePart == 1):
+                                results.append(result.href)
+                            else:
+                                list = []
+                                list.append(N)
+                                list.append(refList)
+                                # print("list :        ",list)
+                                # print("hrefList :        ", hrefList)
+
+                                n = similarity(list)
+                                if(n == -1):
+                                    results.append(hrefList[0])
+                                else:
+                                    results.append(hrefList[n])
 
                     except:
                         continue
