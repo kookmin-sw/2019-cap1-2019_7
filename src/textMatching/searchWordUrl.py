@@ -37,7 +37,7 @@ def matching(input_path, file_name):
                     nounSub = []
                     N = ""
                     refList = []
-
+                    hrefList = []
 
                     # 품사 리스트
                     parts = lines[line+1].split()
@@ -66,7 +66,7 @@ def matching(input_path, file_name):
                         if(result["part"] == parts[idx-1]):
                             samePart += 1
                         refList.append(result["ref_word"])
-
+                        hrefList.append(result['href'])
 
                     if(samePart == 1):
                         results.append(result["href"])
@@ -75,8 +75,14 @@ def matching(input_path, file_name):
                         list.append(N)
                         list.append(refList)
                         print("list :        ",list)
-                        
-
+                        print("hrefList :        ", hrefList)
+                        n = 1
+                        # n = similarity(list)
+                        if(n == -1):
+                            results.append(hrefList[0])
+                        else:
+                            results.append(hrefList[n])
+                            
             flag+=1
             wordPath.append(results)
             # print(results)
