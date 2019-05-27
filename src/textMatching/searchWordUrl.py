@@ -74,15 +74,15 @@ def matching(input_path, file_name):
                         list = []
                         list.append(N)
                         list.append(refList)
-                        print("list :        ",list)
-                        print("hrefList :        ", hrefList)
-                        n = 1
-                        # n = similarity(list)
+                        # print("list :        ",list)
+                        # print("hrefList :        ", hrefList)
+
+                        n = similarity(list)
                         if(n == -1):
                             results.append(hrefList[0])
                         else:
                             results.append(hrefList[n])
-                            
+
             flag+=1
             wordPath.append(results)
             # print(results)
@@ -90,9 +90,3 @@ def matching(input_path, file_name):
             flag+=1
     # print(wordPath)
     return wordPath
-
-
-# if __name__=='__main__':
-#     input_path = '0412.srt'
-#     file_name = 'test_out'
-#     matching(input_path, file_name)
