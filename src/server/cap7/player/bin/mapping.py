@@ -1,19 +1,17 @@
-import pymongo
-
+#import pymongo
 # conn = pymongo.MongoClient('127.0.0.1', 27017)
-#
 # db = conn.get_database('dictionary')
 # collection = db.get_collection('basic')
-#
 
 from dictionary.models import *
 import subprocess
 from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy.editor import VideoFileClip, concatenate_videoclips
+import moviepy.video.fx.all as vfx
 import os
 from django.conf import settings
 import shutil
 import multiprocessing
-
 
 
 # 자막과 수어를 적절히 매칭시키고, 그에 따른 수어 영상을 생성하는 함수를 가진 객체
@@ -94,8 +92,8 @@ class SignVideo:
 
     # 각 단어의 수어영상을 하나로 합쳐주는 함수
     # outputFile = outputPath+outputName(=1,2,3...)+".mp4"
-    def mergeClips(self, inputClips, outputFile, id=''):
-        fileName = id + 'fileList.txt'
+    def mergeClips(self, inputClips, outputFile, id):
+        fileName = str(id) + 'fileList.txt'
         filelist = open(fileName, 'w')
         for clip in inputClips:
             filelist.write("file ")
@@ -105,7 +103,7 @@ class SignVideo:
             filelist.write('\n')
 
         filelist.close()
-        mergeCommand = 'ffmpeg -y -f concat -i fileList.txt -c copy ' + outputFile
+        mergeCommand = 'ffmpeg -y -f concat -i '+fileName+' -c copy ' + outputFile
         self.subprocessOpen(mergeCommand)
 
     # inputData=[inputClipPaths, duration]
@@ -131,55 +129,73 @@ class SignVideo:
             startindex += 1
         print("First Merge Completed")
 
-        startindex = inputData[0]
-
+        startindex = inputData[1]
         # Change durations
         for number in range(0, len(duration)):
             outputFile = outputPath + "_" + str(startindex) + ".mp4"
             inputFile = outputPath + str(startindex) + ".mp4"
             clip = VideoFileClip(inputFile)
-            speed = float(duration[number]) / clip.duration
+            clipDuration = clip.duration
+            speed = float(duration[number]) / clipDuration
             clip.close()
-            speedCommand = 'ffmpeg -y -i ' + inputFile + ' -vf "setpts=(' + str(speed) + ')*PTS" -an ' + outputFile
+            speed = round(speed, 2)
+            speedCommand = 'ffmpeg -y -i ' + inputFile + ' -vf "setpts=(' + str(speed) + ')*PTS" ' + outputFile
             self.subprocessOpen(speedCommand)
             startindex += 1
         print("Change Durations Completed")
 
     def makeFinalVideo(self, numberOfClips, outputPath):
         finalVideo = []
-
         # Make SignLanguage
         for number in range(0, numberOfClips):
-            finalVideo.append(outputPath + "_" + str(number) + ".mp4")
+            inputFile = outputPath + "_" + str(number) + ".mp4"
+            clip = VideoFileClip(inputFile)
+            finalVideo.append(clip)
 
+        finalVideo = concatenate_videoclips(finalVideo)
         outputFile = settings.MEDIA_ROOT + 'signLanguage.mp4'
-        self.mergeClips(finalVideo, outputFile)
+        finalVideo.write_videofile(outputFile)
+
         print("Last Merge Completed")
         # shutil.rmtree('player/media/outputs')
         print(outputFile)
         return outputFile
 
     def generateSignLanguage(self, wordPath, inputDuration):
+
         subtitleDuration = self.getDurations(inputDuration)
         inputClipPaths = self.matchingSign(wordPath)
+        print('Generate SignLanguage Start ...')
         numClipPath = len(inputClipPaths)
         numDuration = len(subtitleDuration)
+        print('Generate SignLanguage Start 1...')
+        # 멀티프로세싱을 위해 input data 분할
+        inputData = []
+        n = 8
+        for num in range(0, n):
+            inputData.append([])
+            inputData[num].append(num + 1)
+            inputData[num].append(round(numClipPath / n) * num)
+            if (num == n - 1):
+                inputData[num].append(inputClipPaths[round(numClipPath / n) * num:])
+                inputData[num].append(subtitleDuration[round(numDuration / n) * num:])
+            else:
+                inputData[num].append(inputClipPaths[round(numClipPath / n) * num:round(numClipPath / n) * (num + 1)])
+                inputData[num].append(subtitleDuration[round(numDuration / n) * num:round(numDuration / n) * (num + 1)])
 
-        inputData1 = [1, 0, inputClipPaths[:int(numClipPath / 4)], subtitleDuration[:int(numDuration / 4)]]
-        inputData2 = [2, int(numClipPath / 4), inputClipPaths[int(numClipPath / 4):int(numClipPath / 4) * 2],
-                      subtitleDuration[int(numDuration / 4):int(numDuration / 4) * 2]]
-        inputData3 = [3, int(numClipPath / 4) * 2, inputClipPaths[int(numClipPath / 4) * 2:int(numClipPath / 4) * 3],
-                      subtitleDuration[int(numDuration / 4) * 2:int(numDuration / 4) * 3]]
-        inputData4 = [4, int(numClipPath / 4) * 3, inputClipPaths[int(numClipPath / 4) * 3:],
-                      subtitleDuration[int(numDuration / 4) * 3:]]
-
+        print('Generate SignLanguage Start 2...')
         # Run Multiprocessing
-        inputDataList = [inputData1, inputData2, inputData3, inputData4]
-        pool = multiprocessing.Pool(processes=4)
-        pool.map(self.makeClipsBySentence, inputDataList)
+        print('Generate SignLanguage Start 2...')
+        pool = multiprocessing.Pool(processes=8)
+        pool.map(self.makeClipsBySentence, inputData)
+        print('Generate SignLanguage Start 2...')
         pool.close()
+        print('Generate SignLanguage Start 2...')
         pool.join()
+        print('Generate SignLanguage Start 2...')
+        print(numDuration)
         outputFile = self.makeFinalVideo(numDuration, "player/media/outputs/")
+        print('Generate SignLanguage Start 2...')
         return outputFile
 
 

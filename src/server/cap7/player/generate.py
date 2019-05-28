@@ -23,14 +23,25 @@ class SubtitleGenerator(Generator):
         audio_path = self.stt.extractAudio(video_path)
         return audio_path
 
-    def convertAudio2Subtitle(self, audio_path):
-        text_path = self.stt.extractText(audio_path)
-        sub_path, dur_path = self.sub.generateSubtitle(text_path)
+    def convertAudio2VTT(self, audio_path):
+        text_path, language = self.stt.extractText(audio_path)
+        sub_path, dur_path = self.sub.generateVTTfromSTT(text_path, language)
         return sub_path, dur_path
 
-    def generate(self, video_path):
-        audio_path = self.convertVideo2Audio(video_path)
-        subtitle_path,  dur_path = self.convertAudio2Subtitle(audio_path)
+    def convertSRT2VTT(self, srt_path):
+        sub_path, dur_path = self.sub.generateVTTfromSRT(srt_path)
+        return sub_path, dur_path
+
+    def generate(self, video_path, srt_path):
+        ## 유튜브 영상에 자막이 있을 때,
+        if srt_path:
+            subtitle_path, dur_path = self.convertSRT2VTT(srt_path)
+
+        ## 유튜브 영상에 자막이 없을 때,
+        else:
+            audio_path = self.convertVideo2Audio(video_path)
+            subtitle_path, dur_path = self.convertAudio2VTT(audio_path)
+
         return subtitle_path, dur_path
 
 

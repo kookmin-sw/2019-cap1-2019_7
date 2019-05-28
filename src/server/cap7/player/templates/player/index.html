@@ -21,169 +21,100 @@
 		<script src='{% static "js/init.js" %}'></script>
 	</head>
 	<body id="top">
-
 		<!-- Header -->
-			<header id="header" class="skel-layers-fixed">
-				<h1><a href="/"><img src='{% static "img/logo.PNG" %}' width="35%"></a></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="">Home</a></li>
-						<li><a href="player.html">Player</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li><a href="team.html">Team</a></li>
-					</ul>
-				</nav>
-			</header>
+		<header id="header" class="skel-layers-fixed">
+			<h1><a href="/"><img src='{% static "img/logo.PNG" %}' width="35%"></a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="player.html">Player</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="team.html">Team</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<h3>청각장애인을 위한 수화 번역 웹 플레이어</h3>
-					<h1><img src='{% static "img/logo3.png" %}' width=100%"></h1>
-					<p>전지적 수화 시점</p>
-					<ul class="actions">
-						<li><a href="player.html" class="button big special text-center">시작하기</a></li>
-					</ul>
-				</div>
-			</section>
+		<section id="banner">
+			<div class="inner">
+				<img src='{% static "img/logo10.png" %}' width='50%';>
+				<ul class="actions">
+					<li><a href="player.html" class="button big special text-center">시작하기</a></li>
+				</ul>
+			</div>
+		</section>
 
 		<!-- One -->
-			<section id="one" class="wrapper style1">
-				<header class="major">
-					<h2>INFORMATION</h2>
-					<p>자막과 수화를 동시에 제공하는 플레이어 웹사이트</p>
-				</header>
-				<div class="container">
-					<!--<div class="row">-->
-						<!--<img src="{% static 'img/function.PNG' %}" width="100%" height="auto">-->
-					<!--</div>-->
-					<div class="row">
-						<div class="4u">
-							<section class="special box">
-								<span class="fa-stack fa-4x">
-              						<i class="fas fa-circle fa-stack-2x" style="color:#FA7268"></i>
-              						<i class="far fa-caret-square-right fa-stack-1x fa-inverse"></i>
-            					</span>
-								<h3>VIDEO</h3>
-								<p>청각장애인이 시청하고자 하는 동영상을 업로드합니다.</p>
-							</section>
-						</div>
-						<div class="4u">
-							<section class="special box">
-								<span class="fa-stack fa-4x">
-								  <i class="fas fa-circle fa-stack-2x" style="color:#FA7268"></i>
-								  <i class="far fa-comment-dots fa-stack-1x fa-inverse"></i>
-								</span>
-								<h3>SUBTITLE</h3>
-								<p>Google STT API를 이용해 자막을 생성합니다.</p>
-							</section>
-						</div>
-						<div class="4u">
-							<section class="special box">
-								<span class="fa-stack fa-4x">
-								  <i class="fas fa-circle fa-stack-2x" style="color:#FA7268"></i>
-								  <i class="fas fa-sign-language fa-stack-1x fa-inverse"></i>
-								</span>
-								<h3>SIGN LANGUAGE</h3>
-								<p>자막에 맞는 수화 영상을 기존 영상과 함께 제공 합니다.</p>
-							</section>
-						</div>
+		<section id="one" class="wrapper style1">
+			<header class="major">
+				<h2>INFORMATION</h2>
+				<p>자막과 수화를 동시에 제공하는 플레이어 웹사이트</p>
+			</header>
+			<div class="container">
+				<!--<div class="row">-->
+					<!--<img src="{% static 'img/function.PNG' %}" width="100%" height="auto">-->
+				<!--</div>-->
+				<div class="row">
+					<div class="4u">
+						<section class="special box">
+							<span class="fa-stack fa-4x">
+								<i class="fas fa-circle fa-stack-2x" style="color:#FA7268"></i>
+								<i class="far fa-caret-square-right fa-stack-1x fa-inverse"></i>
+							</span>
+							<h3>VIDEO</h3>
+							<p>청각장애인이 시청하고자 하는 동영상을 업로드합니다.</p>
+						</section>
+					</div>
+					<div class="4u">
+						<section class="special box">
+							<span class="fa-stack fa-4x">
+							  <i class="fas fa-circle fa-stack-2x" style="color:#FA7268"></i>
+							  <i class="far fa-comment-dots fa-stack-1x fa-inverse"></i>
+							</span>
+							<h3>SUBTITLE</h3>
+							<p>Google STT API를 이용해 자막을 생성합니다.</p>
+						</section>
+					</div>
+					<div class="4u">
+						<section class="special box">
+							<span class="fa-stack fa-4x">
+							  <i class="fas fa-circle fa-stack-2x" style="color:#FA7268"></i>
+							  <i class="fas fa-sign-language fa-stack-1x fa-inverse"></i>
+							</span>
+							<h3>SIGN LANGUAGE</h3>
+							<p>자막에 맞는 수화 영상을 기존 영상과 함께 제공 합니다.</p>
+						</section>
 					</div>
 				</div>
-			</section>
-			<!---->
-		<!--&lt;!&ndash; Two &ndash;&gt;-->
-			<!--<section id="two" class="wrapper style2">-->
-				<!--<header class="major">-->
-					<!--<h2>Commodo accumsan aliquam</h2>-->
-					<!--<p>Amet nisi nunc lorem accumsan</p>-->
-				<!--</header>-->
-				<!--<div class="container">-->
-					<!--<div class="row">-->
-						<!--<div class="6u">-->
-							<!--<section class="special">-->
-								<!--<a href="#" class="image fit"><img src='{% static "images/pic01.jpg"  %}' alt=""/></a>-->
-								<!--<h3>Mollis adipiscing nisl</h3>-->
-								<!--<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>-->
-								<!--<ul class="actions">-->
-									<!--<li><a href="#" class="button alt">Learn More</a></li>-->
-								<!--</ul>-->
-							<!--</section>-->
-						<!--</div>-->
-						<!--<div class="6u">-->
-							<!--<section class="special">-->
-								<!--<a href="#" class="image fit"><img src='{% static "images/pic02.jpg" %}' alt="" /></a>-->
-								<!--<h3>Neque ornare adipiscing</h3>-->
-								<!--<p>Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem.</p>-->
-								<!--<ul class="actions">-->
-									<!--<li><a href="#" class="button alt">Learn More</a></li>-->
-								<!--</ul>-->
-							<!--</section>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</section>-->
+			</div>
+		</section>
 
-		<!--&lt;!&ndash; Three &ndash;&gt;-->
-			<!--<section id="three" class="wrapper style1">-->
-				<!--<div class="container">-->
-					<!--<div class="row">-->
-						<!--<div class="8u">-->
-							<!--<section>-->
-								<!--<h2>Mollis ut adipiscing</h2>-->
-								<!--<a href="#" class="image fit"><img src='{% static "images/pic03.jpg" %}' alt="" /></a>-->
-								<!--<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>-->
-							<!--</section>-->
-						<!--</div>-->
-						<!--<div class="4u">-->
-							<!--<section>-->
-								<!--<h3>Magna massa blandit</h3>-->
-								<!--<p>Feugiat amet accumsan ante aliquet feugiat accumsan. Ante blandit accumsan eu amet tortor non lorem felis semper. Interdum adipiscing orci feugiat penatibus adipiscing col cubilia lorem ipsum dolor sit amet feugiat consequat.</p>-->
-								<!--<ul class="actions">-->
-									<!--<li><a href="#" class="button alt">Learn More</a></li>-->
-								<!--</ul>-->
-							<!--</section>-->
-							<!--<hr />-->
-							<!--<section>-->
-								<!--<h3>Ante sed commodo</h3>-->
-								<!--<ul class="alt">-->
-									<!--<li><a href="#">Erat blandit risus vis adipiscing</a></li>-->
-									<!--<li><a href="#">Tempus ultricies faucibus amet</a></li>-->
-									<!--<li><a href="#">Arcu commodo non adipiscing quis</a></li>-->
-									<!--<li><a href="#">Accumsan vis lacinia semper</a></li>-->
-								<!--</ul>-->
-							<!--</section>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</section>			-->
-			<!---->
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<div class="row double">
-						<div class="6u">
-							<h2>수화 인 플레이어</h2>
-							<p>본 프로젝트의 이름은 ‘수화인플레이어’로 사용자가 정보를 얻고자 하는 영상을 등록하면 영상의 내용을 수화로 번역하여 이를 등록된 영상과 함께 사용자에게 제공하는 것이 목표이다.
-								현재 시중에 나와있는 대부분의 영상매체는 자막이 함께 제공되는 영상이 적을 뿐더러 더욱이 수화 영상을 함께 제공하는 것은 뉴스나 일부 수화통역 영상 이외에 거의 찾아볼 수 없다.
-								IT 기술 발달로 점점 영상 매체의 의존도가 높아짐에 따라 청인과 청각장애인 간의 정보 격차는 심화될 것으로 예상된다. 하여 본 프로젝트의 기대효과는 청각장애인도 인터넷 강의나
-								시사/교양 프로그램 등 정보를 담고 있는 영상에서 원하는 정보를 제약없이 습득할 수 있도록 하는 것이다.</p>
-						</div>
-						<div class="6u">
-							<h2>SignLanguage IN Player</h2>
-							<p>Most of the video media currently on the market have fewer videos that come with subtitles and, moreover, provide Sign Language together can hardly be found other than news or some sign language translation videos. As IT technology advances increasingly rely on video media, the information gap between the audience and the deaf is expected to widen. Thus, the expected effect of this project is to enable deaf people to acquire the information they want in a video containing information, such as Internet lectures and current events/cultivation programs.</p>
-							<ul class="icons">
-								<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_7" class="fab icon fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://kookmin-sw.github.io/2019-cap1-2019_7" class="fas icon fa-git"><span class="label">Team Page</span></a></li>
-								<li><a href="https://www.facebook.com/jeong5055" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							</ul>
-						</div>
+		<footer id="footer">
+			<div class="container">
+				<div class="row double">
+					<div class="6u">
+						<h2>수화 인 플레이어</h2>
+						<p>본 프로젝트의 이름은 ‘수화인플레이어’로 사용자가 정보를 얻고자 하는 영상을 등록하면 영상의 내용을 수화로 번역하여 이를 등록된 영상과 함께 사용자에게 제공하는 것이 목표이다.
+							현재 시중에 나와있는 대부분의 영상매체는 자막이 함께 제공되는 영상이 적을 뿐더러 더욱이 수화 영상을 함께 제공하는 것은 뉴스나 일부 수화통역 영상 이외에 거의 찾아볼 수 없다.
+							IT 기술 발달로 점점 영상 매체의 의존도가 높아짐에 따라 청인과 청각장애인 간의 정보 격차는 심화될 것으로 예상된다. 하여 본 프로젝트의 기대효과는 청각장애인도 인터넷 강의나
+							시사/교양 프로그램 등 정보를 담고 있는 영상에서 원하는 정보를 제약없이 습득할 수 있도록 하는 것이다.</p>
 					</div>
-					<ul class="copyright">
-						<li>국민대학교 소프트웨어융합대학 Capstone 7조</li>
-						<li>&copy; 전지적 수화시점. All rights reserved.</li>
-					</ul>
+					<div class="6u">
+						<h2>SignLanguage IN Player</h2>
+						<p>Most of the video media currently on the market have fewer videos that come with subtitles and, moreover, provide Sign Language together can hardly be found other than news or some sign language translation videos. As IT technology advances increasingly rely on video media, the information gap between the audience and the deaf is expected to widen. Thus, the expected effect of this project is to enable deaf people to acquire the information they want in a video containing information, such as Internet lectures and current events/cultivation programs.</p>
+						<ul class="icons">
+							<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_7" class="fab icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://kookmin-sw.github.io/2019-cap1-2019_7" class="fas icon fa-git"><span class="label">Team Page</span></a></li>
+							<li><a href="https://www.facebook.com/jeong5055" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						</ul>
+					</div>
 				</div>
-			</footer>
+				<ul class="copyright">
+					<li>국민대학교 소프트웨어융합대학 Capstone 7조</li>
+					<li>&copy; 전지적 수화시점. All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
 	</body>
 </html>

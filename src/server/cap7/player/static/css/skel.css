@@ -105,11 +105,6 @@
 				padding: 0 0 0 4em;
 			}
 
-			.row {
-				/* margin-left: -(gutters.vertical) */
-				margin-left: -4em;
-			}
-
 			.row + .row.uniform > * {
 				/* padding: (gutters.vertical) 0 0 (gutters.vertical) */
 				padding: 4em 0 0 4em;
@@ -219,4 +214,13 @@
 			.row + .row.uniform.double > * {
 				/* padding: (gutters.vertical * 2) 0 0 (gutters.vertical * 2) */
 				padding: 8em 0 0 8em;
+			}
+
+			/* Style buttons */
+			.btn1 {
+			  border: none; /* Remove borders */
+			  color: white; /* White text */
+			  padding: 12px 16px; /* Some padding */
+			  font-size: 16px; /* Set a font size */
+			  cursor: pointer; /* Mouse pointer on hover */
 			}

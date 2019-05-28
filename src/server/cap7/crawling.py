@@ -21,12 +21,12 @@ from dictionary.models import *
 def spider(max_indexes):
     f = open("basic.txt", 'w')
     f2 = open("nunmber.txt", "w")
-    count1 = 13989
-    count2 = 75
-    index = 2894
+    count1 = 20937
+    count2 = 140
+    index = 9501
     while index < max_indexes:
 
-        url = 'http://sldict.korean.go.kr/front/sign/signContentsView.do?origin_no=' + str(index) #+ '&category=SPE008'
+        url = 'http://sldict.korean.go.kr/front/sign/signContentsView.do?origin_no=' + str(index) #+ '&category=SPE003'
         # URL에서 비디오 가져오기
         source_code = requests.get(url)
         plain_text = source_code.text
@@ -69,9 +69,16 @@ def spider(max_indexes):
                         Number(word=w, part=p, mean=m, ref_word=r, location=l).save()
                     count2 +=1
 
+                else:
+                    location = save_signlanguage_video(href, frame, count1, 'basic')
+                    data.append([word, part, mean, ref_word, location])
+                    for w, p, m, r, l in data:
+                        f.write(word + " " + part + " " + mean + "\n")
+                        Basic(word=w, part=p, mean=m, ref_word=r, location=l).save()
+                    count1 += 1
+
                 print("단어 : " + word + "\n품사 :" + part + "\n")
             index += 1
-
     f.close()
 
 
@@ -121,7 +128,7 @@ def cut_video(url):
     #  vcap의 프레임 수 get
     frame_cnt = vcap.get(cv2.CAP_PROP_FRAME_COUNT)
     # 프레임 수 1/3로 나누기
-    frame_cnt = int(frame_cnt / 3)
+    frame_cnt = int(frame_cnt/3)
     frame = str(frame_cnt)
     return frame
 
@@ -139,4 +146,4 @@ def save_signlanguage_video(href, frame, count, type):
 
     return output_location2
 
-spider(12866)
+spider(9502)

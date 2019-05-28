@@ -89,6 +89,7 @@ class STT:
             text_file.write(u'Transcript: {}'.format(result.alternatives[0].transcript))
             text_file.write('\n')
             print(u'Transcript: {}'.format(result.alternatives[0].transcript))
-            print('###Extract Text End')
 
-        return text_path
+        print('###Extract Text End')
+
+        return text_path, language

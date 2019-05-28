@@ -37,7 +37,7 @@ def player(request):
     url_form = URLForm(request.POST or None)
 
     if video_form.is_valid():
-        # if file_extension != '.mp4':
+        # if file_extension == '.mp4' or file_extension == '':
         #     video_to_mp4(video_name)
         #     video = Video.objects.get(name=video_name)
         #
@@ -46,31 +46,37 @@ def player(request):
         #     print(videoFile.video)
         #     video.save()
         #     video_name = str(file) + '.mp4'
+        option = None
         video_form.save()
 
     elif url_form.is_valid():
-        youtube_video = getVideo(request.POST['url'])
+
+        youtube = Youtube(request.POST['url'])
         url_form.save()
 
         lastvideo_tmp = Video.objects.last()
-        lastvideo_tmp.videoFile = youtube_video
+        lastvideo_tmp.videoFile = youtube.getVideo()
+        option = youtube.hasSubtitle(lastvideo_tmp.language)
+        print('@@@@@@@@@@@@@@@@@@@@@')
+        print(lastvideo_tmp.language)
+        print(option)
         lastvideo_tmp.save()
 
     try:
-        lastvideo= Video.objects.last()
-
-        # if lastvideo.url != '':
-        #     lastvideo.videoFile = getVideo(lastvideo.url)
-        #     print(lastvideo.videoFile)
-
+        lastvideo = Video.objects.last()
         videoFile = lastvideo.videoFile
-
         video_name = str(videoFile)
+        # print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22')
+        # print(youtube.hasSubtitle(lastvideo.language))
+        main(video_name, option)
 
-        main(video_name)
-
-        webSubtitle = '[Web]subtitle.vtt'
+        if lastvideo.language == 'en-US':
+            webSubtitle = '[WEB]subtitle2.vtt'
+        else:
+            webSubtitle = '[WEB]subtitle.vtt'
+            
         signVideo = 'signLanguage.mp4'
+
 
     except:
         videoFile=''
@@ -85,6 +91,7 @@ def player(request):
                 'webSubtitle': webSubtitle,
                 'signVideo' : signVideo,
               }
+
     return render(request, 'player/player.html', context)
 
 # 문의사항

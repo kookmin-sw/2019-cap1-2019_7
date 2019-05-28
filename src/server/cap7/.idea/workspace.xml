@@ -2,25 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75fb0f8a-effc-4014-a8a0-6da1978df0d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/player/bin/translation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/player/bin/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cap7/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cap7/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionary/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/bin/googleSTT.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/googleSTT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/bin/mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/mapping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/bin/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/nlp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/bin/subtitle.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/subtitle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/bin/youtube.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/bin/translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/translation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/bin/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/generate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/static/css/agency.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/agency.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/static/css/nprogress.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/nprogress.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/static/css/skel.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/skel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/static/img/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/img/banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/static/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/js/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/static/js/upload.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/player/templates/player/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/templates/player/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/templates/player/player.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/player.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/templates/player/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/utils/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/player/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,22 +37,63 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/bin/googleSTT.py">
+        <entry file="file://$PROJECT_DIR$/player/static/js/player.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/player/templates/player/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-308">
-              <caret line="42" column="38" lean-forward="true" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="1672">
+              <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
               <folding>
-                <element signature="e#48#58#0" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#0;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#1;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#video#0;n#div#1;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="661">
+              <caret line="1085" column="36" lean-forward="true" selection-start-line="1085" selection-start-column="36" selection-end-line="1085" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player/bin/nlp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="e#24#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player/bin/mapping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="175" column="31" lean-forward="true" selection-start-column="2" selection-end-line="190" selection-end-column="10" />
+            <state relative-caret-position="457">
+              <caret line="197" column="49" lean-forward="true" selection-start-line="197" selection-start-column="49" selection-end-line="197" selection-end-column="49" />
+              <folding>
+                <element signature="e#147#178#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,73 +101,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player/templates/player/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#div#1;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="741">
+              <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/main.py">
+        <entry file="file://$PROJECT_DIR$/player/static/css/nprogress.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="1102">
+              <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/generate.py">
+        <entry file="file://$PROJECT_DIR$/player/static/js/nprogress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-              <folding>
-                <element signature="e#23#53#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/bin/subtitle.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1177">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/templates/player/player.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1330">
-              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/bin/translation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="8930">
+              <caret line="470" column="5" selection-start-line="470" selection-start-column="5" selection-end-line="470" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -129,8 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player/bin/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="1729">
+              <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -147,29 +146,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contac</find>
-      <find>ty</find>
-      <find>tel</find>
-      <find>phone</find>
-      <find>textarea</find>
-      <find>type</find>
-      <find>image</find>
-      <find>bar</find>
-      <find>basic</find>
-      <find>text_path</find>
-      <find>input</find>
-      <find>outputPath</find>
-      <find>const</find>
-      <find>inputClips</find>
-      <find>vtt_</find>
-      <find>get</find>
-      <find>video_file</find>
-      <find>video</find>
       <find>split</find>
       <find>DIRS</find>
       <find>MEDIA</find>
       <find>videofile</find>
-      <find>videoFile</find>
       <find>sta</find>
       <find>label</find>
       <find>matchingSign</find>
@@ -177,6 +157,25 @@
       <find>make</find>
       <find>writeS</find>
       <find>stat</find>
+      <find>sign</find>
+      <find>type</find>
+      <find>save_sign</find>
+      <find>videoFileclip</find>
+      <find>section#contact .sec</find>
+      <find>videoFile</find>
+      <find>margin-left</find>
+      <find>section h3</find>
+      <find>section</find>
+      <find>@media</find>
+      <find>.form-group textarea</find>
+      <find>outputPath</find>
+      <find>conver</find>
+      <find>convert</find>
+      <find>generateVTT</find>
+      <find>generate</find>
+      <find>extrac</find>
+      <find>outputforweb</find>
+      <find>inc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,10 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/player/static/js/upload.js" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp12653/home/mergeTest.py" />
-        <option value="$PROJECT_DIR$/dictionary/admin.py" />
-        <option value="$PROJECT_DIR$/dictionary/tests.py" />
         <option value="$PROJECT_DIR$/player/static/css/styles.css" />
         <option value="$PROJECT_DIR$/player/templates/player/left-sidebar.html" />
         <option value="$PROJECT_DIR$/player/templates/player/no-sidebar.html" />
@@ -196,9 +191,7 @@
         <option value="$PROJECT_DIR$/player/urls.py" />
         <option value="$PROJECT_DIR$/player/templates/player/right-sidebar.html" />
         <option value="$PROJECT_DIR$/../../../../nprogress-master/index.html" />
-        <option value="$PROJECT_DIR$/player/static/css/nprogress.css" />
         <option value="$PROJECT_DIR$/player/static/css/agency.css" />
-        <option value="$PROJECT_DIR$/player/static/css/agency.min.css" />
         <option value="$PROJECT_DIR$/player/constant.py" />
         <option value="$PROJECT_DIR$/player/DB_search.py" />
         <option value="$PROJECT_DIR$/player/DB.py" />
@@ -209,38 +202,44 @@
         <option value="$PROJECT_DIR$/player/fwd_dic.user" />
         <option value="$PROJECT_DIR$/player/stopword.py" />
         <option value="$PROJECT_DIR$/player/text2SignLanguageMapping.py" />
-        <option value="$PROJECT_DIR$/dictionary/models.py" />
-        <option value="$PROJECT_DIR$/crawling.py" />
         <option value="$PROJECT_DIR$/player/videotowav.py" />
-        <option value="$PROJECT_DIR$/player/bin/nlp.py" />
         <option value="$PROJECT_DIR$/player/bin/stopword.py" />
         <option value="$PROJECT_DIR$/player/translate.py" />
-        <option value="$PROJECT_DIR$/player/generate.py" />
         <option value="$PROJECT_DIR$/player/bin/tools.py" />
         <option value="$PROJECT_DIR$/player/admin.py" />
         <option value="$PROJECT_DIR$/cap7/settings.py" />
         <option value="$PROJECT_DIR$/cap7/urls.py" />
-        <option value="$PROJECT_DIR$/player/forms.py" />
-        <option value="$PROJECT_DIR$/player/static/css/style.css" />
-        <option value="$PROJECT_DIR$/player/models.py" />
         <option value="$PROJECT_DIR$/player/bin/translate.py" />
-        <option value="$PROJECT_DIR$/player/main.py" />
-        <option value="$PROJECT_DIR$/player/bin/translation.py" />
-        <option value="$PROJECT_DIR$/player/bin/subtitle.py" />
-        <option value="$PROJECT_DIR$/player/templates/player/contact.html" />
-        <option value="$PROJECT_DIR$/player/templates/player/team.html" />
-        <option value="$PROJECT_DIR$/player/templates/player/player.html" />
-        <option value="$PROJECT_DIR$/player/templates/player/index.html" />
-        <option value="$PROJECT_DIR$/player/bin/googleSTT.py" />
         <option value="$PROJECT_DIR$/player/bin/youtube.py" />
-        <option value="$PROJECT_DIR$/player/bin/utils.py" />
-        <option value="$PROJECT_DIR$/player/views.py" />
+        <option value="$PROJECT_DIR$/player/main.py" />
+        <option value="$PROJECT_DIR$/player/forms.py" />
+        <option value="$PROJECT_DIR$/dictionary/models.py" />
+        <option value="$PROJECT_DIR$/player/templates/player/contact.html" />
+        <option value="$PROJECT_DIR$/player/static/css/skel.css" />
+        <option value="$PROJECT_DIR$/player/static/css/agency.min.css" />
+        <option value="$PROJECT_DIR$/player/bin/googleSTT.py" />
+        <option value="$PROJECT_DIR$/player/bin/nlp.py" />
+        <option value="$PROJECT_DIR$/player/templates/player/index.html" />
         <option value="$PROJECT_DIR$/player/bin/mapping.py" />
+        <option value="$PROJECT_DIR$/player/generate.py" />
+        <option value="$PROJECT_DIR$/player/bin/subtitle.py" />
+        <option value="$PROJECT_DIR$/player/views.py" />
+        <option value="$PROJECT_DIR$/player/models.py" />
+        <option value="$PROJECT_DIR$/player/bin/translation.py" />
+        <option value="$PROJECT_DIR$/player/bin/utils.py" />
+        <option value="$PROJECT_DIR$/crawling.py" />
+        <option value="$PROJECT_DIR$/player/templates/player/team.html" />
+        <option value="$PROJECT_DIR$/player/static/css/nprogress.css" />
+        <option value="$PROJECT_DIR$/player/static/js/video.js" />
+        <option value="$PROJECT_DIR$/player/static/js/upload.js" />
+        <option value="$PROJECT_DIR$/player/static/css/style.css" />
+        <option value="$PROJECT_DIR$/player/static/js/player.js" />
+        <option value="$PROJECT_DIR$/player/templates/player/player.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="-13" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -249,6 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,6 +260,11 @@
               <item name="cap7" type="b2602c69:ProjectViewProjectNode" />
               <item name="cap7" type="462c0819:PsiDirectoryNode" />
               <item name="cap7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cap7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cap7" type="462c0819:PsiDirectoryNode" />
+              <item name="dictionary" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cap7" type="b2602c69:ProjectViewProjectNode" />
@@ -289,6 +294,13 @@
               <item name="cap7" type="b2602c69:ProjectViewProjectNode" />
               <item name="cap7" type="462c0819:PsiDirectoryNode" />
               <item name="player" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cap7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cap7" type="462c0819:PsiDirectoryNode" />
+              <item name="player" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,7 +314,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,6 +323,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\20143\Desktop\cap7\2019-cap1-2019_7\src\server\cap7\player\templates\player" />
       <recent name="C:\Users\20143\Desktop\2019-cap1-2019_7\src\server\cap7\player" />
       <recent name="C:\Users\20143\Desktop\2019-cap1-2019_7\src\server\cap7\cap7" />
     </key>
@@ -467,8 +479,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-13" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23931624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -481,8 +492,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.329718" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32932165" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50252527" side_tool="true" visible="true" weight="0.09638554" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4957265" visible="true" weight="0.11829135" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50427353" side_tool="true" visible="true" weight="0.11829135" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -508,54 +519,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/crawling.py</url>
-          <line>128</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../../main.py" />
-    <entry file="file://$PROJECT_DIR$/../../../../relocatedVTT.vtt" />
-    <entry file="file://$PROJECT_DIR$/player/DB.py" />
-    <entry file="file://$PROJECT_DIR$/fileList.txt" />
-    <entry file="file://$PROJECT_DIR$/../../../../../youtube2file.py" />
-    <entry file="file://$PROJECT_DIR$/player/fwd_dic.user" />
-    <entry file="file://$PROJECT_DIR$/player/dic.user" />
-    <entry file="file://$PROJECT_DIR$/player/stopword.py" />
-    <entry file="file://$PROJECT_DIR$/player/constant.py" />
-    <entry file="file://$PROJECT_DIR$/player/youtube2file.py" />
-    <entry file="file://$PROJECT_DIR$/player/nlp.py" />
-    <entry file="file://$PROJECT_DIR$/player/generateSubtitleFormTxt.py" />
-    <entry file="file://$PROJECT_DIR$/player/generateSignLanguage.py" />
-    <entry file="file://$PROJECT_DIR$/player/text2SignLanguageMapping.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP3_/main.py" />
     <entry file="file://$PROJECT_DIR$/dictionary/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding>
-            <element signature="e#25#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dictionary/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -577,6 +545,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cap7/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP1_/mapping.py" />
+    <entry file="file://$PROJECT_DIR$/player/bin/stopword.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/youtube.py" />
     <entry file="file://$PROJECT_DIR$/player/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -594,118 +581,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cap7/settings.py">
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/generate/bin/youtube.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/generate/bin/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2109">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        <state relative-caret-position="153">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cap7/urls.py">
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/generate/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="228">
+          <caret line="12" lean-forward="true" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/generate/generate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="24" selection-end-line="60" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/generate/bin/subtitle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="142" column="43" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/generate/bin/googleSTT.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/player/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="152">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding>
             <element signature="e#23#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/static/css/styles.css">
+    <entry file="file://$PROJECT_DIR$/cap7/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="437">
+          <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/youtube_download/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/문서/카카오톡 받은 파일/youtube_download/download_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/css/skel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="216" column="13" selection-start-line="216" selection-start-column="13" selection-end-line="216" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/css/agency.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="10414" lean-forward="true" selection-start-line="4" selection-start-column="10414" selection-end-line="4" selection-end-column="10414" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionary/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
           <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="763" selection-start-line="763" selection-end-line="763" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="60" column="29" lean-forward="true" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
           <folding>
-            <element signature="e#23#51#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/templates/player/team.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/templates/player/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/nlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#24#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP1_/mapping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="162" column="58" selection-start-line="162" selection-start-column="58" selection-end-line="162" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/stopword.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
-          <folding>
-            <element signature="e#24#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/player/generate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+        <state relative-caret-position="361">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#23#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/templates/player/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+          <folding>
+            <element signature="e#23#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,70 +700,156 @@
     <entry file="file://$PROJECT_DIR$/player/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/templates/player/index.html">
+    <entry file="file://$PROJECT_DIR$/player/bin/translation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="470">
+          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#div#1;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#div#2;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#24#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/youtube.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/templates/player/player.html">
+    <entry file="file://$PROJECT_DIR$/player/templates/player/team.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1330">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+        <state relative-caret-position="2641">
+          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/utils.py">
+    <entry file="file://$PROJECT_DIR$/player/static/js/video.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="266">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/translation.py">
+    <entry file="file://$PROJECT_DIR$/player/static/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/subtitle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1177">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="5415">
+          <caret line="285" column="18" selection-start-line="285" selection-start-column="18" selection-end-line="285" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/player/bin/googleSTT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="42" column="38" lean-forward="true" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        <state relative-caret-position="399">
+          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/subtitle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="e#24#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/templates/player/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/css/nprogress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/js/nprogress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8930">
+          <caret line="470" column="5" selection-start-line="470" selection-start-column="5" selection-end-line="470" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1729">
+          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/player/bin/mapping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="175" column="31" lean-forward="true" selection-start-column="2" selection-end-line="190" selection-end-column="10" />
+        <state relative-caret-position="457">
+          <caret line="197" column="49" lean-forward="true" selection-start-line="197" selection-start-column="49" selection-end-line="197" selection-end-column="49" />
+          <folding>
+            <element signature="e#147#178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/js/player.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="1085" column="36" lean-forward="true" selection-start-line="1085" selection-start-column="36" selection-end-line="1085" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/templates/player/player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#0;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#1;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#video#0;n#div#1;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

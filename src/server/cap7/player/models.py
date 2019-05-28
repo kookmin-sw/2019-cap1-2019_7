@@ -35,7 +35,7 @@ class Video(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=10, verbose_name="이름")
-    email = models.EmailField(verbose_name='이메일')
+    email = models.CharField(max_length=50, verbose_name='이메일')
     phone = models.CharField(null=True, verbose_name='휴대폰번호', max_length=20)
     message = models.TextField(verbose_name='내용')
 

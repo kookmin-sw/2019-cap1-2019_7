@@ -16,40 +16,17 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 		<!--[if lte IE 8]><script src='{% static "js/html5shiv.js" %}'></script><![endif]-->
 		<script src='{% static "js/jquery.min.js" %}'></script>
-		<script src='{% static "js/skel.min.js" %}'></script>
-		<script src='{% static "js/skel-layers.min.js" %}'></script>
-		<script src='{% static "js/init.js" %}'></script>
+		<!--<script src='{% static "js/skel.min.js" %}'></script>-->
+		<!--<script src='{% static "js/skel-layers.min.js" %}'></script>-->
+		<!--<script src='{% static "js/init.js" %}'></script>-->
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src='{% static "js/nprogress.js" %}'></script>
+		<script src='{% static "js/player.js" %}'></script>
         <script>if(location.hostname.match(/ricostacruz\.com$/)){var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-20473929-1"]),_gaq.push(["_trackPageview"]),function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}()}</script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<style>
-			#video-1 {
-			   width:200%;
-			   max-width:640px;
-			   height:auto;
-			}
-			#video-2 {
-			   width:40%;
-			   margin-top: 50px
-			   max-width:640px;
-			   height:40%;
-			}
-
-			/* Style buttons */
-			.btn1 {
-			  border: none; /* Remove borders */
-			  color: white; /* White text */
-			  padding: 12px 16px; /* Some padding */
-			  font-size: 16px; /* Set a font size */
-			  cursor: pointer; /* Mouse pointer on hover */
-			}
-
-		</style>
-
 	</head>
 	<body id="top">
 
@@ -69,11 +46,14 @@
 		<!-- Main -->
 		<section id="main" class="wrapper style1">
 			<header class="major">
-				<h2>Player</h2>
 				{% if videoFile == '' %}
+				<h2>Player</h2>
 				<p>방식을 선택해주세요.</p>
 				<hr class="major" />
+
+				{% endif %}
 			</header>
+		{% if videoFile == '' %}
 			<center>
 				<button class="btn btn1" id="file_upload" type="button" data-toggle="modal" data-target="#file_upload_modal">
 					<section class="special box">
@@ -140,83 +120,90 @@
 				</div>
 			  </div>
 			</div>
+		{% else %}
+			<button class="button big special text-center" onclick="showHide()">수화</button>
+		  <div class="video-container form-inline row">
+			<div class="video_zone col-sm-6 col-xs-12">
+				<video id="video-1" class="video-js vjs-default-skin " style="float:right" controls autobuffer muted preload='auto' data-setup='{}'>
+					<source src="{{MEDIA_URL}}{{videoFile}}" type="video/mp4">
+					<source src="{{MEDIA_URL}}{{videoFile}}" type="video/webm">
+					<source src="{{MEDIA_URL}}{{videoFile}}" type="video/ogg">
+					<track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}{{webSubtitle}}" default>
+				</video>
+			</div>
+			<div id="showHide" align="middle" class="video_zone col-sm-6 col-xs-12">
+				<video id="video-2" class="video-js vjs-default-skin" style="float:left;" autobuffer muted preload='auto' data-setup='{}'>
+					<source src="{{MEDIA_URL}}{{signVideo}}" type="video/mp4">
+				</video>
+			</div>
+		  </div>
 
-			{% else %}
-			  <div id="videoal" class="form-inline">
-				  <center>
-					<div class="video_zone">
-						<video id="video-1" class="video-js vjs-default-skin" controls autobuffer muted preload='auto' data-setup='{}'>
-							<source src="{{MEDIA_URL}}{{videoFile}}" type="video/mp4">
-							<!--<source src="{{MEDIA_URL}}{{videoFile}}" type="video/webm">-->
-							<!--<source src="{{MEDIA_URL}}{{videoFile}}" type="video/ogg">-->
-							<track label="Korean" kind="subtitles" srclang="ko" src="{{MEDIA_URL}}{{webSubtitle}}" default>
-						</video>
-					</div>
-					<div class="video_zone">
-						<video id="video-2" class="video-js vjs-default-skin" autobuffer muted preload='auto' data-setup='{}'>
-							<source src="{{MEDIA_URL}}{{signVideo}}" type="video/mp4">
-						</video>
-					</div>
-				  </center>
-
-			  </div>
-			{% endif %}
+		{% endif %}
 			<br><br>
 		</section>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-						<div class="text-center">
-							<ul class="icons" style="center">
-								<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_7" class="fab icon fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://kookmin-sw.github.io/2019-cap1-2019_7" class="fas icon fa-git"><span class="label">Team Page</span></a></li>
-								<li><a href="https://www.facebook.com/jeong5055" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							</ul>
-						</div>
-					<ul class="copyright">
-						<li>국민대학교 소프트웨어융합대학 Capstone 7조</li>
-						<li>&copy; 전지적 수화 시점. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- 동영상 업로드 시 로딩 바 -->
-        <script>
-			setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
-			$("#b-inc1").click(function() { NProgress.inc(); });
-			$("#b-inc2").click(function() { NProgress.inc(); });
-		</script>
-		<!-- 동영상 동시 재생 -->
-		<script>
-			$("#video-1").on("play",function(){
-				$("#video-2").trigger("play");
-			});
-			$("#video-1").on("pause",function(){
-				$("#video-2").trigger("pause");
-			});
-		</script>
-
-		<script>
-			$("#file_upload").click(function(){
-				$("#file_upload_modal").modal();
-			});
-
-			$("#youtube_link").click(function(){
-				$("#youtube_link_modal").modal();
-			});
-		</script>
-
-		<script>
-			$("#b-inc1").click(function(){
-				$("#file_upload_modal").modal('hide');
-				});
-			});
-		</script>
-
-        <script>var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
-	    <script>
-          $(document).ready(function(){ var fileTarget = $('.filebox .upload-hidden'); fileTarget.on('change', function(){ // 값이 변경되면 if(window.FileReader){ // modern browser var filename = $(this)[0].files[0].name; } else { // old IE var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 } // 추출한 파일명 삽입 $(this).siblings('.upload-name').val(filename); }); });
-        </script>
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="container">
+					<div class="text-center">
+						<ul class="icons" style="center">
+							<li><a href="https://github.com/kookmin-sw/2019-cap1-2019_7" class="fab icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://kookmin-sw.github.io/2019-cap1-2019_7" class="fas icon fa-git"><span class="label">Team Page</span></a></li>
+							<li><a href="https://www.facebook.com/jeong5055" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						</ul>
+					</div>
+				<ul class="copyright">
+					<li>국민대학교 소프트웨어융합대학 Capstone 7조</li>
+					<li>&copy; 전지적 수화 시점. All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
     </body>
 </html>
+<script>
+		<!-- 동영상 업로드 시 로딩 바 -->
+	setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+	$("#b-inc1").click(function() { NProgress.inc();
+		$("#file_upload_modal").modal('hide');
+		$("#youtube_link_modal").modal('hide');
+	});
+	$("#b-inc2").click(function() { NProgress.inc(); });
+</script>
+<script>
+
+	<!-- 동영상 동시 재생 -->
+	$("#video-1").on("play",function(){
+		$("#video-2").trigger("play");
+	});
+	$("#video-1").on("pause",function(){
+		$("#video-2").trigger("pause");
+	});
+</script>
+<script>
+
+	<!-- modal 호출 -->
+	$("#file_upload").click(function(){
+		$("#file_upload_modal").modal();
+	});
+
+	$("#youtube_link").click(function(){
+		$("#youtube_link_modal").modal();
+	});
+</script>
+<script>
+	<!-- 업로드 시 로딩 바 -->
+	$("#b-inc1").click(function(){
+
+	});
+</script>
+<script>
+	<!--수화 영상 옵션 선택-->
+	function showHide(){
+		if(document.getElementById("showHide").style.display =='none'){
+			document.getElementById("showHide").style.display ='block';
+		}
+		else{
+			document.getElementById("showHide").style.display ='none';
+		}
+	}
+</script>

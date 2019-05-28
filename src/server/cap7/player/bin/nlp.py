@@ -23,7 +23,7 @@ class NLP:
     def relocateMorpheme(self, subtitle_path):
         print('Relocate Morpheme Start...')
         output_file = 'player/media/subtitle/relocatedVTT.vtt'
-
+        print(subtitle_path)
         input_f = open(subtitle_path, 'r', encoding="utf8")
         output_f = open(output_file, 'w', encoding="utf8")
 

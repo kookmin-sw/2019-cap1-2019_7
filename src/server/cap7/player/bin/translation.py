@@ -1,8 +1,11 @@
-def translate(englishTextFile):
+
+
+def translate(web_subtitle, nlp_subtitle):
+    import argparse
     import os
     from google.cloud import translate
+    import six
 
-    print('Translation Start...')
     credential_path = "test3-596b967c9537.json"
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
@@ -10,34 +13,57 @@ def translate(englishTextFile):
     translate_client = translate.Client()
 
     # The text to translate
-    inputFile = open(englishTextFile, 'r')
-    outputFile = open('player/media/subtitle/translated_output.txt', 'w')
+    inputFile1  = open(web_subtitle, 'r')
+    inputFile2 = open(nlp_subtitle, 'r')
+    outputPath1 = 'player/media/videos/[WEB]subtitle2.vtt'
+    outputPath2 = 'player/media/videos/[NLP]subtitle2.vtt'
+    outputFile1 = open(outputPath1, 'w')
+    outputFile2 = open(outputPath2, 'w')
 
-    lines = inputFile.readlines()
+    lines1 = inputFile1.readlines()
+    lines2 = inputFile2.readlines()
 
     for i in range(2):
-        outputFile.write(lines[0])
-        del lines[0]
+        outputFile1.write(lines1[0])
+        outputFile2.write(lines2[0])
+        del lines1[0]
+        del lines2[0]
 
     flag = 1
-    for line in lines:
+    for line in lines1:
         if flag % 4 == 0:
-            outputFile.write('\n')
+            outputFile1.write('\n')
         if flag % 4 == 3:
-            print("\n", line, "\n")
+            print("\n", line)
             text = line
 
             target = 'ko'
             translation = translate_client.translate(text,target_language=target)
-            outputFile.write(translation['translatedText'])
+            outputFile1.write(translation['translatedText'])
 
             flag+=1
         else:
-            outputFile.write(line)
+            outputFile1.write(line)
             flag += 1
 
-    print('Translation End...')
+    for line in lines2:
+        if flag % 4 == 0:
+            outputFile2.write('\n')
+        if flag % 4 == 3:
+            print("\n", line)
+            text = line
 
-    return outputFile
+            target = 'ko'
+            translation = translate_client.translate(text,target_language=target)
+            outputFile2.write(translation['translatedText'])
 
-# if __name__ == '__main__':
+            flag+=1
+        else:
+            outputFile2.write(line)
+            flag += 1
+
+    return outputPath1, outputPath2
+
+
+if __name__ == '__main__':
+    translate()
