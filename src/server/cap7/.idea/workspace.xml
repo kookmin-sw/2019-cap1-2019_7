@@ -3,30 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="75fb0f8a-effc-4014-a8a0-6da1978df0d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionary/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/bin/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/constant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/bin/googleSTT.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/googleSTT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/bin/mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/mapping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/bin/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/nlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/bin/subtitle.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/subtitle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/bin/stopword.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/stopword.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/bin/translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/translation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/bin/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/bin/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/static/css/agency.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/agency.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player/static/css/nprogress.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/nprogress.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/static/css/skel.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/skel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/static/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/player/static/js/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/static/js/upload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/templates/player/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/templates/player/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player/static/img/KakaoTalk_Video_20190527_1204_42_427.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/player/templates/player/player.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/player.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/templates/player/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/player/templates/player/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/player/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/player/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,15 +21,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/static/js/player.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/player/templates/player/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+            <state relative-caret-position="171">
+              <caret line="179" column="7" lean-forward="true" selection-start-line="179" selection-start-column="7" selection-end-line="179" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#0;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#1;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -57,31 +36,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/static/css/style.css">
+        <entry file="file://$PROJECT_DIR$/player/bin/similarityVoca.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="1085" column="36" lean-forward="true" selection-start-line="1085" selection-start-column="36" selection-end-line="1085" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/bin/nlp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="546">
+              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
               <folding>
-                <element signature="e#24#47#0" expanded="true" />
+                <element signature="e#23#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawling.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/player/bin/stopword.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="299">
+              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -89,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/player/bin/mapping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="197" column="49" lean-forward="true" selection-start-line="197" selection-start-column="49" selection-end-line="197" selection-end-column="49" />
+            <state relative-caret-position="228">
+              <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
               <folding>
                 <element signature="e#147#178#0" expanded="true" />
               </folding>
@@ -99,37 +69,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/templates/player/index.html">
+        <entry file="file://$PROJECT_DIR$/player/bin/subtitle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+            <state relative-caret-position="240">
+              <caret line="106" column="32" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="32" />
+              <folding>
+                <element signature="e#24#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/static/css/nprogress.css">
+        <entry file="file://$PROJECT_DIR$/player/bin/translation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1102">
-              <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+            <state relative-caret-position="228">
+              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="19" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/static/js/nprogress.js">
+        <entry file="file://$PROJECT_DIR$/player/bin/constant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8930">
-              <caret line="470" column="5" selection-start-line="470" selection-start-column="5" selection-end-line="470" selection-end-column="5" />
+            <state relative-caret-position="342">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/player/bin/utils.py">
+        <entry file="file://$PROJECT_DIR$/../../../../../temp.srt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1729">
-              <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+            <state relative-caret-position="494">
+              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player/bin/googleSTT.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1824">
+              <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+              <folding>
+                <element signature="e#48#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/player/[WEB]subtitle.vtt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -146,13 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>split</find>
-      <find>DIRS</find>
-      <find>MEDIA</find>
-      <find>videofile</find>
-      <find>sta</find>
-      <find>label</find>
-      <find>matchingSign</find>
       <find>inputClipPaths</find>
       <find>make</find>
       <find>writeS</find>
@@ -176,6 +163,13 @@
       <find>extrac</find>
       <find>outputforweb</find>
       <find>inc</find>
+      <find>similarity</find>
+      <find>simi</find>
+      <find>audio_path</find>
+      <find>N</find>
+      <find>list</find>
+      <find>subtitle</find>
+      <find>stopword</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/player/static/css/styles.css" />
-        <option value="$PROJECT_DIR$/player/templates/player/left-sidebar.html" />
         <option value="$PROJECT_DIR$/player/templates/player/no-sidebar.html" />
         <option value="$PROJECT_DIR$/player/static/css/style-xlarge.css" />
         <option value="$PROJECT_DIR$/player/urls.py" />
@@ -203,7 +195,6 @@
         <option value="$PROJECT_DIR$/player/stopword.py" />
         <option value="$PROJECT_DIR$/player/text2SignLanguageMapping.py" />
         <option value="$PROJECT_DIR$/player/videotowav.py" />
-        <option value="$PROJECT_DIR$/player/bin/stopword.py" />
         <option value="$PROJECT_DIR$/player/translate.py" />
         <option value="$PROJECT_DIR$/player/bin/tools.py" />
         <option value="$PROJECT_DIR$/player/admin.py" />
@@ -217,29 +208,32 @@
         <option value="$PROJECT_DIR$/player/templates/player/contact.html" />
         <option value="$PROJECT_DIR$/player/static/css/skel.css" />
         <option value="$PROJECT_DIR$/player/static/css/agency.min.css" />
-        <option value="$PROJECT_DIR$/player/bin/googleSTT.py" />
         <option value="$PROJECT_DIR$/player/bin/nlp.py" />
         <option value="$PROJECT_DIR$/player/templates/player/index.html" />
-        <option value="$PROJECT_DIR$/player/bin/mapping.py" />
         <option value="$PROJECT_DIR$/player/generate.py" />
-        <option value="$PROJECT_DIR$/player/bin/subtitle.py" />
         <option value="$PROJECT_DIR$/player/views.py" />
         <option value="$PROJECT_DIR$/player/models.py" />
-        <option value="$PROJECT_DIR$/player/bin/translation.py" />
         <option value="$PROJECT_DIR$/player/bin/utils.py" />
         <option value="$PROJECT_DIR$/crawling.py" />
         <option value="$PROJECT_DIR$/player/templates/player/team.html" />
-        <option value="$PROJECT_DIR$/player/static/css/nprogress.css" />
         <option value="$PROJECT_DIR$/player/static/js/video.js" />
         <option value="$PROJECT_DIR$/player/static/js/upload.js" />
         <option value="$PROJECT_DIR$/player/static/css/style.css" />
         <option value="$PROJECT_DIR$/player/static/js/player.js" />
         <option value="$PROJECT_DIR$/player/templates/player/player.html" />
+        <option value="$PROJECT_DIR$/player/static/css/nprogress.css" />
+        <option value="$PROJECT_DIR$/player/bin/googleSTT.py" />
+        <option value="$PROJECT_DIR$/player/bin/similarityVoca.py" />
+        <option value="$PROJECT_DIR$/player/bin/mapping.py" />
+        <option value="$PROJECT_DIR$/player/bin/subtitle.py" />
+        <option value="$PROJECT_DIR$/player/bin/translation.py" />
+        <option value="$PROJECT_DIR$/player/bin/stopword.py" />
+        <option value="$PROJECT_DIR$/player/bin/constant.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="806" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -479,9 +473,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="806" y="0" width="974" height="1047" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23931624" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17735043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -492,8 +487,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.329718" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4957265" visible="true" weight="0.11829135" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50427353" side_tool="true" visible="true" weight="0.11829135" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4946581" visible="true" weight="0.11829135" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5053419" side_tool="true" visible="true" weight="0.11829135" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -520,14 +515,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dictionary/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/transcribe.py" />
     <entry file="file://$PROJECT_DIR$/player/sign.py" />
     <entry file="file://$PROJECT_DIR$/player/saveSignLanguageVideo.py" />
     <entry file="file://$PROJECT_DIR$/player/relocatedVTT.vtt" />
@@ -537,13 +524,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/player/bin/dic.user">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/constant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cap7/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -556,13 +536,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP1_/mapping.py" />
-    <entry file="file://$PROJECT_DIR$/player/bin/stopword.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/player/bin/youtube.py" />
     <entry file="file://$PROJECT_DIR$/player/apps.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -676,17 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/templates/player/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/player/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -704,13 +666,6 @@
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/translation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -755,33 +710,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/googleSTT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding>
-            <element signature="e#48#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/player/static/js/player.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/subtitle.py">
+    <entry file="file://$PROJECT_DIR$/player/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding>
-            <element signature="e#24#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/nlp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="e#24#47#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="20615">
+          <caret line="1085" column="36" selection-start-line="1085" selection-start-column="36" selection-end-line="1085" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -792,20 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/templates/player/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/static/css/nprogress.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/player/static/js/nprogress.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8930">
@@ -813,43 +734,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/utils.py">
+    <entry file="file://$PROJECT_DIR$/player/templates/player/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1729">
-          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/bin/mapping.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="197" column="49" lean-forward="true" selection-start-line="197" selection-start-column="49" selection-end-line="197" selection-end-column="49" />
+        <state relative-caret-position="532">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
-            <element signature="e#147#178#0" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/player/static/js/player.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/player/templates/player/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="1085" column="36" lean-forward="true" selection-start-line="1085" selection-start-column="36" selection-end-line="1085" selection-end-column="36" />
+        <state relative-caret-position="285">
+          <caret line="101" column="26" lean-forward="true" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="84" column="54" selection-start-line="84" selection-start-column="11" selection-end-line="84" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/static/css/nprogress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/[WEB]subtitle.vtt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/player/templates/player/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+        <state relative-caret-position="171">
+          <caret line="179" column="7" lean-forward="true" selection-start-line="179" selection-start-column="7" selection-end-line="179" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#0;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#span#0;n#section#0;n#button#1;n#center#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#video#0;n#div#1;n#div#2;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/googleSTT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/similarityVoca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/mapping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+          <folding>
+            <element signature="e#147#178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../temp.srt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/subtitle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="106" column="32" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="32" />
+          <folding>
+            <element signature="e#24#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/translation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/nlp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player/bin/stopword.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
         </state>
       </provider>
     </entry>

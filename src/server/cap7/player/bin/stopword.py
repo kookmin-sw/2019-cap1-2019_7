@@ -15,7 +15,7 @@ class StopWord:
             '관형사': self.default,  # 관형사(determinant)
             '부사': self.check_adverb,  # 부사(adverb)
             '감탄사': self.default,  # 감탄사(exclamation)
-            '조사': self.check_post,  # 조사(post)
+            '조사': self.ignore,  # 조사(post)
             '어미': self.check_end,  # 어미(end)
             '접사': self.check_affix,  #접사(affix)
             '숫자': self.check_number,  # 숫자(number),

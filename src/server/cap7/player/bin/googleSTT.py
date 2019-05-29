@@ -36,21 +36,28 @@ class STT:
     # 오디오 파일을 입력받아 timestamp 정보를 갖는 text 추출하는 함수
     def extractText(self, audio_path):
         """Transcribe the given audio file."""
+        from google.cloud import storage
         from google.cloud import speech
         from google.cloud.speech import enums
         from google.cloud.speech import types
 
         client = speech.SpeechClient()
+        gcsClient = storage.Client()
+
+        bucket = gcsClient.get_bucket('capstone7')
+
+        blob = bucket.blob(audio_path)
+        blob.upload_from_filename(audio_path)
+        # 이름으로 저장한지 보기
+        gcs_uri = "gs://capstone7/" + audio_path
 
         if Video.objects.last().language == 'ko-KR':
             language = 'ko-KR'
         else:
             language = 'en-US'
 
-        with io.open(audio_path, 'rb') as audio_file:
-            content = audio_file.read()
 
-        audio = types.RecognitionAudio(content=content)
+        audio = types.RecognitionAudio(uri=gcs_uri)
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
             sample_rate_hertz=44100,
@@ -60,7 +67,8 @@ class STT:
             audio_channel_count=2,
             enable_separate_recognition_per_channel=True)
 
-        response = client.recognize(config, audio)
+        operation = client.long_running_recognize(config, audio)
+        response = operation.result(timeout=1000)
 
         text_path = 'player/media/subtitle/googleSTT_output.txt'
         print(audio_path)
@@ -77,7 +85,6 @@ class STT:
                 word = word_info.word
                 start_time = word_info.start_time
                 end_time = word_info.end_time
-
                 text_file.write('%s ' % word)
                 text_file.write('start_time %s ' % (start_time.seconds + start_time.nanos * 1e-9))
                 text_file.write('end_time %s\n' % (end_time.seconds + end_time.nanos * 1e-9))
@@ -89,7 +96,7 @@ class STT:
             text_file.write(u'Transcript: {}'.format(result.alternatives[0].transcript))
             text_file.write('\n')
             print(u'Transcript: {}'.format(result.alternatives[0].transcript))
-
+        text_file.close()
         print('###Extract Text End')
 
         return text_path, language

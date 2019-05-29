@@ -46,6 +46,7 @@ def translate(web_subtitle, nlp_subtitle):
             outputFile1.write(line)
             flag += 1
 
+    flag = 1
     for line in lines2:
         if flag % 4 == 0:
             outputFile2.write('\n')

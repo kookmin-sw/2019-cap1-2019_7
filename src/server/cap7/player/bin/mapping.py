@@ -4,12 +4,15 @@
 # collection = db.get_collection('basic')
 
 from dictionary.models import *
-import subprocess
+from django.conf import settings
+from .similarityVoca import *
+
 from moviepy.video.io.VideoFileClip import VideoFileClip
 from moviepy.editor import VideoFileClip, concatenate_videoclips
 import moviepy.video.fx.all as vfx
+
+import subprocess
 import os
-from django.conf import settings
 import shutil
 import multiprocessing
 
@@ -32,10 +35,8 @@ class SignVideo:
             if flag%5 == 3:
                 words = lines[line].split()
                 idx=0
-
                 for word in words:
                     idx+=1
-
                     try:
                         # 형태소가 숫자일 때,
                         if word.isdigit():
@@ -51,12 +52,60 @@ class SignVideo:
                         elif Basic.objects.filter(word=word).count() > 1:
                             find_word = Basic.objects.filter(word=word)
 
+                            # 명사 list, 왼쪽 오른쪽 명사거리, 명사, 참조단어 list, href list
+                            noun = []
+                            nounSub = []
+                            refList = []
+                            locationList = []
+
+                            # 품사 리스트
+                            parts = lines[line+1].split()
+
+                            for i in range(idx-2, -1, -1):
+                                if(parts[i] == "명사"):
+                                    noun.append(words[i])
+                                    nounSub.append(idx - i -1)
+                                    break
+
+                            for i in range(idx, len(parts)):
+                                if(parts[i] == "명사"):
+
+                                    noun.append(words[i])
+                                    nounSub.append(i-idx+1)
+                                    break
+
+                            if(nounSub[0]>nounSub[1]):
+                                N = noun[1]
+                            else:
+                                N = noun[0]
+
+                            # 같은 품사 갯수
+                            samePart = 0
+
                             # 일차적으로 품사가 일치하는 단어로 반환
                             for result in find_word:
-                                words = lines[line].split()
-                                if result.part == word.part:
-                                    results.append(result.location)
-                                    break
+                                if result.part == parts[idx-1]:
+                                    samePart += 1
+                                    print('일치하는 품사가 있다')
+                                refList.append(result.ref_word)
+                                locationList.append(result.location)
+
+                            if(samePart == 1):
+                                results.append(result.href)
+
+                            else:
+                                print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+                                print('단어 : ', result)
+                                print("refList :        ",refList)
+                                print('가장 가까운 명사 : ' , N)
+                                sim = SimilarytyWord()
+                                n = sim.calc_similarity(N, refList)
+                                print('유사도 결과 단어 : ')
+                                print(refList[n])
+                                if(n == -1):
+                                    results.append(locationList[0])
+                                else:
+                                    results.append(locationList[n])
 
                     except:
                         continue
@@ -165,10 +214,8 @@ class SignVideo:
 
         subtitleDuration = self.getDurations(inputDuration)
         inputClipPaths = self.matchingSign(wordPath)
-        print('Generate SignLanguage Start ...')
         numClipPath = len(inputClipPaths)
         numDuration = len(subtitleDuration)
-        print('Generate SignLanguage Start 1...')
         # 멀티프로세싱을 위해 input data 분할
         inputData = []
         n = 8
@@ -183,19 +230,13 @@ class SignVideo:
                 inputData[num].append(inputClipPaths[round(numClipPath / n) * num:round(numClipPath / n) * (num + 1)])
                 inputData[num].append(subtitleDuration[round(numDuration / n) * num:round(numDuration / n) * (num + 1)])
 
-        print('Generate SignLanguage Start 2...')
         # Run Multiprocessing
-        print('Generate SignLanguage Start 2...')
         pool = multiprocessing.Pool(processes=8)
         pool.map(self.makeClipsBySentence, inputData)
-        print('Generate SignLanguage Start 2...')
         pool.close()
-        print('Generate SignLanguage Start 2...')
         pool.join()
-        print('Generate SignLanguage Start 2...')
         print(numDuration)
         outputFile = self.makeFinalVideo(numDuration, "player/media/outputs/")
-        print('Generate SignLanguage Start 2...')
         return outputFile
 
 
