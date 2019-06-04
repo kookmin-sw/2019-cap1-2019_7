@@ -34,7 +34,7 @@
 
 ```markdown
 이름 : 윤지은
-담당 : 팀장 / 자막 생성 및 수화 영상 제작
+담당 : 팀장 / 자막 생성 및 수화 영상 생성
 e-mail : dbss58@naver.com
 ```
 ```markdown
@@ -54,6 +54,7 @@ e-mail : wlsdudqo97@naver.com
 ```
 ```markdown
 이름 : 축이림
+담당 : 자료 조사
 ```
 
 ### 5. 기타
